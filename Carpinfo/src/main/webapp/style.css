@@ -85,6 +85,10 @@ img { margin: 0px; padding: 0px; border: none; }
 	background: url(images/menu.png) no-repeat;
 }
 
+#menu {
+	margin-top: 100px;
+}
+
 #menu ul {
 	margin: 0;
 	padding: 0;

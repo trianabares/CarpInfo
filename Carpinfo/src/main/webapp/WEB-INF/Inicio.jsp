@@ -28,19 +28,18 @@
       <div id="container">
         <div id="header">
           <div id="header_left">
+          	<div id="site_title">
+              <h1><a href="/"> <img src="images/logo.png" alt="" /> <span>free website template</span> </a></h1>
+            </div>
             <div id="menu">
               <ul>
-                <li><a href="#" class="current"><span></span>Home</a></li>
-                <li><a href="#">Tours</a></li>
-                <li><a href="#">News</a></li>
-                <li><a href="#">Gallery</a></li>
-                <li><a href="#">Contact Us</a></li>
+                <li><a href="/info">INFO UTIL</a></li>
+                <li><a href="/turismo">TURISMO</a></li>
+                <li><a href="/vecinos">VECINOS</a></li>
+                <li><a href="/contacto">CONTACTO</a></li>
               </ul>
             </div>
             <!-- end of menu -->
-            <div id="site_title">
-              <h1><a href="#"> <img src="images/logo.png" alt="" /> <span>free website template</span> </a></h1>
-            </div>
           </div>
           <!-- end of header left -->
           <div id="header_right">
@@ -54,6 +53,7 @@
               <div class="cleaner"></div>
               <input type="submit" name="login" value="Login" alt="login" id="submit_btn" />
             </form>
+            <a>Registrarse</a>
           </div>
           <!-- end of header right -->
           <div class="cleaner"></div>
