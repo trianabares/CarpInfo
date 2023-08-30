@@ -9,6 +9,7 @@
 <!-- para errores de renderizado en rutas PUT -->
 <%@ page isErrorPage="true"%>
 
+<<<<<<< Updated upstream
 <!DOCTYPE html>
 <html>
 
@@ -24,5 +25,8 @@
 <div class="container">
 
 </div>
+=======
+
+>>>>>>> Stashed changes
 </body>
 </html>
