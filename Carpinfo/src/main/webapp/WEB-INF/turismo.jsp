@@ -36,13 +36,50 @@
               <h1><a href="/"> <img src="images/logo.png" alt="" /> <span>free website template</span> </a></h1>
             </div>
             <div id="menu">
-              <ul>
-                <li><a href="/info">INFO UTIL</a></li>
-                <li><a href="/turismo">TURISMO</a></li>
-                <li><a href="/vecinos">VECINOS</a></li>
-                <li><a href="/contacto">CONTACTO</a></li>
-              </ul>
+	            <div class="menu-padre">
+		            <a href="/info">INFO UTIL</a>
+		            	<div class="menu-desplegable">
+			             	<a href="#">Opción 1</a>
+					        <a href="#">Opción 2</a>
+					        <a href="#">Opción 3</a>
+					     </div>
+				</div>
+			    <div class="menu-padre">
+		            <a href="/info">TURISMO</a>
+		            	<div class="menu-desplegable">
+			             	<a href="#">Opción 1</a>
+					        <a href="#">Opción 2</a>
+					        <a href="#">Opción 3</a>
+					     </div>
+				</div>
+			    <div class="menu-padre">
+		            <a href="/info">VECINOS</a>
+		            	<div class="menu-desplegable">
+			             	<a href="#">Opción 1</a>
+					        <a href="#">Opción 2</a>
+					        <a href="#">Opción 3</a>
+					     </div>
+				</div>
+			       <div class="menu-padre">
+		            <a href="/info">CONTACTO</a>
+		            	<div class="menu-desplegable">
+			             	<a href="#">Opción 1</a>
+					        <a href="#">Opción 2</a>
+					        <a href="#">Opción 3</a>
+					     </div>
+					</div>
             </div>
+            <!-- end of menu -->
+            <!-- prueba de menu desplegable -->
+<!--             <div class="menu-padre"> -->
+<!-- 		        <a href="#">Menú</a> -->
+<!-- 		        Menú desplegable oculto por defecto -->
+<!-- 		        <ul class="menu-desplegable"> -->
+<!-- 		            <li><a href="#">Opción 1</a></li> -->
+<!-- 		            <li><a href="#">Opción 2</a></li> -->
+<!-- 		            <li><a href="#">Opción 3</a></li> -->
+<!-- 		        </ul> -->
+<!-- 		    </div> -->
             <!-- end of menu -->
           </div>
           <!-- end of header left -->
