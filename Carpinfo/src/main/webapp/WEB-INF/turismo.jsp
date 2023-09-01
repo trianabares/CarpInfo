@@ -108,17 +108,17 @@
 							<div id="content">
 								<div class="content_section">
 									<h2>Turismo</h2>
-									<p>
-										<a href="#">Free Website Templates</a> are provided by
-										TemplateMo.com. Feel free to download, edit and use this
-										template for your websites. Credit goes to <a href="#">Public
-											Domain Picutures</a> for the header picture used in this
-										template.
-									</p>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-										Sed et quam vitae ipsum vulputate varius vitae semper nunc.
-										Quisque eget elit quis augue pharetra feugiat. Suspendisse
-										turpis arcu, dignissim ac laoreet a, condimentum in massa.</p>
+									<p>Hace aproximadamente 3500 años, se asentaron en este
+										territorio los primeros pobladores de lo que es hoy el partido
+										de Tigre. La información acerca de los primeros habitantes del
+										distrito proviene de diferentes sitios arqueológicos, como los
+										del arroyo Sarandí, arroyo Guazú-Nambí y La Bellaca, en Villa
+										La Ñata. En el siglo XVI, a la llegada de los conquistadores
+										europeos, los guaraníes habitaban la zona del delta y
+										comunidades de querandíes vivían en la llanura pampeana. La
+										colonización comenzó con la fundación de la ciudad de Buenos
+										Aires, en 1580, cuando el gobernador Juan de Garay repartió
+										tierras para estancias y chacras.</p>
 								</div>
 								<div class="content_section">
 									<h2>Tour Programs</h2>
@@ -126,21 +126,6 @@
 										vitae semper nunc. Quisque eget elit quis augue pharetra
 										feugiat. Suspendisse turpis arcu, dignissim ac laoreet a,
 										condimentum in massa.</p>
-
-									<ul class="featured_tour float_r">
-										<li><a href="#">Vestibulum euismod vulputate
-												consectetur <span>Suspendisse risus tortor, sagittis
-													ac ante.</span>
-										</a></li>
-										<li><a href="#">tiam turpis arcu, tempus id mauris <span>Nulla
-													dictum rhoncus lacinia. Quisque feugiat malesuada nulla,
-													sit amet fringilla dui.</span></a></li>
-										<li><a href="#">Suspendisse id mauris nec mi <span>Pellentesque
-													euismod auctor libero, in euismod eros.</span></a></li>
-										<li><a href="#">Aenean tristique vehicula laoreet. <span>Cras
-													eget massa aliquam dolor consectetur pharetra. Vivamus
-													vehicula tincidunt eleifend</span></a></li>
-									</ul>
 									<div class="cleaner"></div>
 									<div class="button_01">
 										<a href="#">View All</a>
@@ -155,27 +140,25 @@
 						<!-- end of content_outer -->
 						<div id="template_sidebar">
 							<div class="sidebar_section">
-								<h2>New Destinations</h2>
+								<h2>Servicios</h2>
 								<div class="image_wrapper">
 									<a href="#"><img src="images/image_01.jpg" alt=""
 										width="260" height="120" /></a>
 								</div>
-								<h3>Lorem ipsum dolor sit amet</h3>
-								<p>Sed et quam vitae ipsum vulputate varius vitae semper
-									nunc. Quisque eget elit quis augue pharetra feugiat.</p>
+								<h3>Bar el pepe</h3>
+								<p>Lugar familiar etc etc</p>
 								<div class="button_01">
-									<a href="#">Read more</a>
+									<a href="#">ir a su web</a>
 								</div>
 								<div class="cleaner_h30"></div>
 								<div class="image_wrapper">
 									<a href="#"><img src="images/image_02.jpg" alt=""
 										width="260" height="120" /></a>
 								</div>
-								<h3>Maecenas scelerisque porttitor</h3>
-								<p>Donec augue sem, interdum sed elementum a, feugiat id
-									ligula. Sed id blandit dolor. Curabitur nibh ligula.</p>
+								<h3>Hotel JueJue</h3>
+								<p>Se aceptan mascotas</p>
 								<div class="button_01">
-									<a href="#">Read more</a>
+									<a href="#">Ir asl sitio</a>
 								</div>
 							</div>
 						</div>
@@ -185,13 +168,11 @@
 					<!-- end of content_wrapper -->
 					<div id="footer">
 						<ul class="footer_menu">
-							<li><a href="#">Home</a></li>
-							<li><a href="#">Tours</a></li>
-							<li><a href="#">News</a></li>
-							<li><a href="#">Gallery</a></li>
+							<li><a href="#">Inicio</a></li>
+							<li><a href="#">Turismo</a></li>
 							<li class="last_menu"><a href="#">Contact</a></li>
 						</ul>
-						Copyright &copy; 2048 <a href="#">Your Company Name</a> | Designed
+						Copyright &copy; 2048 <a href="#">CarpInfo</a> | Designed
 						by <a target="_blank" rel="nofollow"
 							href="http://www.templatemo.com">templatemo</a>
 					</div>
