@@ -42,6 +42,16 @@ img { margin: 0px; padding: 0px; border: none; }
 .float_l { float: left; }
 .float_r { float:  right; }
 
+/* Estilo para ocultar el menú desplegable por defecto */
+.menu-desplegable {
+		display: none;
+}
+
+/* Estilo para mostrar el menú desplegable cuando el usuario pasa el mouse sobre el elemento */
+.menu-padre:hover .menu-desplegable {
+	display: block;
+}
+
 
 #wrapper_outter {
 	width: 100%;

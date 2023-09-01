@@ -16,8 +16,12 @@
 <meta charset="ISO-8859-1">
 <title>CarpInfo Inicio</title>
 <!-- BOOTSTRAP  -->
-<link rel="stylesheet" href="/webjars/bootstrap/5.2.3/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="/webjars/bootstrap/5.2.3/css/bootstrap.min.css">
+<!-- Incluye jQuery antes de Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+
 <link rel="stylesheet" href="/style.css">
 </head>
 
