@@ -36,42 +36,50 @@
               <h1><a href="/"> <img src="images/logo.png" alt="" /> <span>CarpInfo</span> </a></h1>
             </div>
             <div id="menu">
-			  <ul>
-			    <li class="menu-padre">
-			      <a href="/info">INFO UTIL</a>
-			      <ul class="menu-desplegable">
-			        <li><a href="#">Opción 1</a></li>
-			        <li><a href="#">Opción 2</a></li>
-			        <li><a href="#">Opción 3</a></li>
-			      </ul>
-			    </li>
-			    <li class="menu-padre">
-			      <a href="/turismo">TURISMO</a>
-			      <ul class="menu-desplegable">
-			        <li><a href="#">Historia de la isla</a></li>
-			        <li><a href="#">Atracciones</a></li>
-			        <li><a href="#">Humedales</a></li>
-			        <li><a href="#">Otros</a></li>
-			      </ul>
-			    </li>
-			    <li class="menu-padre">
-			      <a href="/vecinos">VECINOS</a>
-			      <ul class="menu-desplegable">
-			        <li><a href="#">Opción 1</a></li>
-			        <li><a href="#">Opción 2</a></li>
-			        <li><a href="#">Opción 3</a></li>
-			      </ul>
-			    </li>
-			    <li class="menu-padre">
-			      <a href="/contacto">CONTACTO</a>
-			      <ul class="menu-desplegable">
-			        <li><a href="#">Opción 1</a></li>
-			        <li><a href="#">Opción 2</a></li>
-			        <li><a href="#">Opción 3</a></li>
-			      </ul>
-			    </li>
-			  </ul>
-			</div>
+              <ul>
+                <li><a href="/info">INFO UTIL</a></li>
+                <li><a href="/turismo">TURISMO</a></li>
+                <li><a href="/vecinos">VECINOS</a></li>
+                <li><a href="/contacto">CONTACTO</a></li>
+              </ul>
+            </div>
+<!--             <div id="menu"> -->
+<!-- 			  <ul> -->
+<!-- 			    <li class="menu-padre"> -->
+<!-- 			      <a href="/info">INFO UTIL</a> -->
+<!-- 			      <ul class="menu-desplegable"> -->
+<!-- 			        <li><a href="#">Opción 1</a></li> -->
+<!-- 			        <li><a href="#">Opción 2</a></li> -->
+<!-- 			        <li><a href="#">Opción 3</a></li> -->
+<!-- 			      </ul> -->
+<!-- 			    </li> -->
+<!-- 			    <li class="menu-padre"> -->
+<!-- 			      <a href="/turismo">TURISMO</a> -->
+<!-- 			      <ul class="menu-desplegable"> -->
+<!-- 			        <li><a href="#">Historia de la isla</a></li> -->
+<!-- 			        <li><a href="#">Atracciones</a></li> -->
+<!-- 			        <li><a href="#">Humedales</a></li> -->
+<!-- 			        <li><a href="#">Otros</a></li> -->
+<!-- 			      </ul> -->
+<!-- 			    </li> -->
+<!-- 			    <li class="menu-padre"> -->
+<!-- 			      <a href="/vecinos">VECINOS</a> -->
+<!-- 			      <ul class="menu-desplegable"> -->
+<!-- 			        <li><a href="#">Opción 1</a></li> -->
+<!-- 			        <li><a href="#">Opción 2</a></li> -->
+<!-- 			        <li><a href="#">Opción 3</a></li> -->
+<!-- 			      </ul> -->
+<!-- 			    </li> -->
+<!-- 			    <li class="menu-padre"> -->
+<!-- 			      <a href="/contacto">CONTACTO</a> -->
+<!-- 			      <ul class="menu-desplegable"> -->
+<!-- 			        <li><a href="#">Opción 1</a></li> -->
+<!-- 			        <li><a href="#">Opción 2</a></li> -->
+<!-- 			        <li><a href="#">Opción 3</a></li> -->
+<!-- 			      </ul> -->
+<!-- 			    </li> -->
+<!-- 			  </ul> -->
+<!-- 			</div> -->
             <!-- end of menu -->
           </div>
           <!-- end of header left -->
@@ -103,12 +111,7 @@
               <div class="content_section">
                 <h2> Tour Programs</h2>
                 <p class="em_text">Sed et quam vitae ipsum vulputate varius vitae semper nunc. Quisque eget elit quis augue pharetra feugiat. Suspendisse turpis arcu, dignissim ac laoreet a, condimentum in massa.</p>
-                <ul class="featured_tour float_l">
-                  <li> <a href="#">Donec a nunc nec est euismod congue <span>Duis id erat quis sem eleifend molestie.</span></a> </li>
-                  <li> <a href="#">Proin at urna eu sem convallis elementum <span>Ut dapibus tincidunt tempus. Aliquam ac pellentesque mauris. Donec at nisl tellus. </span></a> </li>
-                  <li> <a href="#">Aenean tristique vehicula laoreet <span>Vestibulum ante ipsum primis in faucibus orci luctus.</span></a> </li>
-                  <li> <a href="#">Praesent et odio sit amet <span>Pellentesque euismod auctor libero, in euismod eros.</span></a> </li>
-                </ul>
+
                 <ul class="featured_tour float_r">
                   <li> <a href="#">Vestibulum euismod vulputate consectetur <span>Suspendisse risus tortor, sagittis ac ante.</span></a> </li>
                   <li> <a href="#">tiam turpis arcu, tempus id mauris <span>Nulla dictum rhoncus lacinia. Quisque feugiat malesuada nulla, sit amet fringilla dui.</span></a> </li>
