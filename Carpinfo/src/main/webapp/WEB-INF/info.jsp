@@ -16,8 +16,8 @@
 <meta charset="ISO-8859-1">
 <title>CarpInfo informacion</title>
 <!-- BOOTSTRAP  -->
-<!-- <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css"> -->
-<!-- <script src="/webjars/bootstrap/js/bootstrap.min.js"></script> -->
+<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
+<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="/style.css">
 </head>
 
