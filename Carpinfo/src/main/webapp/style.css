@@ -95,7 +95,7 @@ img { margin: 0px; padding: 0px; border: none; }
 #container {
 	width: 980px;
 	padding: 30px 0;
-	background: url(images/content_top.jpg) top center no-repeat;
+	background: url(images/content_top.jpg) top center;
 }
 
 #header {
