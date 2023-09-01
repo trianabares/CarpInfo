@@ -43,15 +43,35 @@ img { margin: 0px; padding: 0px; border: none; }
 .float_l { float: left; }
 .float_r { float:  right; }
 
-/* Estilo para ocultar el menú desplegable por defecto */
-.menu-desplegable {
-		display: none;
-}
+/* Estilo para menu desplegable */
+/* .menu-desplegable { */
+/*   display: none; */
+/*   position: absolute; */
+/*   background-color: #fff; */
+/*   z-index: 999; */
+/*   width: 150px;  */
+/*   margin-top: 10px;  */
+/* } */
 
-/* Estilo para mostrar el menú desplegable cuando el usuario pasa el mouse sobre el elemento */
-.menu-padre:hover .menu-desplegable {
-	display: block;
-}
+/* .menu-padre:hover .menu-desplegable { */
+/*   display: block; */
+/* } */
+
+/* .menu-desplegable li { */
+/*   width: 100%; */
+/* } */
+
+/* .menu-desplegable a { */
+/*   display: block; */
+/*   padding: 10px 20px; */
+/*   text-decoration: none; */
+/*   color: #333; */
+/*   font-weight: bold; */
+/* } */
+
+/* .menu-desplegable a:hover { */
+/*   background-color: #f5f5f5; */
+/* } */
 
 
 #wrapper_outter {

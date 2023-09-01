@@ -33,68 +33,60 @@
         <div id="header">
           <div id="header_left">
           	<div id="site_title">
-              <h1><a href="/"> <img src="images/logo.png" alt="" /> <span>free website template</span> </a></h1>
+              <h1><a href="/"> <img src="images/logo.png" alt="" /> <span>CarpInfo</span> </a></h1>
             </div>
             <div id="menu">
-	            <div class="menu-padre">
-		            <a href="/info">INFO UTIL</a>
-		            	<div class="menu-desplegable">
-			             	<a href="#">Opción 1</a>
-					        <a href="#">Opción 2</a>
-					        <a href="#">Opción 3</a>
-					     </div>
-				</div>
-			    <div class="menu-padre">
-		            <a href="/info">TURISMO</a>
-		            	<div class="menu-desplegable">
-			             	<a href="#">Opción 1</a>
-					        <a href="#">Opción 2</a>
-					        <a href="#">Opción 3</a>
-					     </div>
-				</div>
-			    <div class="menu-padre">
-		            <a href="/info">VECINOS</a>
-		            	<div class="menu-desplegable">
-			             	<a href="#">Opción 1</a>
-					        <a href="#">Opción 2</a>
-					        <a href="#">Opción 3</a>
-					     </div>
-				</div>
-			       <div class="menu-padre">
-		            <a href="/info">CONTACTO</a>
-		            	<div class="menu-desplegable">
-			             	<a href="#">Opción 1</a>
-					        <a href="#">Opción 2</a>
-					        <a href="#">Opción 3</a>
-					     </div>
-					</div>
-            </div>
-            <!-- end of menu -->
-            <!-- prueba de menu desplegable -->
-<!--             <div class="menu-padre"> -->
-<!-- 		        <a href="#">Menú</a> -->
-<!-- 		        Menú desplegable oculto por defecto -->
-<!-- 		        <ul class="menu-desplegable"> -->
-<!-- 		            <li><a href="#">Opción 1</a></li> -->
-<!-- 		            <li><a href="#">Opción 2</a></li> -->
-<!-- 		            <li><a href="#">Opción 3</a></li> -->
-<!-- 		        </ul> -->
-<!-- 		    </div> -->
+			  <ul>
+			    <li class="menu-padre">
+			      <a href="/info">INFO UTIL</a>
+			      <ul class="menu-desplegable">
+			        <li><a href="#">Opción 1</a></li>
+			        <li><a href="#">Opción 2</a></li>
+			        <li><a href="#">Opción 3</a></li>
+			      </ul>
+			    </li>
+			    <li class="menu-padre">
+			      <a href="/turismo">TURISMO</a>
+			      <ul class="menu-desplegable">
+			        <li><a href="#">Historia de la isla</a></li>
+			        <li><a href="#">Atracciones</a></li>
+			        <li><a href="#">Humedales</a></li>
+			        <li><a href="#">Otros</a></li>
+			      </ul>
+			    </li>
+			    <li class="menu-padre">
+			      <a href="/vecinos">VECINOS</a>
+			      <ul class="menu-desplegable">
+			        <li><a href="#">Opción 1</a></li>
+			        <li><a href="#">Opción 2</a></li>
+			        <li><a href="#">Opción 3</a></li>
+			      </ul>
+			    </li>
+			    <li class="menu-padre">
+			      <a href="/contacto">CONTACTO</a>
+			      <ul class="menu-desplegable">
+			        <li><a href="#">Opción 1</a></li>
+			        <li><a href="#">Opción 2</a></li>
+			        <li><a href="#">Opción 3</a></li>
+			      </ul>
+			    </li>
+			  </ul>
+			</div>
             <!-- end of menu -->
           </div>
           <!-- end of header left -->
           <div id="header_right">
-            <h2>Member Login</h2>
+            <h2>Vecinos Login</h2>
             <form action="#" method="get">
-              <label>Username</label>
+              <label>usuario</label>
               <input type="text" value="" name="username" size="10" class="input_field" />
               <div class="cleaner"></div>
-              <label>Password</label>
+              <label>Contraseña</label>
               <input type="password" value="" name="password" class="input_field" />
               <div class="cleaner"></div>
               <input type="submit" name="login" value="Login" alt="login" id="submit_btn" />
+              <a>Registrarse</a>
             </form>
-            <a>Registrarse</a>
           </div>
           <!-- end of header right -->
           <div class="cleaner"></div>
@@ -104,7 +96,7 @@
           <div id="content_outer">
             <div id="content">
               <div class="content_section">
-                <h2>Welcome to Travel &amp; Tour</h2>
+                <h2>Turismo</h2>
                 <p><a href="#">Free Website Templates</a> are provided by TemplateMo.com. Feel free to download, edit and use this template for your websites. Credit goes to <a href="#">Public Domain Picutures</a> for the header picture used in this template.</p>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam vitae ipsum vulputate varius vitae semper nunc. Quisque eget elit quis augue pharetra feugiat. Suspendisse turpis arcu, dignissim ac laoreet a, condimentum in massa.</p>
               </div>
