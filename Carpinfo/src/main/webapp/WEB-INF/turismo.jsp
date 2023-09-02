@@ -96,7 +96,7 @@
 									name="password" class="input_field" />
 								<div class="cleaner"></div>
 								<input type="submit" name="login" value="Login" alt="login"
-									id="submit_btn" /> <a>Registrarse</a>
+									id="submit_btn" /> <a href="/registro">Registrarse</a>
 							</form>
 						</div>
 						<!-- end of header right -->

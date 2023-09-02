@@ -58,7 +58,7 @@
 								<input type="submit" name="login" value="Login" alt="login"
 									id="submit_btn" />
 							</form>
-							<a>Registrarse</a>
+							<a href="/registro">Registrarse</a>
 						</div>
 						<!-- end of header right -->
 						<div class="cleaner"></div>
