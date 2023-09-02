@@ -66,11 +66,11 @@
                 <h2>Bienvenido a la comunidad CARPINFO</h2>
                 <p>En esta seccion vas a poder: </p>
                 <ul>
-                <li><a href="#">Interactuar con la comunidad</a></li>
-                <li><a href="#">Expresar tus opiniones</a></li>
-                <li><a href="#">Organizar eventos</a></li>
-                <li><a href="#">Comunicar inconvenientes</a></li>
-                <li><a href="#">Proponer cambios positivos para la comunidad</a></li>
+                <li>Interactuar con la comunidad</li>
+                <li>Expresar tus opiniones</li>
+                <li>Organizar eventos</li>
+                <li>Comunicar inconvenientes</li>
+                <li>Proponer cambios positivos para la comunidad</li>
                 
                 </ul>
               </div>
@@ -78,21 +78,13 @@
                 <h2>El Delta es de todos</h2>
                 <p class="em_text">Por esto, creamos un espacio en el cual cada vecino y vecina pueda expresarse libremente, siempre desde el respeto y buenos tratos, para asi asegurarnos una eperiencia positiva y constructiva.</p>
                 <h2>Empecemos!</h2>
-                <ul class="featured_tour float_l">
-                  <li> <a href="#">Primero, registrate para acceder al foro. <span>Duis id erat quis sem eleifend molestie.</span></a> </li>
-                  <li> <a href="#">Proin at urna eu sem convallis elementum <span>Ut dapibus tincidunt tempus. Aliquam ac pellentesque mauris. Donec at nisl tellus. </span></a> </li>
-                  <li> <a href="#">Aenean tristique vehicula laoreet <span>Vestibulum ante ipsum primis in faucibus orci luctus.</span></a> </li>
-                  <li> <a href="#">Praesent et odio sit amet <span>Pellentesque euismod auctor libero, in euismod eros.</span></a> </li>
-                </ul>
-                <ul class="featured_tour float_r">
-                  <li> <a href="#">Vestibulum euismod vulputate consectetur <span>Suspendisse risus tortor, sagittis ac ante.</span></a> </li>
-                  <li> <a href="#">tiam turpis arcu, tempus id mauris <span>Nulla dictum rhoncus lacinia. Quisque feugiat malesuada nulla, sit amet fringilla dui.</span></a> </li>
-                  <li> <a href="#">Suspendisse id mauris nec mi <span>Pellentesque euismod auctor libero, in euismod eros.</span></a> </li>
-                  <li> <a href="#">Aenean tristique vehicula laoreet. <span>Cras eget massa aliquam dolor consectetur pharetra. Vivamus vehicula tincidunt eleifend</span></a> </li>
-                </ul>
-                <div class="cleaner"></div>
-                <div class="button_01"><a href="#">View All</a></div>
-                <div class="cleaner"></div>
+                  
+                  
+            <h2><a href="#">Crear un evento</a></h2>  
+            <h2><a href="#">Informar un problema</a></h2>  
+            <h2><a href="#">Ir al foro</a></h2>
+      
+      
               </div>
             </div>
             <!-- end of content -->
