@@ -95,7 +95,7 @@ img { margin: 0px; padding: 0px; border: none; }
 #container {
 	width: 980px;
 	padding: 30px 0;
-	background: url(images/content_top.jpg) top center no-repeat;
+	background: url(images/content_top.jpg) top center;
 }
 
 #header {
@@ -214,6 +214,13 @@ img { margin: 0px; padding: 0px; border: none; }
 	width: 80px;
 	margin-top: 3px;
 	margin-right: 10px;
+}
+.formulario-registro{
+	border: 1px solid #000000;
+	border-radius: 10px;
+	box-shadow: 5px 5px 2px grey;
+	background-color: #A1DC8C;
+	padding:20px;
 }
 
 .input_field {

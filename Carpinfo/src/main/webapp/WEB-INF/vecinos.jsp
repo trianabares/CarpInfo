@@ -43,17 +43,8 @@
           </div>
           <!-- end of header left -->
           <div id="header_right">
-            <h2>Inicia sesion</h2>
-            <form action="#" method="get">
-              <label>Usuario</label>
-              <input type="text" value="" name="username" size="10" class="input_field" />
-              <div class="cleaner"></div>
-              <label>Clave</label>
-              <input type="password" value="" name="password" class="input_field" />
-              <div class="cleaner"></div>
-              <input type="submit" name="login" value="Login" alt="login" id="submit_btn" />
-            </form>
-            <a>Registrarse</a>
+            <h2>Hola sesion</h2>
+            
           </div>
           <!-- end of header right -->
           <div class="cleaner"></div>

@@ -41,20 +41,7 @@
             </div>
             <!-- end of menu -->
           </div>
-          <!-- end of header left -->
-          <div id="header_right">
-            <h2>Member Login</h2>
-            <form action="#" method="get">
-              <label>Username</label>
-              <input type="text" value="" name="username" size="10" class="input_field" />
-              <div class="cleaner"></div>
-              <label>Password</label>
-              <input type="password" value="" name="password" class="input_field" />
-              <div class="cleaner"></div>
-              <input type="submit" name="login" value="Login" alt="login" id="submit_btn" />
-            </form>
-            <a href="/registro">Registrarse</a>
-          </div>
+         
           <!-- end of header right -->
           <div class="cleaner"></div>
         </div>
@@ -63,28 +50,42 @@
           <div id="content_outer">
             <div id="content">
               <div class="content_section">
-                <h2>Welcome to Travel &amp; Tour</h2>
-                <p><a href="#">Free Website Templates</a> are provided by TemplateMo.com. Feel free to download, edit and use this template for your websites. Credit goes to <a href="#">Public Domain Picutures</a> for the header picture used in this template.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam vitae ipsum vulputate varius vitae semper nunc. Quisque eget elit quis augue pharetra feugiat. Suspendisse turpis arcu, dignissim ac laoreet a, condimentum in massa.</p>
-              </div>
-              <div class="content_section">
-                <h2> Tour Programs</h2>
-                <p class="em_text">Sed et quam vitae ipsum vulputate varius vitae semper nunc. Quisque eget elit quis augue pharetra feugiat. Suspendisse turpis arcu, dignissim ac laoreet a, condimentum in massa.</p>
-                <ul class="featured_tour float_l">
-                  <li> <a href="#">Donec a nunc nec est euismod congue <span>Duis id erat quis sem eleifend molestie.</span></a> </li>
-                  <li> <a href="#">Proin at urna eu sem convallis elementum <span>Ut dapibus tincidunt tempus. Aliquam ac pellentesque mauris. Donec at nisl tellus. </span></a> </li>
-                  <li> <a href="#">Aenean tristique vehicula laoreet <span>Vestibulum ante ipsum primis in faucibus orci luctus.</span></a> </li>
-                  <li> <a href="#">Praesent et odio sit amet <span>Pellentesque euismod auctor libero, in euismod eros.</span></a> </li>
-                </ul>
-                <ul class="featured_tour float_r">
-                  <li> <a href="#">Vestibulum euismod vulputate consectetur <span>Suspendisse risus tortor, sagittis ac ante.</span></a> </li>
-                  <li> <a href="#">tiam turpis arcu, tempus id mauris <span>Nulla dictum rhoncus lacinia. Quisque feugiat malesuada nulla, sit amet fringilla dui.</span></a> </li>
-                  <li> <a href="#">Suspendisse id mauris nec mi <span>Pellentesque euismod auctor libero, in euismod eros.</span></a> </li>
-                  <li> <a href="#">Aenean tristique vehicula laoreet. <span>Cras eget massa aliquam dolor consectetur pharetra. Vivamus vehicula tincidunt eleifend</span></a> </li>
-                </ul>
-                <div class="cleaner"></div>
-                <div class="button_01"><a href="#">View All</a></div>
-                <div class="cleaner"></div>
+                
+                <div class=" offset-1 formulario-registro">
+            <h2>Register!</h2>
+            <div class="text-danger">
+                <form:errors class="text-danger" path="user.*" />
+            </div>
+
+            <form:form method="POST" action="/registration"
+                modelAttribute="user">
+                <div class="mb-3">
+                    <form:label path="nombre" class="form-label">First Name:</form:label>
+                    <form:input type="text" path="nombre" class="form-control" />
+                </div>
+          
+                <div class="mb-3">
+                    <form:label path="email" class="form-label">Email:</form:label>
+                    <form:input type="email" path="email" class="form-control" />
+                </div>
+            
+                <div class="mb-3">
+                    <form:label path="password" class="form-label">Password:</form:label>
+                    <form:password path="password" class="form-control" />
+                </div>
+                <div class="mb-3">
+                    <form:label path="passwordConfirmation" class="form-label">Password Confirmation:</form:label>
+                    <form:password path="passwordConfirmation" class="form-control" />
+                </div>
+                <input type="submit" value="Register!" class="btn btn-primary" />
+            </form:form>
+            <p class="text-success">
+                <c:out value="${registro }"></c:out>
+            </p>
+        </div>
+                
+                
+              
               </div>
             </div>
             <!-- end of content -->
