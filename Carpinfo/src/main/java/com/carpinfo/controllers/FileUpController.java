@@ -30,7 +30,7 @@ public class FileUpController {
 			throw new RuntimeException ("Por favor subir un archivo");
 		}
 		
-		fileupService.subirArchivoABD(archivo);
+//		fileupService.subirArchivoABD(archivo);
 		
 		try {
 			byte[] bytes = archivo.getBytes();
