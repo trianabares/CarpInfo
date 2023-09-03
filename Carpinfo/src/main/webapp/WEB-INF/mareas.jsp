@@ -65,6 +65,7 @@
 					</div>
 					<!-- end of header -->
 					<div id="content_wrapper">
+					
 						<div id="content_outer">
 							<div id="content">
 								<div class="content_section">
@@ -93,12 +94,32 @@
 										</thead>
 										<tbody>
 											<tr>
-												<td>SAN FERNANDO/TIGRE</td>
+												<td>SAN FERNANDO / TIGRE</td>
 
 												<td>BAJAMAR</td>
 												<td>05:00</td>
 
 												<td>1.60</td>
+												<td>03/09/2023</td>
+
+											</tr>
+											<tr>
+												<td></td>
+
+												<td>PLEAMAR</td>
+												<td>11:00</td>
+
+												<td>2.90</td>
+												<td>03/09/2023</td>
+
+											</tr>
+<tr>
+												<td></td>
+
+												<td>BAJAMAR</td>
+												<td>19:00</td>
+
+												<td>1.50</td>
 												<td>03/09/2023</td>
 
 											</tr>
