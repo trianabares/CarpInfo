@@ -215,7 +215,7 @@
 
 									<div class="cleaner"></div>
 									<div class="button_01">
-										<a href="#">View All</a>
+										<a href="/info/mareas">Pronóstico de mareas</a>
 									</div>
 									<div class="cleaner"></div>
 								</div>

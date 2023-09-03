@@ -16,6 +16,11 @@ public class MainController {
 		return "info.jsp";
 	}
 	
+	@GetMapping("/info/mareas")
+	public String mareas(){
+		return "mareas.jsp";
+	}
+	
 	@GetMapping("/turismo")
 	public String turismo(){
 		return "turismo.jsp";
