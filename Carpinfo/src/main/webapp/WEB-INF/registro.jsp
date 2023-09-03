@@ -52,7 +52,7 @@
               <div class="content_section">
                 
                 <div class=" offset-1 formulario-registro">
-            <h2>Register!</h2>
+            <h2>Registrarse</h2>
             <div class="text-danger">
                 <form:errors class="text-danger" path="user.*" />
             </div>
@@ -60,7 +60,7 @@
             <form:form method="POST" action="/registration"
                 modelAttribute="user">
                 <div class="mb-3">
-                    <form:label path="nombre" class="form-label">First Name:</form:label>
+                    <form:label path="nombre" class="form-label">Nombre:</form:label>
                     <form:input type="text" path="nombre" class="form-control" />
                 </div>
           
@@ -70,14 +70,14 @@
                 </div>
             
                 <div class="mb-3">
-                    <form:label path="password" class="form-label">Password:</form:label>
+                    <form:label path="password" class="form-label">Contraseña:</form:label>
                     <form:password path="password" class="form-control" />
                 </div>
                 <div class="mb-3">
-                    <form:label path="passwordConfirmation" class="form-label">Password Confirmation:</form:label>
+                    <form:label path="passwordConfirmation" class="form-label">Confirmar Contraseña:</form:label>
                     <form:password path="passwordConfirmation" class="form-control" />
                 </div>
-                <input type="submit" value="Register!" class="btn btn-primary" />
+                <input type="submit" value="Registrarse" class="btn btn-primary" />
             </form:form>
             <p class="text-success">
                 <c:out value="${registro }"></c:out>
