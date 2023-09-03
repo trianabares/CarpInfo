@@ -113,7 +113,7 @@
 												<td>03/09/2023</td>
 
 											</tr>
-<tr>
+											<tr>
 												<td></td>
 
 												<td>BAJAMAR</td>
@@ -134,42 +134,43 @@
 
 									<div id="content_bottom"></div>
 									<div class="cleaner"></div>
-
-									<!-- end of content -->
-									<div id="content_bottom"></div>
-									<div class="cleaner"></div>
 								</div>
-								<!-- end of content_outer -->
-								<div id="template_sidebar">
-									<div class="sidebar_section">
-										<h2>New Destinations</h2>
-										<div class="image_wrapper">
-											<a href="#"><img src="images/image_01.jpg" alt=""
-												width="260" height="120" /></a>
-										</div>
-										<h3>Lorem ipsum dolor sit amet</h3>
-										<p>Sed et quam vitae ipsum vulputate varius vitae semper
-											nunc. Quisque eget elit quis augue pharetra feugiat.</p>
-										<div class="button_01">
-											<a href="#">Read more</a>
-										</div>
-										<div class="cleaner_h30"></div>
-										<div class="image_wrapper">
-											<a href="#"><img src="images/image_02.jpg" alt=""
-												width="260" height="120" /></a>
-										</div>
-										<h3>Maecenas scelerisque porttitor</h3>
-										<p>Donec augue sem, interdum sed elementum a, feugiat id
-											ligula. Sed id blandit dolor. Curabitur nibh ligula.</p>
-										<div class="button_01">
-											<a href="#">Read more</a>
-										</div>
-									</div>
-								</div>
-								<!-- end of template_sidebar -->
-								<div class="cleaner"></div>
 							</div>
-							<!-- end of content_wrapper -->
+							<!-- end of content -->
+							<div id="content_bottom"></div>
+							<div class="cleaner"></div>
+						</div>
+						<!-- end of content_outer -->
+						<div id="template_sidebar">
+							<div class="sidebar_section">
+								<h2>New Destinations</h2>
+								<div class="image_wrapper">
+									<a href="#"><img src="images/image_01.jpg" alt=""
+										width="260" height="120" /></a>
+								</div>
+								<h3>Lorem ipsum dolor sit amet</h3>
+								<p>Sed et quam vitae ipsum vulputate varius vitae semper
+									nunc. Quisque eget elit quis augue pharetra feugiat.</p>
+								<div class="button_01">
+									<a href="#">Read more</a>
+								</div>
+								<div class="cleaner_h30"></div>
+								<div class="image_wrapper">
+									<a href="#"><img src="images/image_02.jpg" alt=""
+										width="260" height="120" /></a>
+								</div>
+								<h3>Maecenas scelerisque porttitor</h3>
+								<p>Donec augue sem, interdum sed elementum a, feugiat id
+									ligula. Sed id blandit dolor. Curabitur nibh ligula.</p>
+								<div class="button_01">
+									<a href="#">Read more</a>
+								</div>
+							</div>
+						</div>
+						<!-- end of template_sidebar -->
+						<div class="cleaner"></div>
+					</div>
+					<!-- end of content_wrapper -->
 							<div id="footer">
 								<ul class="footer_menu">
 									<li><a href="#">Home</a></li>
