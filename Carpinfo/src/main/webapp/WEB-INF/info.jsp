@@ -197,7 +197,7 @@
 									</ul>
 									<div class="cleaner"></div>
 									<div class="button_01">
-										<a href="#">View All</a>
+										<a href="/info/aysa">Recorrido AYSA</a>
 									</div>
 									<!-- 						ALTURA DE MAREA -->
 									<br>
