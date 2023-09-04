@@ -13,10 +13,10 @@ import jakarta.persistence.Table;
 import lombok.Builder;
 import lombok.Data;
 
-@Entity
-@Table(name="archivos")
 @Data
 @Builder
+@Entity
+@Table(name="archivos")
 public class FileUp {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

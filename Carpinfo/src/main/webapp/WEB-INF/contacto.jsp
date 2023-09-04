@@ -69,12 +69,33 @@
 							<div id="content">
 								<div class="content_section">
 									<h2>Nuestro Equipo</h2>
+									
+									<p>Somos un pequeño equipo de desarrolladores web jóvenes, conformado por: </p>
+									
+									<ul class="featured_tour float_l">
+										<li>Triana Bares</li>
+										<li>Elías García</li>
+										<li>Braian Lopez</li>
+									</ul>
+									<ul class="featured_tour float_r">
+										<li>León Vallejos</li>
+										<li>Candela Fatala</li>
+										<li>Ignacio Jerez</li>
+									</ul>
+									<div class="cleaner"></div>
 								</div>
 								<div class="content_section">
 									<h2>Nuestro Propósito</h2>
+									
+									<p>Esta propuesta surge a partir de la falta de un lugar centralizado donde se pueda alojar y mostrar información 
+									relevante dentro de la zona del delta en el Tigre, localidad de la provincia de Buenos Aires, Argentina. Nos pareció 
+									que faltaba un sitio dedicado a las necesidades de tanto la comunidad de vecinos como de los visitantes.</p>
+									
 								</div>
 								<div class="content_section">
 									<h2>Modelo de Negocios</h2>
+									
+									<p>La forma en que este proyecto puede subsistir en el tiempo es gracias al apoyo de la municipalidad.</p>
 								</div>
 								<div class="content_section">
 									<h2>¿Por qué Nosotros?</h2>
