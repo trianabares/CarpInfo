@@ -104,14 +104,17 @@
 									relevante dentro de la zona del delta en el Tigre, localidad de la provincia de Buenos Aires, Argentina. Nos pareció 
 									que faltaba un sitio dedicado a las necesidades de tanto la comunidad de vecinos como de los visitantes.</p>
 									
+									<p>El sitio está destinado a proporcionar información pertinente sobre la zona, incluyendo actualizaciones sobre
+									el cauce del río y horarios de los servicios (como lanchas de transporte y distribución de agua potable), además de promover
+									el turismo en la localidad, con un apartado donde los emprendedores locales vana apoder promocionar sus servicios. 
+									También existe un espacio para que los vecinos dejen sus opiniones para mejorar la comunidad y se fomente la comunicación.</p>
+									
 								</div>
 								<div class="content_section">
 									<h2>Modelo de Negocios</h2>
 									
-									<p>La forma en que este proyecto puede subsistir en el tiempo es gracias al apoyo de la municipalidad.</p>
-								</div>
-								<div class="content_section">
-									<h2>¿Por qué Nosotros?</h2>
+									<p>La forma en que este proyecto puede subsistir en el tiempo es gracias a tanto al apoyo de la municipalidad, como al espacio
+									publicitario habilitado para cualquiera que quiera promocionar su emprendimiento en nuestro sitio.</p>
 								</div>
 							</div>
 							<!-- end of content -->
