@@ -29,8 +29,10 @@
 					<div id="header">
 						<div id="header_left">
 							<div id="site_title d-flex">
-          						    <h1><a href="/"> <img src="images/logo.png" alt="Carpinfo"/></a><span>Carpinfo</span></h1>
-         					   </div>
+								<h1>
+									<a href="/"> <img src="images/logo.png" alt="Carpinfo" /></a><span>Carpinfo</span>
+								</h1>
+							</div>
 							<div id="menu">
 								<ul>
 									<li><a href="/info">INFO UTIL</a></li>
@@ -43,32 +45,35 @@
 						</div>
 						<!-- end of header left -->
 						<div id="header_right">
-						
-						<c:choose>
-			<c:when test="${usuario.id == null }">
-		<h2>Member Login</h2>
-							<form action="#" method="get">
-								<label>Username</label> <input type="text" value=""
-									name="username" size="10" class="input_field" />
-								<div class="cleaner"></div>
-								<label>Password</label> <input type="password" value=""
-									name="password" class="input_field" />
-								<div class="cleaner"></div>
-								<input type="submit" name="login" value="Login" alt="login"
-									id="submit_btn" />
-							</form>
-							<a href="/registro">Registrarse</a>
-			</c:when>
-			<c:otherwise>
-			<h2>
-				Hola,
-				<c:out value="${usuario.nombre }"></c:out>
-			</h2>
-			</c:otherwise>
-		</c:choose>
-						
-						
-							
+
+							<c:choose>
+								<c:when test="${usuario.id == null }">
+									<h2>Member Login</h2>
+									<form action="/login" method="POST">
+										<label>Email</label> <input type="text" name="email"
+											class="input_field" />
+										<div class="cleaner"></div>
+										<label>Password</label> <input type="password" value=""
+											name="password" class="input_field" />
+										<div class="cleaner"></div>
+										<input type="submit" name="login" value="Login" alt="login"
+											id="submit_btn" />
+									</form>
+									<a href="/registro">Registrarse</a>
+								</c:when>
+								<c:otherwise>
+									<h2>
+										Hola,
+										<c:out value="${usuario.nombre }"></c:out>
+									</h2>
+									<h6>
+										email:
+										<c:out value="${usuario.email }"></c:out>
+									</h6>
+									<hr>
+									<a class="m-5" href="/logout">Cerrar sesión</a>
+								</c:otherwise>
+							</c:choose>
 						</div>
 						<!-- end of header right -->
 						<div class="cleaner"></div>
@@ -218,7 +223,7 @@
 										visitante como residente de esta hermosa región. Sabemos que
 										el conocimiento de las mareas es esencial para planificar tus
 										actividades y aprovechar al máximo este entorno.</p>
-									
+
 
 
 

@@ -43,58 +43,39 @@
 									<li><a href="/contacto">CONTACTO</a></li>
 								</ul>
 							</div>
-							<!--             <div id="menu"> -->
-							<!-- 			  <ul> -->
-							<!-- 			    <li class="menu-padre"> -->
-							<!-- 			      <a href="/info">INFO UTIL</a> -->
-							<!-- 			      <ul class="menu-desplegable"> -->
-							<!-- 			        <li><a href="#">Opción 1</a></li> -->
-							<!-- 			        <li><a href="#">Opción 2</a></li> -->
-							<!-- 			        <li><a href="#">Opción 3</a></li> -->
-							<!-- 			      </ul> -->
-							<!-- 			    </li> -->
-							<!-- 			    <li class="menu-padre"> -->
-							<!-- 			      <a href="/turismo">TURISMO</a> -->
-							<!-- 			      <ul class="menu-desplegable"> -->
-							<!-- 			        <li><a href="#">Historia de la isla</a></li> -->
-							<!-- 			        <li><a href="#">Atracciones</a></li> -->
-							<!-- 			        <li><a href="#">Humedales</a></li> -->
-							<!-- 			        <li><a href="#">Otros</a></li> -->
-							<!-- 			      </ul> -->
-							<!-- 			    </li> -->
-							<!-- 			    <li class="menu-padre"> -->
-							<!-- 			      <a href="/vecinos">VECINOS</a> -->
-							<!-- 			      <ul class="menu-desplegable"> -->
-							<!-- 			        <li><a href="#">Opción 1</a></li> -->
-							<!-- 			        <li><a href="#">Opción 2</a></li> -->
-							<!-- 			        <li><a href="#">Opción 3</a></li> -->
-							<!-- 			      </ul> -->
-							<!-- 			    </li> -->
-							<!-- 			    <li class="menu-padre"> -->
-							<!-- 			      <a href="/contacto">CONTACTO</a> -->
-							<!-- 			      <ul class="menu-desplegable"> -->
-							<!-- 			        <li><a href="#">Opción 1</a></li> -->
-							<!-- 			        <li><a href="#">Opción 2</a></li> -->
-							<!-- 			        <li><a href="#">Opción 3</a></li> -->
-							<!-- 			      </ul> -->
-							<!-- 			    </li> -->
-							<!-- 			  </ul> -->
-							<!-- 			</div> -->
+
 							<!-- end of menu -->
 						</div>
 						<!-- end of header left -->
 						<div id="header_right">
-							<h2>Vecinos Login</h2>
-							<form action="#" method="get">
-								<label>usuario</label> <input type="text" value=""
-									name="username" size="10" class="input_field" />
-								<div class="cleaner"></div>
-								<label>Contraseña</label> <input type="password" value=""
-									name="password" class="input_field" />
-								<div class="cleaner"></div>
-								<input type="submit" name="login" value="Login" alt="login"
-									id="submit_btn" /> <a href="/registro">Registrarse</a>
-							</form>
+							<c:choose>
+								<c:when test="${usuario.id == null }">
+									<h2>Member Login</h2>
+									<form action="/login" method="POST">
+										<label>Email</label> <input type="text" name="email"
+											class="input_field" />
+										<div class="cleaner"></div>
+										<label>Password</label> <input type="password" value=""
+											name="password" class="input_field" />
+										<div class="cleaner"></div>
+										<input type="submit" name="login" value="Login" alt="login"
+											id="submit_btn" />
+									</form>
+									<a href="/registro">Registrarse</a>
+								</c:when>
+								<c:otherwise>
+									<h2>
+										Hola,
+										<c:out value="${usuario.nombre }"></c:out>
+									</h2>
+									<h6>
+										email:
+										<c:out value="${usuario.email }"></c:out>
+									</h6>
+									<hr>
+									<a class="m-5" href="/logout">Cerrar sesión</a>
+								</c:otherwise>
+							</c:choose>
 						</div>
 						<!-- end of header right -->
 						<div class="cleaner"></div>

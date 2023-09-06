@@ -56,20 +56,18 @@ public class UserController {
 			BindingResult resultado, Model viewModel, HttpSession sesion) {
 		if (resultado.hasErrors()) {
 			viewModel.addAttribute("user", new User());
-			return "registro.jsp";
+			return "inicio.jsp";
 		}
 		
-		if(userServ.authenthicateUser(
-				loginuser.getEmail(), 
-				loginuser.getPassword(), 
-				resultado )) {
+		if(userServ.authenthicateUser(loginuser.getEmail(), loginuser.getPassword(), resultado)) {
 			User usuarioLog = userServ.encontrarPorEmail(loginuser.getEmail());
-			sesion.setAttribute("userID",usuarioLog.getId());
+			sesion.setAttribute("userID", usuarioLog.getId());
+			viewModel.addAttribute("usuario", usuarioLog);
 			return "redirect:/";
 		}else {
 			viewModel.addAttribute("errorLog", "Por favor intenta de nuevo");
 			viewModel.addAttribute("user", new User());
-			return "registro.jsp";
+			return "inicio.jsp";
 		}
 		
 	}
