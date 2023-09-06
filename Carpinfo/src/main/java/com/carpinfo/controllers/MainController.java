@@ -3,6 +3,8 @@ package com.carpinfo.controllers;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import jakarta.servlet.http.HttpSession;
+
 @Controller
 public class MainController {
 	
@@ -12,7 +14,8 @@ public class MainController {
 	}
 	
 	@GetMapping("/info")
-	public String info(){
+	public String info(HttpSession sesion){
+		Long userId = (Long) sesion.getAttribute("userID");
 		return "info.jsp";
 	}
 	

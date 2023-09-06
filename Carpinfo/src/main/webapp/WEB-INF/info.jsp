@@ -47,7 +47,10 @@
 						</div>
 						<!-- end of header left -->
 						<div id="header_right">
-							<h2>Member Login</h2>
+						
+						<c:choose>
+			<c:when test="${usuario.id == null }">
+		<h2>Member Login</h2>
 							<form action="#" method="get">
 								<label>Username</label> <input type="text" value=""
 									name="username" size="10" class="input_field" />
@@ -59,6 +62,17 @@
 									id="submit_btn" />
 							</form>
 							<a href="/registro">Registrarse</a>
+			</c:when>
+			<c:otherwise>
+			<h2>
+				Hola,
+				<c:out value="${usuario.nombre }"></c:out>
+			</h2>
+			</c:otherwise>
+		</c:choose>
+						
+						
+							
 						</div>
 						<!-- end of header right -->
 						<div class="cleaner"></div>
