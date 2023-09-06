@@ -93,12 +93,12 @@ public class MainController {
 		Long userId = (Long) sesion.getAttribute("userID");
 		
 		// Verifica si el usuario ha iniciado sesión
-		if (userId != null) {
+		if (userId == null) {
 			
-			 User usuario = userServ.encontrarUserPorId(userId);
-			 model.addAttribute("usuario", usuario);
-			 
+			 return "redirect:/registro";
 		}
+		User usuario = userServ.encontrarUserPorId(userId);
+		 model.addAttribute("usuario", usuario);
 		return "vecinos.jsp";
 	}
 	
