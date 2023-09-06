@@ -70,7 +70,6 @@
 							<div id="content">
 								<div class="content_section">
 									<h2>RECORRIDO DE AYSA</h2>
-									</p>
 								</div>
 								<div class="content_section">
 									<table class="table table-striped float_r">
@@ -87,6 +86,95 @@
 												<td>1</td>
 												<td>VIERNES 8/9</td>
 												<td>A° DURAZNO</td>
+
+											</tr>
+											<tr>
+												<td></td>
+												<td>VIERNES 8/9</td>
+												<td>A° CAPITANCITO</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>VIERNES 8/9</td>
+												<td>A° CARACOLES</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>VIERNES 8/9</td>
+												<td>A° LUCIANO</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>VIERNES 8/9</td>
+												<td>A° CHANÁ</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>VIERNES 8/9</td>
+												<td>RÍO PARANÁ MINÍ</td>
+											</tr>
+
+										</tbody>
+
+									</table>
+									
+<!-- 									RECORRIDO DOS -->
+<table class="table table-striped float_r">
+
+										<thead>
+											<tr>
+												<th>RECORRIDO</th>
+												<th>FECHA</th>
+												<th>RIO / ARROYO</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>2</td>
+												<td>VIERNES 8/9</td>
+												<td>A° PAYCARABY</td>
+
+											</tr>
+											<tr>
+												<td></td>
+												<td>VIERNES 8/9</td>
+												<td>A° ESTUDIANTE</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>VIERNES 8/9</td>
+												<td>A° C AMBROSONI</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>VIERNES 8/9</td>
+												<td>A° FELICARIA</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>VIERNES 8/9</td>
+												<td>A° FELICARIA ABAJO</td>
+											</tr>
+
+										</tbody>
+
+									</table>
+									
+<!-- 									RECRRIDO TRES -->
+<table class="table table-striped float_r">
+
+										<thead>
+											<tr>
+												<th>RECORRIDO</th>
+												<th>FECHA</th>
+												<th>RIO / ARROYO</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>3</td>
+												<td>VIERNES 8/9</td>
+												<td>A° CARAPACHAY</td>
 
 											</tr>
 											<tr>
