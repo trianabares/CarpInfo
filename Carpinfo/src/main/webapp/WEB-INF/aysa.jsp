@@ -174,33 +174,28 @@
 											<tr>
 												<td>3</td>
 												<td>VIERNES 8/9</td>
-												<td>A° CARAPACHAY</td>
+												<td>RÍO LUJÁN</td>
 
 											</tr>
 											<tr>
 												<td></td>
 												<td>VIERNES 8/9</td>
-												<td>A° CAPITANCITO</td>
+												<td>RÍO CARAPACHAY</td>
 											</tr>
 											<tr>
 												<td></td>
 												<td>VIERNES 8/9</td>
-												<td>A° CARACOLES</td>
+												<td>MUELLE ZANJÓN</td>
 											</tr>
 											<tr>
 												<td></td>
 												<td>VIERNES 8/9</td>
-												<td>A° LUCIANO</td>
+												<td>A° ANGOSTURA</td>
 											</tr>
 											<tr>
 												<td></td>
 												<td>VIERNES 8/9</td>
-												<td>A° CHANÁ</td>
-											</tr>
-											<tr>
-												<td></td>
-												<td>VIERNES 8/9</td>
-												<td>RÍO PARANÁ MINÍ</td>
+												<td>CANAL ORTIZ</td>
 											</tr>
 
 										</tbody>
