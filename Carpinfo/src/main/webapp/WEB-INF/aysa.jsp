@@ -14,7 +14,7 @@
 
 <head>
 <meta charset="ISO-8859-1">
-<title>CarpInfo Inicio</title>
+<title>CarpInfo Aysa</title>
 <!-- BOOTSTRAP  -->
 <link rel="stylesheet"
 	href="/webjars/bootstrap/5.2.3/css/bootstrap.min.css">
@@ -29,12 +29,9 @@
 				<div id="container">
 					<div id="header">
 						<div id="header_left">
-							<div id="site_title">
-								<h1>
-									<a href="/"> <img src="images/logo.png" alt="" /> <span>Carpinfo</span>
-									</a>
-								</h1>
-							</div>
+							<div id="site_title d-flex">
+            					  <h1><a href="/"> <img src="images/logo.png" alt="Carpinfo"/></a><span>Carpinfo</span></h1>
+           					 </div>
 							<div id="menu">
 								<ul>
 									<li><a href="/info">INFO UTIL</a></li>

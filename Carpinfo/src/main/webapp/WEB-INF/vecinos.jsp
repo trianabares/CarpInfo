@@ -28,8 +28,8 @@
       <div id="container">
         <div id="header">
           <div id="header_left">
-          	<div id="site_title">
-              <h1><a href="/"> <img src="images/logo.png" alt="" /> <span>Carpinfo</span> </a></h1>
+          	<div id="site_title d-flex">
+              <h1><a href="/"> <img src="images/logo.png" alt="Carpinfo"/></a><span>Carpinfo</span></h1>
             </div>
             <div id="menu">
               <ul>
