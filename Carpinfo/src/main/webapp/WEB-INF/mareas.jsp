@@ -115,12 +115,12 @@
 
 									</table>
 
+									<div id="content_bottom"></div>
+									<div class="cleaner"></div>
+
 									<div class="button_01">
 										<a href="/info">Atras</a>
 									</div>
-
-									<div id="content_bottom"></div>
-									<div class="cleaner"></div>
 								</div>
 							</div>
 							<!-- end of content -->
