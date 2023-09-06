@@ -44,7 +44,7 @@
           <!-- end of header left -->
           <div id="header_right">
             <h2>Member Login</h2>
-            <form action="#" method="get">
+            <form action="/login" method="get">
               <label>Username</label>
               <input type="text" value="" name="username" size="10" class="input_field" />
               <div class="cleaner"></div>
