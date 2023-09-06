@@ -112,7 +112,11 @@ img { margin: 0px; padding: 0px; border: none; }
 	clear: both;
 	width: 564px;	
 	height: 44px;
-	background: url(images/menu.png) no-repeat;
+	border: 1px solid #000000;
+	border-radius: 10px;
+	box-shadow: 5px 5px 2px grey;
+	background-color: #A1DC8C;
+	opacity: 0.75;
 }
 
 #menu ul {
@@ -136,7 +140,7 @@ img { margin: 0px; padding: 0px; border: none; }
 	text-align: center;
 	font-size: 14px;
 	text-decoration: none;
-	color: #ffffff;	
+	color: #000000;	
 	font-weight: bold;
 	outline: none;
 }
