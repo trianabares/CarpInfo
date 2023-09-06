@@ -85,16 +85,34 @@
 										<tbody>
 											<tr>
 												<td>1</td>
-												<td>VIERNES 1/9</td>
+												<td>VIERNES 8/9</td>
 												<td>A° DURAZNO</td>
 
 											</tr>
 											<tr>
 												<td></td>
-
-												<td>VIERNES 1/9</td>
+												<td>VIERNES 8/9</td>
 												<td>A° CAPITANCITO</td>
-
+											</tr>
+											<tr>
+												<td></td>
+												<td>VIERNES 8/9</td>
+												<td>A° CARACOLES</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>VIERNES 8/9</td>
+												<td>A° LUCIANO</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>VIERNES 8/9</td>
+												<td>A° CHANÁ</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>VIERNES 8/9</td>
+												<td>RÍO PARANÁ MINÍ</td>
 											</tr>
 
 										</tbody>
@@ -104,6 +122,8 @@
 									<div class="button_01">
 										<a href="/info">Atras</a>
 									</div>
+									
+									
 
 									<div id="content_bottom"></div>
 									<div class="cleaner"></div>

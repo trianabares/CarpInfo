@@ -14,7 +14,7 @@
 
 <head>
 <meta charset="ISO-8859-1">
-<title>CarpInfo Inicio</title>
+<title>Mareas</title>
 <!-- BOOTSTRAP  -->
 <link rel="stylesheet"
 	href="/webjars/bootstrap/5.2.3/css/bootstrap.min.css">
@@ -65,7 +65,7 @@
 					</div>
 					<!-- end of header -->
 					<div id="content_wrapper">
-					
+
 						<div id="content_outer">
 							<div id="content">
 								<div class="content_section">
@@ -74,9 +74,9 @@
 										puertos de La Plata, Buenos Aires, San Fernando e Isla Martín
 										García.</p>
 									<p>
-										<strong>UN METRO DIEZ CENTIMETROS SOBRE LOS VALORES
-											INDICADOS EN LAS TABLAS DE MAREA, LUEGO AUMENTANDO HASTA UN
-											METRO CUARENTA CENTIMETROS SOBRE ESTOS.-</strong>
+										<strong>CINCUENTA CENTIMETROS SOBRE LOS VALORES
+											INDICADOS EN LAS TABLAS DE MAREA, LUEGO DISMINUYENDO HASTA
+											CUARENTA CENTIMETROS SOBRE DE ESTOS.-</strong>
 									</p>
 								</div>
 								<div class="content_section">
@@ -95,32 +95,22 @@
 										<tbody>
 											<tr>
 												<td>SAN FERNANDO / TIGRE</td>
-
-												<td>BAJAMAR</td>
-												<td>05:00</td>
-
-												<td>1.60</td>
-												<td>03/09/2023</td>
-
-											</tr>
-											<tr>
-												<td></td>
-
+		
 												<td>PLEAMAR</td>
-												<td>11:00</td>
+												<td>15:00</td>
 
-												<td>2.90</td>
-												<td>03/09/2023</td>
+												<td>1.55</td>
+												<td>06/09/2023</td>
 
 											</tr>
 											<tr>
 												<td></td>
 
 												<td>BAJAMAR</td>
-												<td>19:00</td>
-
-												<td>1.50</td>
-												<td>03/09/2023</td>
+												<td>21:00</td>
+		
+												<td>0.95</td>
+												<td>06/09/2023</td>
 
 											</tr>
 
@@ -171,23 +161,23 @@
 						<div class="cleaner"></div>
 					</div>
 					<!-- end of content_wrapper -->
-							<div id="footer">
-								<ul class="footer_menu">
-									<li><a href="#">Home</a></li>
-									<li><a href="#">Tours</a></li>
-									<li><a href="#">News</a></li>
-									<li><a href="#">Gallery</a></li>
-									<li class="last_menu"><a href="#">Contact</a></li>
-								</ul>
-								Copyright &copy; 2048 <a href="#">Your Company Name</a> |
-								Designed by <a target="_blank" rel="nofollow"
-									href="http://www.templatemo.com">templatemo</a>
-							</div>
-							<!-- end of footer -->
-							<div class="cleaner"></div>
-						</div>
+					<div id="footer">
+						<ul class="footer_menu">
+							<li><a href="#">Home</a></li>
+							<li><a href="#">Tours</a></li>
+							<li><a href="#">News</a></li>
+							<li><a href="#">Gallery</a></li>
+							<li class="last_menu"><a href="#">Contact</a></li>
+						</ul>
+						Copyright &copy; 2048 <a href="#">Your Company Name</a> | Designed
+						by <a target="_blank" rel="nofollow"
+							href="http://www.templatemo.com">templatemo</a>
 					</div>
+					<!-- end of footer -->
+					<div class="cleaner"></div>
 				</div>
 			</div>
+		</div>
+	</div>
 </body>
 </html>
