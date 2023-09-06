@@ -26,17 +26,23 @@ a:active, a:hover {
 	width: 80px;
 	height: 21px;
 	padding: 3px 0 0 0;
-	background: url(images/button.png) no-repeat;
 	color: rgb(0, 0, 0);
 	font-size: 12px;
 	font-weight: bold;
 	text-align: center;
 	text-decoration: none;
+	border: 1px solid #000000;
+	border-radius: 3px;
+	background-color: #A1DC8C;
+	opacity: 0.75;
 }
 
 .button_01 a:hover {
 	color: rgb(0, 0, 0);
-	background: url(images/button_hover.png) no-repeat;
+	border: 1px solid #000000;
+	border-radius: 3px;
+	background-color: #ffffff;
+	opacity: 0.75;
 }
 
 p {
