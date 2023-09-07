@@ -30,9 +30,11 @@ public class Mensajes {
 	
 	@NotNull(message=" Por favor ingresa un contenido")
 	@Size(min=3,  message="El mensaje debe ser mayor a 3 caracteres")
-	private String contenidos;
-
+	private String titulo;
 	
+	@NotNull(message=" Por favor ingresa un contenido")
+	@Size(min=3,  message="El mensaje debe ser mayor a 3 caracteres")
+	private String contenidos;
 	
 	@ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name="user.id")
