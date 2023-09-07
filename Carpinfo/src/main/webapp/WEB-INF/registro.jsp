@@ -41,7 +41,36 @@
             </div>
             <!-- end of menu -->
           </div>
-         
+         <div id="header_right">
+           <c:choose>
+								<c:when test="${usuario.id == null }">
+									<h2>Member Login</h2>
+									<form action="/login" method="POST">
+										<label>Email</label> <input type="text" name="email"
+											class="input_field" />
+										<div class="cleaner"></div>
+										<label>Password</label> <input type="password" value=""
+											name="password" class="input_field" />
+										<div class="cleaner"></div>
+										<input type="submit" name="login" value="Login" alt="login"
+											id="submit_btn" />
+									</form>
+									<a href="/registro">Registrarse</a>
+								</c:when>
+								<c:otherwise>
+									<h2>
+										Hola,
+										<c:out value="${usuario.nombre }"></c:out>
+									</h2>
+									<h6>
+										email:
+										<c:out value="${usuario.email }"></c:out>
+									</h6>
+									<hr>
+									<a class="m-5" href="/logout">Cerrar sesión</a>
+								</c:otherwise>
+							</c:choose>
+          </div>
           <!-- end of header right -->
           <div class="cleaner"></div>
         </div>
