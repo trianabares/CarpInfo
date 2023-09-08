@@ -88,27 +88,40 @@
 									<h1>
 										<c:out value="${mensaje.titulo}"></c:out>
 									</h1>
-									
-									<p><c:out value="${mensaje.contenidos}"></c:out></p>
-									
+									<h2>
+										<c:out value="${mensaje.creador.nombre}"></c:out>
+									</h2>
+									<p>
+										<c:out value="${mensaje.createdAt}"></c:out>
+									</p>
+									<hr>
+									<p>
+										<c:out value="${mensaje.contenidos}"></c:out>
+									</p>
+									<hr>
+									<h2>Comentarios</h2>
+
 									<c:forEach var="comentario" items="${comentarios}">
 										<p><c:out value="${comentario.contenidos}"></c:out></p>
 										<p><c:out value="${comentario.creador.nombre}"></c:out></p>
+										<p><c:out value="${comentario.createdAt}"></c:out></p>
+										<p>-</p>
 									</c:forEach>
-									
+
+
 									<h2>Nuevo Comentario</h2>
-									<form:form action="/foro/${idTema}/${idMensaje}/nuevo" method="POST"
-										modelAttribute="nuevocomentario">
+									<form:form action="/foro/${idTema}/${idMensaje}/nuevo"
+										method="POST" modelAttribute="nuevocomentario">
 										<div class="form-group">
 											<form:label class="form-label" path="contenidos"></form:label>
 											<form:errors class="text-danger" path="contenidos" />
 											<form:textarea class="form-control" path="contenidos" />
 										</div>
-										<form:input type="hidden" path="creador" value="${usuario.id}"/>
+										<form:input type="hidden" path="creador" value="${usuario.id}" />
 										<form:input type="hidden" path="mensaje" value="${mensaje.id}" />
 										<button class="btn btn-success mt-2">Agregar</button>
 									</form:form>
-									
+
 								</div>
 							</div>
 							<!-- end of content -->

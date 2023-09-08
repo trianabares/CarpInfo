@@ -103,7 +103,7 @@
 										</div>
 										<form:input type="hidden" path="creador" value="${usuario.id}"/>
 										<form:input type="hidden" path="tema" value="${tema.id}" />
-										<button class="btn btn-success mt-2">Agregar</button>
+										<button class="btn btn-success m-2">Agregar</button>
 									</form:form>
 									<table class="table table-bordered">
 										<thead>
@@ -116,15 +116,17 @@
 											<c:forEach var="mensaje" items="${mensajes}">
 												<tr>
 													<td>
-														<h4>
-															<a href="/foro/${tema.id}/${mensaje.id}"> <c:out
-																	value="${mensaje.titulo}"></c:out></a>
-														</h4>
+														<h5>
+															<a href="/foro/${tema.id}/${mensaje.id}"> <c:out value="${mensaje.titulo}"></c:out></a>
+														</h5>
 													</td>
 													<td>
-														<h4>
+														<p>
 															<c:out value="${mensaje.creador.nombre}"></c:out>
-														</h4>
+														</p>
+														<p>
+															<c:out value="${mensaje.createdAt}"></c:out>
+														</p>
 													</td>
 												</tr>
 											</c:forEach>

@@ -116,7 +116,7 @@
 									<table class="table table-bordered">
 										<thead>
 											<tr>
-												<th>Name</th>
+												<th></th>
 											</tr>
 										</thead>
 										<tbody>
