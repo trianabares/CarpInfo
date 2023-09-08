@@ -201,7 +201,7 @@
 
 									<div class="cleaner"></div>
 									<div class="button_01">
-										<a href="#" id="verHorariosSemana">días de samana</a>
+										<button id="verHorariosSemana">Dias de semana</button>
 									</div>
 									<script>
 										const btnVerHorarios = document
