@@ -32,7 +32,6 @@ public class Temas {
 	@NotBlank(message=" Por favor ingresa un nombre")
 	@Size(min=3, max=30, message="Nombre debe ser mayor a 3 caracteres y menor a 30")
 	private String nombre;
-
 	
 	@Column(updatable = false)
 	private Date createdAt;

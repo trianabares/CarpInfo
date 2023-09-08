@@ -1,7 +1,6 @@
 package com.carpinfo.models;
 
 import java.util.Date;
-import java.util.List;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -11,7 +10,6 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.PreUpdate;
 import jakarta.persistence.Table;
@@ -23,15 +21,12 @@ import lombok.Setter;
 @Setter
 @Getter
 @Entity
-@Table(name="mensajes")
-public class Mensajes {
+@Table(name="comentarios")
+public class Comentarios {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
-	@NotNull(message=" Por favor ingresa un contenido")
-	@Size(min=3,  message="El mensaje debe ser mayor a 3 caracteres")
-	private String titulo;
 	
 	@NotNull(message=" Por favor ingresa un contenido")
 	@Size(min=3,  message="El mensaje debe ser mayor a 3 caracteres")
@@ -42,17 +37,14 @@ public class Mensajes {
     private User creador;
 	
 	@ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="tema.id")
-    private Temas tema;
-	
-	@OneToMany(mappedBy="mensaje", fetch=FetchType.LAZY)
-    private List<Comentarios> comentario;
+    @JoinColumn(name="mensaje.id")
+    private Mensajes mensaje;
 	
 	@Column(updatable = false)
 	private Date createdAt;
 	private Date updatedAt;
 	
-	public Mensajes() {
+	public Comentarios() {
 	}
 	
 
@@ -65,5 +57,4 @@ public class Mensajes {
 	protected void onUpdate() {
 		this.updatedAt = new Date();
 	}
-
 }

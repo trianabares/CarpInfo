@@ -35,10 +35,6 @@ public class User {
 	@NotBlank(message=" Por favor ingresa un correo electronico")
 	@Email(message="El correo ingresado no es correcto")
 	private String email;
-	
-
-	
-	
 
 	@NotBlank(message="Por favor, ingresa el password")
 	@Size(min=8, max=64, message= "Password debe contener minimo 8 caracteres")
@@ -49,18 +45,16 @@ public class User {
 	@Size(min=8, message= "Password debe contener minimo 8 caracteres")
 	private String passwordConfirmation;
 	
-	
-	
 	@OneToMany(mappedBy="creador", fetch=FetchType.LAZY)
     private List<Mensajes> mensajes;
-	  
+	
+	@OneToMany(mappedBy="creador", fetch=FetchType.LAZY)
+    private List<Comentarios> comentarios;
 	  
 	@Column(updatable = false)
 	private Date createdAt;
 	private Date updatedAt;
 	
-
-
 	public User() {
 	}
 

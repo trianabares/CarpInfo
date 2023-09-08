@@ -30,6 +30,8 @@ private final ForoService foroServ;
 
 	}
 	
+	// TEMAS Y MENSAJES
+	
 	@GetMapping("/foro/{idTema}")
 	public String mostrarTema(@PathVariable("idTema") Long idTema, @ModelAttribute("nuevomensaje") Mensajes mensaje, Model model, HttpSession sesion) {
 		Long userId = (Long) sesion.getAttribute("userID");
@@ -62,5 +64,40 @@ private final ForoService foroServ;
 			return "redirect:/foro/" + idTema.toString();
 		}
 	}
+	
+	// MENSAJES Y COMENTARIOS
+	
+//	@GetMapping("/foro/{idTema}/{idMensaje}")
+//	public String mostrarMensaje(@PathVariable("idTema") Long idTema, @PathVariable("idTema") Long idMensaje, @ModelAttribute("nuevocomentario") Mensajes mensaje, Model model, HttpSession sesion) {
+//		Long userId = (Long) sesion.getAttribute("userID");
+//		if (userId == null) {
+//			return "redirect:/registro";
+//		}
+//		Temas temas = foroServ.mostrar(idTema);
+//		model.addAttribute("tema", temas);
+//		List<Mensajes> mensajes = foroServ.findMensajesByTema(idTema);
+//		model.addAttribute("mensajes", mensajes);
+//		model.addAttribute("usuario", userServ.encontrarUserPorId(userId));
+//		return "mensaje.jsp";
+//	}
+//	
+//	@PostMapping("/foro/{idTema}/nuevo")
+//	public String addMsg(@Valid @ModelAttribute("nuevomensaje") Mensajes mensaje, BindingResult result, @PathVariable("idTema") Long idTema, HttpSession sesion, Model model) {
+//		Long userId = (Long) sesion.getAttribute("userID");
+//		if (userId == null) {
+//			return "redirect:/registro";
+//		}
+//		if (result.hasErrors()) {
+//			Temas temas = foroServ.mostrar(idTema);
+//			model.addAttribute("tema", temas);
+//			List<Mensajes> mensajes = foroServ.findMensajesByTema(idTema);
+//			model.addAttribute("mensajes", mensajes);
+//			model.addAttribute("usuario", userServ.encontrarUserPorId(userId));
+//			return "tema.jsp";
+//		} else {
+//			foroServ.addMensaje(mensaje);
+//			return "redirect:/foro/" + idTema.toString();
+//		}
+//	}
 	
 }
