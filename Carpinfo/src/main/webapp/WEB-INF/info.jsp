@@ -97,39 +97,130 @@
 								<!-- 								HORARIOS DE LANCHA -->
 								<div class="content_section">
 									<h2>Horarios de Interisleña</h2>
-									<p class="em_text">Aquí encontrarás todos los horarios de
-										lancha ya sea para que planifiques tu visita de manera
-										conveniente o para que regreses a tu hogar. ¡Explora y
-										descubre todos los horarios disponibles!</p>
-									<ul class="featured_tour float_l">
-										<li><a href="#">Por la mañana <span>7:00 hs</span></a></li>
-										<li><a href="#">Proin at urna eu sem convallis
-												elementum <span>Ut dapibus tincidunt tempus. Aliquam
-													ac pellentesque mauris. Donec at nisl tellus. </span>
-										</a></li>
-										<li><a href="#">Aenean tristique vehicula laoreet <span>Vestibulum
-													ante ipsum primis in faucibus orci luctus.</span></a></li>
-										<li><a href="#">Praesent et odio sit amet <span>Pellentesque
-													euismod auctor libero, in euismod eros.</span></a></li>
-									</ul>
-									<ul class="featured_tour float_r">
-										<li><a href="#">Vestibulum euismod vulputate
-												consectetur <span>Suspendisse risus tortor, sagittis
-													ac ante.</span>
-										</a></li>
-										<li><a href="#">tiam turpis arcu, tempus id mauris <span>Nulla
-													dictum rhoncus lacinia. Quisque feugiat malesuada nulla,
-													sit amet fringilla dui.</span></a></li>
-										<li><a href="#">Suspendisse id mauris nec mi <span>Pellentesque
-													euismod auctor libero, in euismod eros.</span></a></li>
-										<li><a href="#">Aenean tristique vehicula laoreet. <span>Cras
-													eget massa aliquam dolor consectetur pharetra. Vivamus
-													vehicula tincidunt eleifend</span></a></li>
-									</ul>
+									<p>Aquí encontrarás todos los horarios de lancha colectiva
+										para que regreses a tu hogar o planifiques tu visita de manera
+										conveniente y disfrutes al máximo de este hermoso destino.
+										¡Explora y descubre todos los horarios disponibles!</p>
+									<table id="tablaHorariosSemana" style="display: none;"
+										class="table table-striped float_r">
+										<thead>
+											<tr>
+												<th>DE LUNES A VIERNES</th>
+												<th>SALIDA DE TIGRE</th>
+												<th>LLEGA A TIGRE</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>MAÑANA</td>
+												<td>07:00</td>
+												<td>06:30</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>08:00</td>
+												<td>07:30</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>09:00</td>
+												<td>08:30</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>10:00</td>
+												<td>10:15</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>11:30</td>
+												<td>11:30</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>12:45</td>
+												<td>12:30</td>
+											</tr>
+											<tr>
+												<td>TARDE</td>
+												<td>13:20</td>
+												<td>14:00</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>15:00</td>
+												<td>15:00</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>15:30</td>
+												<td>16:15</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>15:00</td>
+												<td>15:00</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>16:15</td>
+												<td>16:45</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>17:30</td>
+												<td>17:00</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>18:10</td>
+												<td>17:45</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>18:30</td>
+												<td>18:15</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>19:00</td>
+												<td>18:30</td>
+											</tr>
+											<tr>
+												<td>NOCHE</td>
+												<td>20:00</td>
+												<td>18:50</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>21:00</td>
+												<td>20:00</td>
+											</tr>
+										</tbody>
+									</table>
+
 									<div class="cleaner"></div>
 									<div class="button_01">
-										<a href="#">View All</a>
+										<a href="#" id="verHorariosSemana">días de samana</a>
 									</div>
+									<script>
+										const btnVerHorarios = document
+												.getElementById('verHorariosSemana');
+										const tablaHorarios = document
+												.getElementById('tablaHorariosSemana');
+
+										btnVerHorarios
+												.addEventListener(
+														'click',
+														function() {
+															if (tablaHorarios.style.display === 'none') {
+																tablaHorarios.style.display = 'block';
+															} else {
+																tablaHorarios.style.display = 'none';
+															}
+														});
+									</script>
+
 									<br>
 									<!-- 									DIAS DEL CATAMARÁN SANITARIO -->
 									<h2>Salud y seguridad</h2>
