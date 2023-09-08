@@ -4,8 +4,10 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.carpinfo.models.Comentarios;
 import com.carpinfo.models.Mensajes;
 import com.carpinfo.models.Temas;
+import com.carpinfo.repositories.ComentariosRepo;
 import com.carpinfo.repositories.MensajesRepo;
 import com.carpinfo.repositories.TemasRepo;
 
@@ -14,9 +16,11 @@ public class ForoService {
 
 	private final TemasRepo temasRepo;
 	private final MensajesRepo mensajesRepo;
-	public ForoService(TemasRepo tRe, MensajesRepo mRe) {
+	private final ComentariosRepo comentariosRepo;
+	public ForoService(TemasRepo tRe, MensajesRepo mRe, ComentariosRepo cRe) {
 		this.temasRepo = tRe;
 		this.mensajesRepo = mRe;
+		this.comentariosRepo = cRe;
 	}
 	
 	public Temas addTema(Temas tema) {
@@ -27,6 +31,10 @@ public class ForoService {
 		return mensajesRepo.save(mensaje);
 	}
 	
+	public Comentarios addComentario(Comentarios comentario) {
+		return comentariosRepo.save(comentario);
+	}
+	
 	public List<Temas> allTemas() {
 		return temasRepo.findAll();
 	}
@@ -35,8 +43,16 @@ public class ForoService {
 		return mensajesRepo.findMensajesByTema(id);
 	}
 	
+	public List<Comentarios> findComentarioByMensaje(Long id) {
+		return comentariosRepo.findComentarioByMensaje(id);
+	}
+	
 	public Temas mostrar(Long id) {
 		return temasRepo.findById(id).orElse(null);
+	}
+	
+	public Mensajes mostrarMensaje(Long id) {
+		return mensajesRepo.findById(id).orElse(null);
 	}
 	
 }

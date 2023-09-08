@@ -86,50 +86,29 @@
 								<div class="content_section">
 
 									<h1>
-										<c:out value="${tema.nombre}"></c:out>
+										<c:out value="${mensaje.titulo}"></c:out>
 									</h1>
-									<h2>Nuevo Mensaje</h2>
-									<form:form action="/foro/${tema.id}/nuevo" method="POST"
-										modelAttribute="nuevomensaje">
+									
+									<p><c:out value="${mensaje.contenidos}"></c:out></p>
+									
+									<c:forEach var="comentario" items="${comentarios}">
+										<p><c:out value="${comentario.contenidos}"></c:out></p>
+										<p><c:out value="${comentario.creador.nombre}"></c:out></p>
+									</c:forEach>
+									
+									<h2>Nuevo Comentario</h2>
+									<form:form action="/foro/${idTema}/${idMensaje}/nuevo" method="POST"
+										modelAttribute="nuevocomentario">
 										<div class="form-group">
-											<form:label class="form-label" path="titulo">Nombre: </form:label>
-											<form:errors class="text-danger" path="titulo" />
-											<form:input class="form-control" path="titulo" />
-										</div>
-										<div class="form-group">
-											<form:label class="form-label" path="contenidos">Nombre: </form:label>
+											<form:label class="form-label" path="contenidos"></form:label>
 											<form:errors class="text-danger" path="contenidos" />
 											<form:textarea class="form-control" path="contenidos" />
 										</div>
 										<form:input type="hidden" path="creador" value="${usuario.id}"/>
-										<form:input type="hidden" path="tema" value="${tema.id}" />
+										<form:input type="hidden" path="mensaje" value="${mensaje.id}" />
 										<button class="btn btn-success mt-2">Agregar</button>
 									</form:form>
-									<table class="table table-bordered">
-										<thead>
-											<tr>
-												<th>Titulo</th>
-												<th>Autor</th>
-											</tr>
-										</thead>
-										<tbody>
-											<c:forEach var="mensaje" items="${mensajes}">
-												<tr>
-													<td>
-														<h4>
-															<a href="/foro/${tema.id}/${mensaje.id}"> <c:out
-																	value="${mensaje.titulo}"></c:out></a>
-														</h4>
-													</td>
-													<td>
-														<h4>
-															<c:out value="${mensaje.creador.nombre}"></c:out>
-														</h4>
-													</td>
-												</tr>
-											</c:forEach>
-										</tbody>
-									</table>
+									
 								</div>
 							</div>
 							<!-- end of content -->
