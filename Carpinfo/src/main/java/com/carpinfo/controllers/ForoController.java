@@ -74,8 +74,6 @@ private final ForoService foroServ;
 		if (userId == null) {
 			return "redirect:/registro";
 		}
-//		Temas temas = foroServ.mostrar(idTema);
-//		model.addAttribute("tema", temas);
 		Mensajes mensaje = foroServ.mostrarMensaje(idMensaje);
 		model.addAttribute("mensaje", mensaje);
 		List<Comentarios> comentarios = foroServ.findComentarioByMensaje(idMensaje);
@@ -91,8 +89,6 @@ private final ForoService foroServ;
 			return "redirect:/registro";
 		}
 		if (result.hasErrors()) {
-//			Temas temas = foroServ.mostrar(idTema);
-//			model.addAttribute("tema", temas);
 			Mensajes mensajes = foroServ.mostrarMensaje(idMensaje);
 			model.addAttribute("mensaje", mensajes);
 			List<Comentarios> comentario = foroServ.findComentarioByMensaje(idMensaje);
