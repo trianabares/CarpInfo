@@ -29,7 +29,7 @@
         <div id="header">
           <div id="header_left">
           	<div id="site_title d-flex">
-              <h1><a href="/"> <img src="images/logo.png" alt="Carpinfo"/></a><span>Carpinfo</span></h1>
+              <h1><a href="/"> <img src="/images/logo.png" alt="Carpinfo"/></a><span>Carpinfo</span></h1>
             </div>
             <div id="menu">
               <ul>
@@ -43,33 +43,33 @@
           </div>
          <div id="header_right">
            <c:choose>
-								<c:when test="${usuario.id == null }">
-									<h2>Member Login</h2>
-									<form action="/login" method="POST">
-										<label>Email</label> <input type="text" name="email"
-											class="input_field" />
-										<div class="cleaner"></div>
-										<label>Password</label> <input type="password" value=""
-											name="password" class="input_field" />
-										<div class="cleaner"></div>
-										<input type="submit" name="login" value="Login" alt="login"
-											id="submit_btn" />
-									</form>
-									<a href="/registro">Registrarse</a>
-								</c:when>
-								<c:otherwise>
-									<h2>
-										Hola,
-										<c:out value="${usuario.nombre }"></c:out>
-									</h2>
-									<h6>
-										email:
-										<c:out value="${usuario.email }"></c:out>
-									</h6>
-									<hr>
-									<a class="m-5" href="/logout">Cerrar sesión</a>
-								</c:otherwise>
-							</c:choose>
+				<c:when test="${usuario.id == null }">
+					<h2>Member Login</h2>
+					<form action="/login" method="POST">
+						<label>Email</label> <input type="text" name="email"
+							class="input_field" />
+						<div class="cleaner"></div>
+						<label>Password</label> <input type="password" value=""
+							name="password" class="input_field" />
+						<div class="cleaner"></div>
+						<input type="submit" name="login" value="Login" alt="login"
+							id="submit_btn" />
+					</form>
+					<a href="/registro">Registrarse</a>
+				</c:when>
+				<c:otherwise>
+					<h2>
+						Hola,
+						<c:out value="${usuario.nombre }"></c:out>
+					</h2>
+					<h6>
+						email:
+						<c:out value="${usuario.email }"></c:out>
+					</h6>
+					<hr>
+					<a class="m-5" href="/logout">Cerrar sesión</a>
+				</c:otherwise>
+			</c:choose>
           </div>
           <!-- end of header right -->
           <div class="cleaner"></div>
@@ -79,42 +79,43 @@
           <div id="content_outer">
             <div id="content">
               <div class="content_section">
-                
                 <div class=" offset-1 formulario-registro">
-            <h2>Registrarse</h2>
-            <div class="text-danger">
-                <form:errors class="text-danger" path="user.*" />
-            </div>
-
-            <form:form method="POST" action="/registration"
-                modelAttribute="user">
-                <div class="mb-3">
-                    <form:label path="nombre" class="form-label">Nombre:</form:label>
-                    <form:input type="text" path="nombre" class="form-control" />
-                </div>
-          
-                <div class="mb-3">
-                    <form:label path="email" class="form-label">Email:</form:label>
-                    <form:input type="email" path="email" class="form-control" />
-                </div>
-            
-                <div class="mb-3">
-                    <form:label path="password" class="form-label">Contraseña:</form:label>
-                    <form:password path="password" class="form-control" />
-                </div>
-                <div class="mb-3">
-                    <form:label path="passwordConfirmation" class="form-label">Confirmar Contraseña:</form:label>
-                    <form:password path="passwordConfirmation" class="form-control" />
-                </div>
-                <input type="submit" value="Registrarse" class="btn btn-primary" />
-            </form:form>
-            <p class="text-success">
-                <c:out value="${registro }"></c:out>
-            </p>
-        </div>
-                
-                
-              
+		            <h2>Registrarse</h2>
+		            <div class="text-danger">
+		                <form:errors class="text-danger" path="user.*" />
+		            </div>
+		
+		            <form:form method="POST" action="/registration"
+		                modelAttribute="user" enctype="multipart/form-data">
+		                <div class="mb-3">
+		                    <form:label path="nombre" class="form-label">Nombre:</form:label>
+		                    <form:input type="text" path="nombre" class="form-control" />
+		                </div>
+		                
+		                 <div class="mb-3">
+		                    <label class="form-label">Foto de perfil:</label>
+		                    <input type="file" name="imageUpload" class="form-control">
+		                </div>
+		          
+		                <div class="mb-3">
+		                    <form:label path="email" class="form-label">Email:</form:label>
+		                    <form:input type="email" path="email" class="form-control" />
+		                </div>
+		            
+		                <div class="mb-3">
+		                    <form:label path="password" class="form-label">Contraseña:</form:label>
+		                    <form:password path="password" class="form-control" />
+		                </div>
+		                <div class="mb-3">
+		                    <form:label path="passwordConfirmation" class="form-label">Confirmar Contraseña:</form:label>
+		                    <form:password path="passwordConfirmation" class="form-control" />
+		                </div>
+		                <input type="submit" value="Registrarse" class="btn btn-primary" />
+		            </form:form>
+		            <p class="text-success">
+		                <c:out value="${registro }"></c:out>
+		            </p>
+		        </div>
               </div>
             </div>
             <!-- end of content -->

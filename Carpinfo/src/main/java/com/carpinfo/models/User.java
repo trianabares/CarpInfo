@@ -30,7 +30,9 @@ public class User {
 	@NotBlank(message=" Por favor ingresa un nombre")
 	@Size(min=3, max=30, message="Nombre debe ser mayor a 3 caracteres y menor a 30")
 	private String nombre;
-
+	
+	@Column(name = "profile_image")
+	private String profileImage;
 	
 	@NotBlank(message=" Por favor ingresa un correo electronico")
 	@Email(message="El correo ingresado no es correcto")
@@ -66,10 +68,6 @@ public class User {
 		this.id = id;
 	}
 
-	public String getEmail() {
-		return email;
-	}
-
 	public String getNombre() {
 		return nombre;
 	}
@@ -78,10 +76,20 @@ public class User {
 		this.nombre = nombre;
 	}
 
-
+	public String getEmail() {
+		return email;
+	}
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+	
+	public String getProfileImage() {
+		return profileImage;
+	}
+
+	public void setProfileImage(String profileImage) {
+		this.profileImage = profileImage;
 	}
 
 	public String getPassword() {
@@ -98,6 +106,22 @@ public class User {
 
 	public void setPasswordConfirmation(String passwordConfirmation) {
 		this.passwordConfirmation = passwordConfirmation;
+	}
+	
+	public List<Mensajes> getMensajes() {
+		return mensajes;
+	}
+
+	public void setMensajes(List<Mensajes> mensajes) {
+		this.mensajes = mensajes;
+	}
+
+	public List<Comentarios> getComentarios() {
+		return comentarios;
+	}
+
+	public void setComentarios(List<Comentarios> comentarios) {
+		this.comentarios = comentarios;
 	}
 
 	public Date getCreatedAt() {
@@ -116,8 +140,6 @@ public class User {
 		this.updatedAt = updatedAt;
 	}
 
-
-	// otros getters y setters removidos para resumir.
 	@PrePersist
 	protected void onCreate() {
 		this.createdAt = new Date();
