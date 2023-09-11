@@ -28,10 +28,6 @@ public class PublicidadController {
 			Model model, HttpSession sesion) {
 		Long userId = (Long) sesion.getAttribute("userID");
 		
-		if (userId == null) {
-			return "redirect:/registro";
-		}
-		
 		if (result.hasErrors()) {
 			model.addAttribute("publicidad", publiServ.findAllPublicaciones());
 			return "turismo.jsp";
