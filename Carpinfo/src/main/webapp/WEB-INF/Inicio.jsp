@@ -32,7 +32,7 @@
 						<div id="header_left">
 							<div id="site_title d-flex">
 								<h1>
-									<a href="/"> <img src="images/logo.png" alt="Carpinfo" /></a><span>Carpinfo</span>
+									<a href="/"> <img src="/images/logo.png" alt="Carpinfo" /></a><span>Carpinfo</span>
 								</h1>
 							</div>
 							<div id="menu">
@@ -68,7 +68,7 @@
 										<c:out value="${usuario.nombre}"></c:out>
 									</h2>
 									<img alt="Foto de perfil"
-										src="<c:out value="${usuario.profileImage}" />">
+										src="${usuario.profileImage}">
 									<h6>
 										email:
 										<c:out value="${usuario.email}"></c:out>

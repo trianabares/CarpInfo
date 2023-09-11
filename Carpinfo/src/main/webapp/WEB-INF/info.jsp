@@ -30,7 +30,7 @@
 						<div id="header_left">
 							<div id="site_title d-flex">
 								<h1>
-									<a href="/"> <img src="images/logo.png" alt="Carpinfo" /></a><span>Carpinfo</span>
+									<a href="/"> <img src="/images/logo.png" alt="Carpinfo" /></a><span>Carpinfo</span>
 								</h1>
 							</div>
 							<div id="menu">
