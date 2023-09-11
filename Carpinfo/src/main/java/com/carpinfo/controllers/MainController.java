@@ -42,6 +42,7 @@ public class MainController {
 			model.addAttribute("usuario", usuario);
 
 		}
+		model.addAttribute("publicidad", publiServ.findAllPublicaciones());
 		return "Inicio.jsp";
 	}
 

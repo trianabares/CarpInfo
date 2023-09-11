@@ -221,25 +221,19 @@
 						<div id="template_sidebar">
 							<div class="sidebar_section">
 								<h2>Servicios</h2>
-								<div class="image_wrapper">
-									<a href="#"><img src="images/image_01.jpg" alt=""
-										width="260" height="120" /></a>
-								</div>
-								<h3>Bar el pepe</h3>
-								<p>Lugar familiar etc etc</p>
-								<div class="button_01">
-									<a href="#">ir a su web</a>
-								</div>
-								<div class="cleaner_h30"></div>
-								<div class="image_wrapper">
-									<a href="#"><img src="images/image_02.jpg" alt=""
-										width="260" height="120" /></a>
-								</div>
-								<h3>Hotel JueJue</h3>
-								<p>Se aceptan mascotas</p>
-								<div class="button_01">
-									<a href="#">Ir asl sitio</a>
-								</div>
+								<c:forEach var="publicacion" items="${publicaciones}">
+									<h3>${publicacion.nombre}</h3>
+									<div class="image_wrapper">
+										<a href="#"><img src="images/image_01.jpg" alt=""
+											width="260" height="120" /></a>
+									</div>
+									<p>Sed et quam vitae ipsum vulputate varius vitae semper
+										nunc. Quisque eget elit quis augue pharetra feugiat.</p>
+									<div class="button_01">
+										<a href="/servicios/${publicacion.id}">Ver más</a>
+									</div>
+									<div class="cleaner_h30"></div>
+								</c:forEach>
 							</div>
 						</div>
 						<!-- end of template_sidebar -->
