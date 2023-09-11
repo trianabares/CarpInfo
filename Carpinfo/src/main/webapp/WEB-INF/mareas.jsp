@@ -29,9 +29,11 @@
 				<div id="container">
 					<div id="header">
 						<div id="header_left">
-								<div id="site_title d-flex">
-             						 <h1><a href="/"> <img src="/images/logo.png" alt="Carpinfo"/></a><span>Carpinfo</span></h1>
-           					 	</div>
+							<div id="site_title d-flex">
+								<h1>
+									<a href="/"> <img src="/images/logo.png" alt="Carpinfo" /></a><span>Carpinfo</span>
+								</h1>
+							</div>
 							<div id="menu">
 								<ul>
 									<li><a href="/info">INFO UTIL</a></li>
@@ -44,7 +46,7 @@
 						</div>
 						<!-- end of header left -->
 						<div id="header_right">
-							  <c:choose>
+							<c:choose>
 								<c:when test="${usuario.id == null }">
 									<h2>Member Login</h2>
 									<form action="/login" method="POST">
@@ -108,7 +110,7 @@
 										<tbody>
 											<tr>
 												<td>SAN FERNANDO / TIGRE</td>
-		
+
 												<td>PLEAMAR</td>
 												<td>15:00</td>
 
@@ -121,7 +123,7 @@
 
 												<td>BAJAMAR</td>
 												<td>21:00</td>
-		
+
 												<td>0.95</td>
 												<td>06/09/2023</td>
 
@@ -146,28 +148,19 @@
 						<!-- end of content_outer -->
 						<div id="template_sidebar">
 							<div class="sidebar_section">
-								<h2>New Destinations</h2>
-								<div class="image_wrapper">
-									<a href="#"><img src="images/image_01.jpg" alt=""
-										width="260" height="120" /></a>
-								</div>
-								<h3>Lorem ipsum dolor sit amet</h3>
-								<p>Sed et quam vitae ipsum vulputate varius vitae semper
-									nunc. Quisque eget elit quis augue pharetra feugiat.</p>
-								<div class="button_01">
-									<a href="#">Read more</a>
-								</div>
-								<div class="cleaner_h30"></div>
-								<div class="image_wrapper">
-									<a href="#"><img src="images/image_02.jpg" alt=""
-										width="260" height="120" /></a>
-								</div>
-								<h3>Maecenas scelerisque porttitor</h3>
-								<p>Donec augue sem, interdum sed elementum a, feugiat id
-									ligula. Sed id blandit dolor. Curabitur nibh ligula.</p>
-								<div class="button_01">
-									<a href="#">Read more</a>
-								</div>
+								<h2>Servicios</h2>
+								<c:forEach var="publicacion" items="${publicaciones}">
+									<h3>${publicacion.nombre}</h3>
+									<div class="image_wrapper">
+										<a href="#"><img src="images/image_01.jpg" alt=""
+											width="260" height="120" /></a>
+									</div>
+									<p>${publicacion.contenidos}</p>
+									<div class="button_01">
+										<a href="/servicios/${publicacion.id}">Ver más</a>
+									</div>
+									<div class="cleaner_h30"></div>
+								</c:forEach>
 							</div>
 						</div>
 						<!-- end of template_sidebar -->

@@ -67,8 +67,7 @@
 										Hola,
 										<c:out value="${usuario.nombre}"></c:out>
 									</h2>
-									<img alt="Foto de perfil"
-										src="${usuario.profileImage}">
+									<img alt="Foto de perfil" src="${usuario.profileImage}">
 									<h6>
 										email:
 										<c:out value="${usuario.email}"></c:out>
@@ -87,7 +86,7 @@
 						<div id="content_outer">
 							<div id="content">
 								<div class="content_section">
-								
+
 									<h2>Welcome to Travel &amp; Tour</h2>
 									<p>
 										<a href="#">Free Website Templates</a> are provided by
@@ -154,8 +153,7 @@
 										<a href="#"><img src="images/image_01.jpg" alt=""
 											width="260" height="120" /></a>
 									</div>
-									<p>Sed et quam vitae ipsum vulputate varius vitae semper
-										nunc. Quisque eget elit quis augue pharetra feugiat.</p>
+									<p>${publicacion.contenidos}</p>
 									<div class="button_01">
 										<a href="/servicios/${publicacion.id}">Ver más</a>
 									</div>

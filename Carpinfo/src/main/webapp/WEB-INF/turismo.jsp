@@ -212,6 +212,29 @@
 									</div>
 									<div class="cleaner"></div>
 								</div>
+								
+								<c:choose>
+									<c:when test="${usuario.id != null }">
+										<h2>Agregue su Servicio</h2>
+
+										<form:form action="/servicios/nuevo" method="POST"
+											modelAttribute="nuevaPubli">
+											<div class="form-group">
+												<form:label class="form-label" path="nombre">Nombre: </form:label>
+												<form:errors class="text-danger" path="nombre" />
+												<form:input class="form-control" path="nombre" />
+											</div>
+											<div class="form-group">
+												<form:label class="form-label" path="contenidos">Contenido: </form:label>
+												<form:errors class="text-danger" path="contenidos" />
+												<form:input class="form-control" path="contenidos" />
+											</div>
+											<form:input type="hidden" path="creador"
+												value="${usuario.id}" />
+											<button class="btn btn-success mt-2">Agregar</button>
+										</form:form>
+									</c:when>
+								</c:choose>
 							</div>
 							<!-- end of content -->
 							<div id="content_bottom"></div>
@@ -227,8 +250,7 @@
 										<a href="#"><img src="images/image_01.jpg" alt=""
 											width="260" height="120" /></a>
 									</div>
-									<p>Sed et quam vitae ipsum vulputate varius vitae semper
-										nunc. Quisque eget elit quis augue pharetra feugiat.</p>
+									<p>${publicacion.contenidos}</p>
 									<div class="button_01">
 										<a href="/servicios/${publicacion.id}">Ver más</a>
 									</div>

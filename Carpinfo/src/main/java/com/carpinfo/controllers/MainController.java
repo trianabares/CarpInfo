@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import com.carpinfo.models.Publicacion;
 import com.carpinfo.models.Temas;
 import com.carpinfo.models.User;
 import com.carpinfo.services.ForoService;
@@ -42,7 +43,7 @@ public class MainController {
 			model.addAttribute("usuario", usuario);
 
 		}
-		model.addAttribute("publicidad", publiServ.findAllPublicaciones());
+		model.addAttribute("publicaciones", publiServ.findAllPublicaciones());
 		return "Inicio.jsp";
 	}
 
@@ -58,7 +59,7 @@ public class MainController {
 
 		}
 		
-		model.addAttribute("publicidad", publiServ.findAllPublicaciones());
+		model.addAttribute("publicaciones", publiServ.findAllPublicaciones());
 		return "info.jsp";
 	}
 
@@ -74,7 +75,7 @@ public class MainController {
 
 		}
 		
-		model.addAttribute("publicidad", publiServ.findAllPublicaciones());
+		model.addAttribute("publicaciones", publiServ.findAllPublicaciones());
 		return "mareas.jsp";
 	}
 
@@ -90,12 +91,12 @@ public class MainController {
 
 		}
 		
-		model.addAttribute("publicidad", publiServ.findAllPublicaciones());
+		model.addAttribute("publicaciones", publiServ.findAllPublicaciones());
 		return "aysa.jsp";
 	}
 
 	@GetMapping("/turismo")
-	public String turismo(HttpSession sesion, Model model) {
+	public String turismo(HttpSession sesion, Model model, @ModelAttribute("nuevaPubli") Publicacion publi) {
 		Long userId = (Long) sesion.getAttribute("userID");
 
 		// Verifica si el usuario ha iniciado sesión
@@ -106,7 +107,7 @@ public class MainController {
 
 		}
 		
-		model.addAttribute("publicidad", publiServ.findAllPublicaciones());
+		model.addAttribute("publicaciones", publiServ.findAllPublicaciones());
 		return "turismo.jsp";
 	}
 
@@ -119,11 +120,12 @@ public class MainController {
 
 			return "redirect:/registro";
 		}
+		
 		User usuario = userServ.encontrarUserPorId(userId);
 		model.addAttribute("usuario", usuario);
 		List<Temas> temas = foroServ.allTemas();
 		model.addAttribute("temas", temas);
-		model.addAttribute("publicidad", publiServ.findAllPublicaciones());
+		model.addAttribute("publicaciones", publiServ.findAllPublicaciones());
 		return "vecinos.jsp";
 	}
 	
@@ -148,7 +150,7 @@ public class MainController {
 			model.addAttribute("usuario", usuario);
 
 		}
-		model.addAttribute("publicidad", publiServ.findAllPublicaciones());
+		model.addAttribute("publicaciones", publiServ.findAllPublicaciones());
 		return "contacto.jsp";
 	}
 

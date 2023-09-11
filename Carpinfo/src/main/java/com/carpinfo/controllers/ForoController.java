@@ -21,6 +21,7 @@ import com.carpinfo.models.Mensajes;
 import com.carpinfo.models.Temas;
 import com.carpinfo.services.FileUpService;
 import com.carpinfo.services.ForoService;
+import com.carpinfo.services.PublicidadService;
 import com.carpinfo.services.UserService;
 
 import jakarta.servlet.http.HttpSession;
@@ -32,12 +33,13 @@ public class ForoController {
 	private final UserService userServ;
 	private final ForoService foroServ;
 	private final FileUpService fileUpServ;
+	private final PublicidadService publiServ;
 	
-	public ForoController(UserService uServ,ForoService fServ,FileUpService fileUpServ) {
+	public ForoController(UserService uServ,ForoService fServ,FileUpService fileUpServ, PublicidadService publiServ) {
 		this.userServ = uServ;
 		this.foroServ = fServ;
 		this.fileUpServ = fileUpServ;
-
+		this.publiServ = publiServ;
 	}
 	
 	//ruta donde se suben las fotos
@@ -56,6 +58,7 @@ public class ForoController {
 		List<Mensajes> mensajes = foroServ.findMensajesByTema(idTema);
 		model.addAttribute("mensajes", mensajes);
 		model.addAttribute("usuario", userServ.encontrarUserPorId(userId));
+		model.addAttribute("publicaciones", publiServ.findAllPublicaciones());
 		return "tema.jsp";
 	}
 	
@@ -74,6 +77,7 @@ public class ForoController {
 			List<Mensajes> mensajes = foroServ.findMensajesByTema(idTema);
 			model.addAttribute("mensajes", mensajes);
 			model.addAttribute("usuario", userServ.encontrarUserPorId(userId));
+			model.addAttribute("publicaciones", publiServ.findAllPublicaciones());
 			return "tema.jsp";
 		}
 		
@@ -109,6 +113,7 @@ public class ForoController {
 		List<Comentarios> comentarios = foroServ.findComentarioByMensaje(idMensaje);
 		model.addAttribute("comentarios", comentarios);
 		model.addAttribute("usuario", userServ.encontrarUserPorId(userId));
+		model.addAttribute("publicaciones", publiServ.findAllPublicaciones());
 		return "mensaje.jsp";
 	}
 	
@@ -124,6 +129,7 @@ public class ForoController {
 			List<Comentarios> comentario = foroServ.findComentarioByMensaje(idMensaje);
 			model.addAttribute("comentarios", comentario);
 			model.addAttribute("usuario", userServ.encontrarUserPorId(userId));
+			model.addAttribute("publicaciones", publiServ.findAllPublicaciones());
 			return "mensaje.jsp";
 		} else {
 			foroServ.addComentario(comentarios);

@@ -153,7 +153,7 @@
 						<div class="cleaner"></div>
 					</div>
 					<!-- end of content_outer -->
-					<div id="template_sidebar">
+						<div id="template_sidebar">
 							<div class="sidebar_section">
 								<h2>Servicios</h2>
 								<c:forEach var="publicacion" items="${publicaciones}">
@@ -162,8 +162,7 @@
 										<a href="#"><img src="images/image_01.jpg" alt=""
 											width="260" height="120" /></a>
 									</div>
-									<p>Sed et quam vitae ipsum vulputate varius vitae semper
-										nunc. Quisque eget elit quis augue pharetra feugiat.</p>
+									<p>${publicacion.contenidos}</p>
 									<div class="button_01">
 										<a href="/servicios/${publicacion.id}">Ver más</a>
 									</div>
@@ -171,9 +170,9 @@
 								</c:forEach>
 							</div>
 						</div>
-					<!-- end of template_sidebar -->
-					<div class="cleaner"></div>
-				</div>
+						<!-- end of template_sidebar -->
+						<div class="cleaner"></div>
+					</div>
 				<!-- end of content_wrapper -->
 				<div id="footer">
 					<ul class="footer_menu">
