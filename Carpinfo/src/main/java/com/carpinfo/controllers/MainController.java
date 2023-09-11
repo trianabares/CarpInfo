@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import com.carpinfo.models.Temas;
 import com.carpinfo.models.User;
 import com.carpinfo.services.ForoService;
+import com.carpinfo.services.PublicidadService;
 import com.carpinfo.services.UserService;
 
 import jakarta.servlet.http.HttpSession;
@@ -22,10 +23,12 @@ public class MainController {
 
 	private final UserService userServ;
 	private final ForoService foroServ;
+	private final PublicidadService publiServ;
 
-	public MainController(UserService uSer, ForoService foroServ) {
+	public MainController(UserService uSer, ForoService foroServ, PublicidadService publiServ) {
 		this.userServ = uSer;
 		this.foroServ = foroServ;
+		this.publiServ = publiServ;
 	}
 
 	@GetMapping("/")
@@ -53,7 +56,8 @@ public class MainController {
 			model.addAttribute("usuario", usuario);
 
 		}
-
+		
+		model.addAttribute("publicidad", publiServ.findAllPublicaciones());
 		return "info.jsp";
 	}
 
@@ -68,6 +72,8 @@ public class MainController {
 			model.addAttribute("usuario", usuario);
 
 		}
+		
+		model.addAttribute("publicidad", publiServ.findAllPublicaciones());
 		return "mareas.jsp";
 	}
 
@@ -82,6 +88,8 @@ public class MainController {
 			model.addAttribute("usuario", usuario);
 
 		}
+		
+		model.addAttribute("publicidad", publiServ.findAllPublicaciones());
 		return "aysa.jsp";
 	}
 
@@ -96,6 +104,8 @@ public class MainController {
 			model.addAttribute("usuario", usuario);
 
 		}
+		
+		model.addAttribute("publicidad", publiServ.findAllPublicaciones());
 		return "turismo.jsp";
 	}
 
@@ -112,6 +122,7 @@ public class MainController {
 		model.addAttribute("usuario", usuario);
 		List<Temas> temas = foroServ.allTemas();
 		model.addAttribute("temas", temas);
+		model.addAttribute("publicidad", publiServ.findAllPublicaciones());
 		return "vecinos.jsp";
 	}
 	
@@ -119,10 +130,10 @@ public class MainController {
 	public String addLang(@Valid @ModelAttribute("nuevacategoria") Temas tema, BindingResult result) {
 		if (result.hasErrors()) {
 			return "vecinos.jsp";
-		} else {
-			foroServ.addTema(tema);
-			return "redirect:/vecinos";
 		}
+		
+		foroServ.addTema(tema);
+		return "redirect:/vecinos";
 	}
 
 	@GetMapping("/contacto")
@@ -136,6 +147,7 @@ public class MainController {
 			model.addAttribute("usuario", usuario);
 
 		}
+		model.addAttribute("publicidad", publiServ.findAllPublicaciones());
 		return "contacto.jsp";
 	}
 
