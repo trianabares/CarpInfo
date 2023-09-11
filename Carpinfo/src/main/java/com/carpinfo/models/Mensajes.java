@@ -37,6 +37,9 @@ public class Mensajes {
 	@Size(min=3,  message="El mensaje debe ser mayor a 3 caracteres")
 	private String contenidos;
 	
+	@Column(name = "post_image")
+	private String postImage;
+	
 	@ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name="user.id")
     private User creador;

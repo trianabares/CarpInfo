@@ -90,20 +90,24 @@
 									</h1>
 									<h2>Nuevo Mensaje</h2>
 									<form:form action="/foro/${tema.id}/nuevo" method="POST"
-										modelAttribute="nuevomensaje">
-										<div class="form-group">
+										modelAttribute="nuevomensaje" enctype="multipart/form-data">
+										<div class="form-group my-2">
 											<form:label class="form-label" path="titulo">Nombre: </form:label>
 											<form:errors class="text-danger" path="titulo" />
 											<form:input class="form-control" path="titulo" />
 										</div>
-										<div class="form-group">
-											<form:label class="form-label" path="contenidos">Nombre: </form:label>
+										<div class="form-group my-2">
+											<form:label class="form-label" path="contenidos">Contenido: </form:label>
 											<form:errors class="text-danger" path="contenidos" />
 											<form:textarea class="form-control" path="contenidos" />
 										</div>
+										<div class="form-group">
+											<label class="form-label">Adjuntar imagen:</label>
+		                    				<input type="file" name="imageUpload" class="form-control">
+		                    			</div>
 										<form:input type="hidden" path="creador" value="${usuario.id}"/>
 										<form:input type="hidden" path="tema" value="${tema.id}" />
-										<button class="btn btn-success m-2">Agregar</button>
+										<button class="btn btn-success my-2">Agregar</button>
 									</form:form>
 									<table class="table table-bordered">
 										<thead>
