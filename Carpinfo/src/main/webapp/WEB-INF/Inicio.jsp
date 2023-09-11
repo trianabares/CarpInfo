@@ -87,6 +87,7 @@
 						<div id="content_outer">
 							<div id="content">
 								<div class="content_section">
+								
 									<h2>Welcome to Travel &amp; Tour</h2>
 									<p>
 										<a href="#">Free Website Templates</a> are provided by

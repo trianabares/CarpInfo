@@ -22,15 +22,17 @@
 </head>
 
 <body>
-<div id="wrapper_outter">
+	<div id="wrapper_outter">
 		<div id="wrapper_inner">
 			<div id="wrapper">
 				<div id="container">
 					<div id="header">
 						<div id="header_left">
 							<div id="site_title d-flex">
-             					 <h1><a href="/"> <img src="/images/logo.png" alt="Carpinfo"/></a><span>Carpinfo</span></h1>
-            				</div>
+								<h1>
+									<a href="/"> <img src="/images/logo.png" alt="Carpinfo" /></a><span>Carpinfo</span>
+								</h1>
+							</div>
 							<div id="menu">
 								<ul>
 									<li><a href="/info">INFO UTIL</a></li>
@@ -77,44 +79,183 @@
 					</div>
 					<!-- end of header -->
 					<div id="content_wrapper">
-					
+
 						<div id="content_outer">
 							<div id="content">
 								<div class="content_section">
 									<h2>Nuestro Equipo</h2>
-									
-									<p>Somos un pequeño equipo de desarrolladores web jóvenes, conformado por: </p>
-									
-									<ul class="featured_tour float_l">
-										<li>Triana Bares</li>
-										<li>Elías García</li>
-										<li>Braian Lopez</li>
-									</ul>
-									<ul class="featured_tour float_r">
-										<li>León Vallejos</li>
-										<li>Candela Fatala</li>
-										<li>Ignacio Jerez</li>
-									</ul>
+
+									<p>Somos un pequeño equipo de desarrolladores web jóvenes,
+										conformado por:</p>
+
+									<div class="row">
+										<div class="col-md-4 mx-auto">
+											<div class="card text-center">
+												<img src="/images/stickman.jpg" class="card-img-top"
+													alt="Cande">
+												<div class="card-body">
+													<h5 class="card-title">Candela</h5>
+													<h5 class="card-title">Fatala</h5>
+													<a href="mailto:candelafatala@gmail.com"
+														class="btn btn-outline-success">Enviar correo</a>
+													<div class="d-flex mt-3" id="custom-align-center">
+														<!-- Agrega 'id' aquí -->
+														<a
+															href="https://www.linkedin.com/in/candela-fatala-920a21270/"
+															class="btn btn-primary px-1"><img
+															src="/images/linkedin-logo.png" alt="LinkedIn"
+															width="32px"></a> <a
+															href="https://github.com/candelafatala"
+															class="btn btn-secondary px-1"><img
+															src="/images/github-logo.png" alt="GitHub" width="32px"></a>
+													</div>
+												</div>
+											</div>
+										</div>
+
+
+										<div class="col-md-4 mx-auto">
+											<div class="card text-center">
+												<img src="/images/stickman.jpg" class="card-img-top"
+													alt="Elias">
+												<div class="card-body">
+													<h5 class="card-title">Elias</h5>
+													<h5 class="card-title">Garcia</h5>
+													<a href="mailto:eliasgarcia4824@gmail.com"
+														class="btn btn-outline-success">Enviar correo</a>
+													<div class="d-flex mt-3" id="custom-align-center">
+														<!-- Agrega 'id' aquí -->
+														<a href="#" class="btn btn-primary px-1"><img
+															src="/images/linkedin-logo.png" alt="LinkedIn"
+															width="32px"></a> <a href="#"
+															class="btn btn-secondary px-1"><img
+															src="/images/github-logo.png" alt="GitHub" width="32px"></a>
+													</div>
+												</div>
+											</div>
+										</div>
+
+
+										<div class="col-md-4 mx-auto">
+											<div class="card text-center">
+												<img src="/images/stickman.jpg" class="card-img-top"
+													alt="Braian">
+												<div class="card-body">
+													<h5 class="card-title">Braian</h5>
+													<h5 class="card-title">Lopez</h5>
+													<a href="mailto:braiilopez16@gmail.com"
+														class="btn btn-outline-success">Enviar correo</a>
+													<div class="d-flex mt-3" id="custom-align-center">
+														<!-- Agrega 'id' aquí -->
+														<a
+															href="https://www.linkedin.com/in/braian-lopez-407093289/"
+															class="btn btn-primary px-1"><img
+															src="/images/linkedin-logo.png" alt="LinkedIn"
+															width="32px"></a> <a
+															href="https://github.com/BraianLopez"
+															class="btn btn-secondary px-1"><img
+															src="/images/github-logo.png" alt="GitHub" width="32px"></a>
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<div class="col-md-4 mx-auto">
+											<div class="card text-center">
+												<img src="/images/stickman.jpg" class="card-img-top"
+													alt="Leon">
+												<div class="card-body">
+													<h5 class="card-title">León</h5>
+													<h5 class="card-title">Vallejos</h5>
+													<a href="mailto:leonrvallejos@gmail.com"
+														class="btn btn-outline-success">Enviar correo</a>
+													<div class="d-flex mt-3" id="custom-align-center">
+														<!-- Agrega 'id' aquí -->
+														<a href="#" class="btn btn-primary px-1"><img
+															src="/images/linkedin-logo.png" alt="LinkedIn"
+															width="32px"></a> <a
+															href="https://github.com/VallejosLeon"
+															class="btn btn-secondary px-1"><img
+															src="/images/github-logo.png" alt="GitHub" width="32px"></a>
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<div class="col-md-4 mx-auto">
+											<div class="card text-center">
+												<img src="/images/stickman.jpg" class="card-img-top"
+													alt="Ignacio">
+												<div class="card-body">
+													<h5 class="card-title">Ignacio</h5>
+													<h5 class="card-title">Jerez</h5>
+													<a href="mailto:ignanj8@gmail.com"
+														class="btn btn-outline-success">Enviar correo</a>
+													<div class="d-flex mt-3" id="custom-align-center">
+														<!-- Agrega 'id' aquí -->
+														<a href="https://www.linkedin.com/in/ignaciojerez/"
+															class="btn btn-primary px-1"><img
+															src="/images/linkedin-logo.png" alt="LinkedIn"
+															width="32px"></a> <a href="https://github.com/ignacix"
+															class="btn btn-secondary px-1"><img
+															src="/images/github-logo.png" alt="GitHub" width="32px"></a>
+													</div>
+												</div>
+											</div>
+										</div>
+
+
+										<div class="col-md-4 mx-auto">
+											<div class="card text-center">
+												<img src="/images/stickman.jpg" class="card-img-top"
+													alt="Triana">
+												<div class="card-body">
+													<h5 class="card-title">Triana</h5>
+													<h5 class="card-title">Bares</h5>
+													<a href="mailto:trianaxd@gmail.com"
+														class="btn btn-outline-success">Enviar correo</a>
+													<div class="d-flex mt-3" id="custom-align-center">
+														<!-- Agrega 'id' aquí -->
+														<a href="#" class="btn btn-primary px-1"><img
+															src="/images/linkedin-logo.png" alt="LinkedIn"
+															width="32px"></a> <a href="#"
+															class="btn btn-secondary px-1"><img
+															src="/images/github-logo.png" alt="GitHub" width="32px"></a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
 									<div class="cleaner"></div>
 								</div>
 								<div class="content_section">
 									<h2>Nuestro Propósito</h2>
-									
-									<p>Esta propuesta surge a partir de la falta de un lugar centralizado donde se pueda alojar y mostrar información 
-									relevante dentro de la zona del delta en el Tigre, localidad de la provincia de Buenos Aires, Argentina. Nos pareció 
-									que faltaba un sitio dedicado a las necesidades de tanto la comunidad de vecinos como de los visitantes.</p>
-									
-									<p>El sitio está destinado a proporcionar información pertinente sobre la zona, incluyendo actualizaciones sobre
-									el cauce del río y horarios de los servicios (como lanchas de transporte y distribución de agua potable), además de promover
-									el turismo en la localidad, con un apartado donde los emprendedores locales vana apoder promocionar sus servicios. 
-									También existe un espacio para que los vecinos dejen sus opiniones para mejorar la comunidad y se fomente la comunicación.</p>
-									
+
+									<p>Esta propuesta surge a partir de la falta de un lugar
+										centralizado donde se pueda alojar y mostrar información
+										relevante dentro de la zona del delta en el Tigre, localidad
+										de la provincia de Buenos Aires, Argentina. Nos pareció que
+										faltaba un sitio dedicado a las necesidades de tanto la
+										comunidad de vecinos como de los visitantes.</p>
+
+									<p>El sitio está destinado a proporcionar información
+										pertinente sobre la zona, incluyendo actualizaciones sobre el
+										cauce del río y horarios de los servicios (como lanchas de
+										transporte y distribución de agua potable), además de promover
+										el turismo en la localidad, con un apartado donde los
+										emprendedores locales vana apoder promocionar sus servicios.
+										También existe un espacio para que los vecinos dejen sus
+										opiniones para mejorar la comunidad y se fomente la
+										comunicación.</p>
+
 								</div>
 								<div class="content_section">
 									<h2>Modelo de Negocios</h2>
-									
-									<p>La forma en que este proyecto puede subsistir en el tiempo es gracias a tanto al apoyo de la municipalidad, como al espacio
-									publicitario habilitado para cualquiera que quiera promocionar su emprendimiento en nuestro sitio.</p>
+
+									<p>La forma en que este proyecto puede subsistir en el
+										tiempo es gracias a tanto al apoyo de la municipalidad, como
+										al espacio publicitario habilitado para cualquiera que quiera
+										promocionar su emprendimiento en nuestro sitio.</p>
 								</div>
 							</div>
 							<!-- end of content -->
@@ -152,23 +293,24 @@
 						<div class="cleaner"></div>
 					</div>
 					<!-- end of content_wrapper -->
-							<div id="footer">
-								<ul class="footer_menu">
-									<li><a href="#">Home</a></li>
-									<li><a href="#">Tours</a></li>
-									<li><a href="#">News</a></li>
-									<li><a href="#">Gallery</a></li>
-									<li class="last_menu"><a href="#">Contact</a></li>
-								</ul>
-								Copyright &copy; 2048 <a href="#">Your Company Name</a> |
-								Designed by <a target="_blank" rel="nofollow"
-									href="http://www.templatemo.com">templatemo</a>
-							</div>
-							<!-- end of footer -->
-							<div class="cleaner"></div>
-						</div>
+					<div id="footer">
+						<ul class="footer_menu">
+							<li><a href="#">Home</a></li>
+							<li><a href="#">Tours</a></li>
+							<li><a href="#">News</a></li>
+							<li><a href="#">Gallery</a></li>
+							<li class="last_menu"><a href="#">Contact</a></li>
+						</ul>
+						Copyright &copy; 2048 <a href="#">Your Company Name</a> | Designed
+						by <a target="_blank" rel="nofollow"
+							href="http://www.templatemo.com">templatemo</a>
 					</div>
+					<!-- end of footer -->
+					<div class="cleaner"></div>
 				</div>
 			</div>
+		</div>
+	</div>
+
 </body>
 </html>
