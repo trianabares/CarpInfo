@@ -220,6 +220,126 @@
 															}
 														});
 									</script>
+									
+									<table id="tablaHorariosFinde" style="display: none;"
+										class="table table-striped float_r">
+										<thead>
+											<tr>
+												<th>DE LUNES A VIERNES</th>
+												<th>SALIDA DE TIGRE</th>
+												<th>LLEGA A TIGRE</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>MAÑANA</td>
+												<td>07:00</td>
+												<td>06:30</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>08:00</td>
+												<td>07:30</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>09:00</td>
+												<td>08:30</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>10:00</td>
+												<td>10:15</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>11:30</td>
+												<td>11:30</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>12:45</td>
+												<td>12:30</td>
+											</tr>
+											<tr>
+												<td>TARDE</td>
+												<td>13:20</td>
+												<td>14:00</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>15:00</td>
+												<td>15:00</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>15:30</td>
+												<td>16:15</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>15:00</td>
+												<td>15:00</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>16:15</td>
+												<td>16:45</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>17:30</td>
+												<td>17:00</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>18:10</td>
+												<td>17:45</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>18:30</td>
+												<td>18:15</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>19:00</td>
+												<td>18:30</td>
+											</tr>
+											<tr>
+												<td>NOCHE</td>
+												<td>20:00</td>
+												<td>18:50</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>21:00</td>
+												<td>20:00</td>
+											</tr>
+										</tbody>
+									</table>
+
+									<div class="cleaner"></div>
+									<div class="button_01">
+										<button id="verHorariosFinde">fines de semana</button>
+									</div>
+									<script>
+										const btnVerHorariosFinde = document
+												.getElementById('verHorariosFinde');
+										const tablaHorariosFinde = document
+												.getElementById('tablaHorariosFinde');
+
+										btnVerHorariosFinde
+												.addEventListener(
+														'click',
+														function() {
+															if (tablaHorariosFinde.style.display === 'none') {
+																tablaHorariosFinde.style.display = 'block';
+															} else {
+																tablaHorariosFinde.style.display = 'none';
+															}
+														});
+									</script>
 
 									<br>
 									<!-- 									DIAS DEL CATAMARÁN SANITARIO -->
