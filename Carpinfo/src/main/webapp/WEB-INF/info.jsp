@@ -220,7 +220,7 @@
 															}
 														});
 									</script>
-									
+
 									<table id="tablaHorariosFinde" style="display: none;"
 										class="table table-striped float_r">
 										<thead>
@@ -349,7 +349,7 @@
 										recorrido del catamarán sanitario, diseñado para brindar
 										asistencia médica en el delta. Te proporcionaremos los
 										horarios y lugares donde podrás abordar este servicio.</p>
-									<p class="em_text">Además, tefacilitaremos los números de
+									<p class="em_text">Además, te facilitaremos los números de
 										teléfono de las salas de primeros auxilios, los bomberos, la
 										prefectura y la policía. Estos contactos son fundamentales
 										para que puedas recibir ayuda y asistencia en caso de
@@ -357,35 +357,58 @@
 									<p class="em_text">Nuestra prioridad es tu bienestar, por
 										lo que te invitamos a explorar esta sección y tener a mano
 										esta información valiosa.</p>
-									<ul class="featured_tour float_l">
-										<li><a href="#">Por la mañana <span>7:00 hs</span></a></li>
-										<li><a href="#">Proin at urna eu sem convallis
-												elementum <span>Ut dapibus tincidunt tempus. Aliquam
-													ac pellentesque mauris. Donec at nisl tellus. </span>
-										</a></li>
-										<li><a href="#">Aenean tristique vehicula laoreet <span>Vestibulum
-													ante ipsum primis in faucibus orci luctus.</span></a></li>
-										<li><a href="#">Praesent et odio sit amet <span>Pellentesque
-													euismod auctor libero, in euismod eros.</span></a></li>
-									</ul>
-									<ul class="featured_tour float_r">
-										<li><a href="#">Vestibulum euismod vulputate
-												consectetur <span>Suspendisse risus tortor, sagittis
-													ac ante.</span>
-										</a></li>
-										<li><a href="#">tiam turpis arcu, tempus id mauris <span>Nulla
-													dictum rhoncus lacinia. Quisque feugiat malesuada nulla,
-													sit amet fringilla dui.</span></a></li>
-										<li><a href="#">Suspendisse id mauris nec mi <span>Pellentesque
-													euismod auctor libero, in euismod eros.</span></a></li>
-										<li><a href="#">Aenean tristique vehicula laoreet. <span>Cras
-													eget massa aliquam dolor consectetur pharetra. Vivamus
-													vehicula tincidunt eleifend</span></a></li>
-									</ul>
+
+									<h2>RECORRIDO DEL CATA (CATAMARAN SANITARIO)</h2>
+									<table id="tablaCatamaranSanitario" style="display: none;"
+										class="table table-striped float_r">
+										<thead>
+											<tr>
+											
+												<th>Miercoles</th>
+												<th>Jueves</th>
+												<th>Viernes</th>
+												<th>Lunes</th>
+												<th>Martes</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Rio Sarmiento</td>
+												<td>Arroyo Espera</td>
+												<td>Caraguatá 800</td>
+												<td>Canal Honda</td>
+												<td>Arroyo Correa y Pajarito</td>
+											</tr>
+											<tr>
+												<td>Esc Nº 12</td>
+												<td>Esc Nº 8</td>
+												<td></td>
+												<td>Esc Nº 17</td>
+												<td></td>
+											</tr>
+										</tbody>
+									</table>
 									<div class="cleaner"></div>
 									<div class="button_01">
-										<a href="#">View All</a>
+										<button id="verRecorridoCata">Recorrido del Cata</button>
 									</div>
+									<script>
+										const btnVerRecorridoCata = document
+												.getElementById('verRecorridoCata');
+										const tablaCatamaranSanitario = document
+												.getElementById('tablaCatamaranSanitario');
+
+										btnVerRecorridoCata
+												.addEventListener(
+														'click',
+														function() {
+															if (tablaCatamaranSanitario.style.display === 'none') {
+																tablaCatamaranSanitario.style.display = 'block';
+															} else {
+																tablaCatamaranSanitario.style.display = 'none';
+															}
+														});
+									</script>
 									<!-- 								AGUA POTABLE -->
 									<br>
 									<h2>Dias y horarios de AYSA</h2>
