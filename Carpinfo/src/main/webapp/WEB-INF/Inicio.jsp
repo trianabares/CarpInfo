@@ -67,7 +67,7 @@
 										Hola,
 										<c:out value="${usuario.nombre}"></c:out>
 									</h2>
-									<img alt="Foto de perfil" src="${usuario.profileImage}">
+									<img alt="Foto de perfil" src="${usuario.profileImage}" width=50px>
 									<h6>
 										email:
 										<c:out value="${usuario.email}"></c:out>

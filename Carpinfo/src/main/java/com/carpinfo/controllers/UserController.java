@@ -35,7 +35,7 @@ public class UserController {
 	}
 	
 	//ruta donde se suben las fotos
-	private String UPLOAD_FOLDER = "src/main/resources/static/images/";
+	private String UPLOAD_FOLDER = "src/main/webapp/images/";
 
 	@GetMapping("/registro")
 	public String raiz(Model viewModel, HttpSession sesion) {
@@ -79,7 +79,7 @@ public class UserController {
 			e.printStackTrace();
 		}
 	    
-		usuario.setProfileImage(UPLOAD_FOLDER + profileImage.getOriginalFilename());
+		usuario.setProfileImage("/images/" + profileImage.getOriginalFilename());
 		userServ.registroUsuario(usuario, resultado);
 		viewModel.addAttribute("login", new LogReg());
 		return "redirect:/";
