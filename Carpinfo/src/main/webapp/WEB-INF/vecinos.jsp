@@ -101,49 +101,36 @@
 										cada vecino y vecina pueda expresarse libremente, siempre
 										desde el respeto y buenos tratos, para asi asegurarnos una
 										eperiencia positiva y constructiva.</p>
-									<h2>Empecemos!</h2>
 
-
-									<h2>
-										<a href="#">Crear un evento</a>
-									</h2>
-									<h2>
-										<a href="#">Informar un problema</a>
-									</h2>
-									<hr>
 									<h2>Foro</h2>
-									
-									<table class="table table-bordered">
-										<thead>
-											<tr>
-												<th></th>
-											</tr>
-										</thead>
+
+									<table class="table">
 										<tbody>
 											<c:forEach var="tema" items="${temas}">
 												<tr>
 													<td>
 														<h4>
-															<a href="/foro/${tema.id}">
-															<c:out value="${tema.nombre}"></c:out></a>
+															<a href="/foro/${tema.id}"> <c:out
+																	value="${tema.nombre}"></c:out></a>
 														</h4>
 													</td>
 												</tr>
 											</c:forEach>
 										</tbody>
 									</table>
-									
+
 									<h2>Nuevo Categoria</h2>
-							<!-- AGREGAR C:CHOOSE PARA EL ADMIN -->
-										<form:form action="/vecinos" method="POST" modelAttribute="nuevacategoria">
-											<div class="form-group">
-												<form:label class="form-label" path="nombre">Nombre: </form:label>
-												<form:errors class="text-danger" path="nombre" />
-												<form:input class="form-control" path="nombre" />
-											</div>
-											<button class="btn btn-success mt-2">Agregar</button>
-										</form:form>
-										
+									<!-- AGREGAR C:CHOOSE PARA EL ADMIN -->
+									<form:form action="/vecinos" method="POST"
+										modelAttribute="nuevacategoria">
+										<div class="form-group">
+											<form:label class="form-label" path="nombre">Nombre: </form:label>
+											<form:errors class="text-danger" path="nombre" />
+											<form:input class="form-control" path="nombre" />
+										</div>
+										<button class="btn btn-success mt-2">Agregar</button>
+									</form:form>
+
 								</div>
 
 							</div>
@@ -153,26 +140,26 @@
 						<div class="cleaner"></div>
 					</div>
 					<!-- end of content_outer -->
-						<div id="template_sidebar">
-							<div class="sidebar_section">
-								<h2>Servicios</h2>
-								<c:forEach var="publicacion" items="${publicaciones}">
-									<h3>${publicacion.nombre}</h3>
-									<div class="image_wrapper">
-										<a href="#"><img src="images/image_01.jpg" alt=""
-											width="260" height="120" /></a>
-									</div>
-									<p>${publicacion.contenidos}</p>
-									<div class="button_01">
-										<a href="/servicios/${publicacion.id}">Ver más</a>
-									</div>
-									<div class="cleaner_h30"></div>
-								</c:forEach>
-							</div>
+					<div id="template_sidebar">
+						<div class="sidebar_section">
+							<h2>Servicios</h2>
+							<c:forEach var="publicacion" items="${publicaciones}">
+								<h3>${publicacion.nombre}</h3>
+								<div class="image_wrapper">
+									<a href="#"><img src="images/image_01.jpg" alt=""
+										width="260" height="120" /></a>
+								</div>
+								<p>${publicacion.contenidos}</p>
+								<div class="button_01">
+									<a href="/servicios/${publicacion.id}">Ver más</a>
+								</div>
+								<div class="cleaner_h30"></div>
+							</c:forEach>
 						</div>
-						<!-- end of template_sidebar -->
-						<div class="cleaner"></div>
 					</div>
+					<!-- end of template_sidebar -->
+					<div class="cleaner"></div>
+				</div>
 				<!-- end of content_wrapper -->
 				<div id="footer">
 					<ul class="footer_menu">
@@ -190,7 +177,6 @@
 				<div class="cleaner"></div>
 			</div>
 		</div>
-	</div>
 	</div>
 </body>
 </html>
