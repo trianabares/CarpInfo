@@ -43,7 +43,7 @@ public class ForoController {
 	}
 	
 	//ruta donde se suben las fotos
-	private String UPLOAD_FOLDER = "src/main/resources/static/images/";
+	private String UPLOAD_FOLDER = "src/main/webapp/images/";
 	
 	// TEMAS Y MENSAJES
 	
@@ -95,7 +95,7 @@ public class ForoController {
 			e.printStackTrace();
 		}
 	    
-		mensaje.setPostImage(UPLOAD_FOLDER + postImage.getOriginalFilename());
+		mensaje.setPostImage("/images/" + postImage.getOriginalFilename());
 		foroServ.addMensaje(mensaje);
 		return "redirect:/foro/" + idTema.toString();
 	}
