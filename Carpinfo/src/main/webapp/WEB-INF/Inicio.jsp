@@ -49,7 +49,7 @@
 						<div id="header_right">
 							<c:choose>
 								<c:when test="${usuario.id == null }">
-									<h2>Member Login</h2>
+									<h2>Inicio de Sesión</h2>
 									<form action="/login" method="POST">
 										<label>Email</label> <input type="text" name="email"
 											class="input_field" />
@@ -67,9 +67,9 @@
 										Hola,
 										<c:out value="${usuario.nombre}"></c:out>
 									</h2>
-									<img alt="Foto de perfil" src="${usuario.profileImage}" width=50px>
-									<h6>
-										email:
+									<img alt="Foto de perfil" src="${usuario.profileImage}" width=70px height=70px>
+									<h6 class="my-2">
+										E-mail:
 										<c:out value="${usuario.email}"></c:out>
 									</h6>
 									<hr>

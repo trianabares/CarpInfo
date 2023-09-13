@@ -134,47 +134,47 @@
 								</div>
 
 							</div>
+							<!-- end of content -->
+							<div id="content_bottom"></div>
+							<div class="cleaner"></div>
 						</div>
-						<!-- end of content -->
-						<div id="content_bottom"></div>
+						<!-- end of content_outer -->
+						<div id="template_sidebar">
+							<div class="sidebar_section">
+								<h2>Servicios</h2>
+								<c:forEach var="publicacion" items="${publicaciones}">
+									<h3>${publicacion.nombre}</h3>
+									<div class="image_wrapper">
+										<a href="#"><img src="images/image_01.jpg" alt=""
+											width="260" height="120" /></a>
+									</div>
+									<p>${publicacion.contenidos}</p>
+									<div class="button_01">
+										<a href="/servicios/${publicacion.id}">Ver más</a>
+									</div>
+									<div class="cleaner_h30"></div>
+								</c:forEach>
+							</div>
+						</div>
+						<!-- end of template_sidebar -->
 						<div class="cleaner"></div>
 					</div>
-					<!-- end of content_outer -->
-					<div id="template_sidebar">
-						<div class="sidebar_section">
-							<h2>Servicios</h2>
-							<c:forEach var="publicacion" items="${publicaciones}">
-								<h3>${publicacion.nombre}</h3>
-								<div class="image_wrapper">
-									<a href="#"><img src="images/image_01.jpg" alt=""
-										width="260" height="120" /></a>
-								</div>
-								<p>${publicacion.contenidos}</p>
-								<div class="button_01">
-									<a href="/servicios/${publicacion.id}">Ver más</a>
-								</div>
-								<div class="cleaner_h30"></div>
-							</c:forEach>
-						</div>
+					<!-- end of content_wrapper -->
+					<div id="footer">
+						<ul class="footer_menu">
+							<li><a href="#">Home</a></li>
+							<li><a href="#">Tours</a></li>
+							<li><a href="#">News</a></li>
+							<li><a href="#">Gallery</a></li>
+							<li class="last_menu"><a href="#">Contact</a></li>
+						</ul>
+						Copyright &copy; 2048 <a href="#">Your Company Name</a> | Designed
+						by <a target="_blank" rel="nofollow"
+							href="http://www.templatemo.com">templatemo</a>
 					</div>
-					<!-- end of template_sidebar -->
+					<!-- end of footer -->
 					<div class="cleaner"></div>
 				</div>
-				<!-- end of content_wrapper -->
-				<div id="footer">
-					<ul class="footer_menu">
-						<li><a href="#">Home</a></li>
-						<li><a href="#">Tours</a></li>
-						<li><a href="#">News</a></li>
-						<li><a href="#">Gallery</a></li>
-						<li class="last_menu"><a href="#">Contact</a></li>
-					</ul>
-					Copyright &copy; 2048 <a href="#">Your Company Name</a> | Designed
-					by <a target="_blank" rel="nofollow"
-						href="http://www.templatemo.com">templatemo</a>
-				</div>
-				<!-- end of footer -->
-				<div class="cleaner"></div>
 			</div>
 		</div>
 	</div>
