@@ -35,7 +35,7 @@
 							</div>
 							<div id="menu">
 								<ul>
-									<li><a href="/info">INFO UTIL</a></li>
+									<li><a href="/">INFO UTIL</a></li>
 									<li><a href="/turismo">TURISMO</a></li>
 									<li><a href="/vecinos">VECINOS</a></li>
 									<li><a href="/contacto">CONTACTO</a></li>
@@ -47,7 +47,7 @@
 						<div id="header_right">
 							<c:choose>
 								<c:when test="${usuario.id == null }">
-									<h2>Member Login</h2>
+									<h2>Inicio de Sesión</h2>
 									<form action="/login" method="POST">
 										<label>Email</label> <input type="text" name="email"
 											class="input_field" />
@@ -63,16 +63,18 @@
 								<c:otherwise>
 									<h2>
 										Hola,
-										<c:out value="${usuario.nombre }"></c:out>
+										<c:out value="${usuario.nombre}"></c:out>
 									</h2>
-									<h6>
-										email:
-										<c:out value="${usuario.email }"></c:out>
-									</h6>
+									<img alt="Foto de perfil" src="${usuario.profileImage}" width=90px height=60px>
+									<p class="my-2">
+										E-mail:
+										<c:out value="${usuario.email}"></c:out>
+									</p>
 									<hr>
-									<a class="m-5" href="/logout">Cerrar sesión</a>
+									<a href="/logout">Cerrar sesión</a>
 								</c:otherwise>
 							</c:choose>
+
 						</div>
 						<!-- end of header right -->
 						<div class="cleaner"></div>
@@ -268,13 +270,10 @@
 								<h2>Servicios</h2>
 								<c:forEach var="publicacion" items="${publicaciones}">
 									<h3>${publicacion.nombre}</h3>
-									<div class="image_wrapper">
-										<a href="#"><img src="images/image_01.jpg" alt=""
-											width="260" height="120" /></a>
-									</div>
+									<img src="${publicacion.publiImage }" alt="" width=220px height=120px/>
 									<p>${publicacion.contenidos}</p>
 									<div class="button_01">
-										<a href="/servicios/${publicacion.id}">Ver más</a>
+										<a href="${publicacion.enlace}">Ver más</a>
 									</div>
 									<div class="cleaner_h30"></div>
 								</c:forEach>

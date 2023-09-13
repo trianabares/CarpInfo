@@ -36,7 +36,7 @@
 							</div>
 							<div id="menu">
 								<ul>
-									<li><a href="/info">INFO UTIL</a></li>
+									<li><a href="/">INFO UTIL</a></li>
 									<li><a href="/turismo">TURISMO</a></li>
 									<li><a href="/vecinos">VECINOS</a></li>
 									<li><a href="/contacto">CONTACTO</a></li>
@@ -132,6 +132,35 @@
 									</form:form>
 
 								</div>
+								<div class="content_section">
+									<h2>Promocione su Servicio</h2>
+
+									<form:form action="/servicios/nuevo" method="POST"
+										modelAttribute="nuevaPubli" enctype="multipart/form-data">
+										<div class="form-group">
+											<form:label class="form-label" path="nombre">Nombre: </form:label>
+											<form:errors class="text-danger" path="nombre" />
+											<form:input class="form-control" path="nombre" />
+										</div>
+										<div class="form-group">
+											<form:label class="form-label" path="contenidos">Descripción: </form:label>
+											<form:errors class="text-danger" path="contenidos" />
+											<form:textarea class="form-control" path="contenidos" />
+										</div>
+										<div class="form-group">
+											<label class="form-label">Foto del emprendimiento
+												(opcional):</label> <input type="file" name="imageUpload"
+												class="form-control">
+										</div>
+										<div class="form-group">
+											<form:label class="form-label" path="enlace">Enlace a su emprendimiento: </form:label>
+											<form:errors class="text-danger" path="enlace" />
+											<form:input class="form-control" path="enlace" />
+										</div>
+										<form:input type="hidden" path="creador" value="${usuario.id}" />
+										<button class="btn btn-success mt-2">Agregar</button>
+									</form:form>
+								</div>
 
 							</div>
 							<!-- end of content -->
@@ -144,13 +173,10 @@
 								<h2>Servicios</h2>
 								<c:forEach var="publicacion" items="${publicaciones}">
 									<h3>${publicacion.nombre}</h3>
-									<div class="image_wrapper">
-										<a href="#"><img src="images/image_01.jpg" alt=""
-											width="260" height="120" /></a>
-									</div>
+									<img src="${publicacion.publiImage }" alt="" width=220px height=120px/>
 									<p>${publicacion.contenidos}</p>
 									<div class="button_01">
-										<a href="/servicios/${publicacion.id}">Ver más</a>
+										<a href="${publicacion.enlace}">Ver más</a>
 									</div>
 									<div class="cleaner_h30"></div>
 								</c:forEach>

@@ -1,6 +1,9 @@
 package com.carpinfo.controllers;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
+import java.util.Random;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -33,21 +36,6 @@ public class MainController {
 	}
 
 	@GetMapping("/")
-	public String root(HttpSession sesion, Model model) {
-		Long userId = (Long) sesion.getAttribute("userID");
-
-		// Verifica si el usuario ha iniciado sesión
-		if (userId != null) {
-
-			User usuario = userServ.encontrarUserPorId(userId);
-			model.addAttribute("usuario", usuario);
-
-		}
-		model.addAttribute("publicaciones", publiServ.findAllPublicaciones());
-		return "Inicio.jsp";
-	}
-
-	@GetMapping("/info")
 	public String info(HttpSession sesion, Model model) {
 		Long userId = (Long) sesion.getAttribute("userID");
 
@@ -75,6 +63,20 @@ public class MainController {
 
 		}
 		
+		
+		
+		SimpleDateFormat fechaFormat = new SimpleDateFormat("d MMMM, yyyy");
+		Date fechaActual = new Date();
+		model.addAttribute("fecha", fechaFormat.format(fechaActual));
+		
+		SimpleDateFormat horaFormat = new SimpleDateFormat("HH:mm");
+		model.addAttribute("hora", horaFormat.format(fechaActual));
+		
+		double[] arrayDouble = {0.80, 0.95, 1.05, 1.30, 1.45};
+		Random r = new Random();
+		int altura = r.nextInt(5);
+		model.addAttribute("altura", arrayDouble[altura]);
+		
 		model.addAttribute("publicaciones", publiServ.findAllPublicaciones());
 		return "mareas.jsp";
 	}
@@ -96,7 +98,7 @@ public class MainController {
 	}
 
 	@GetMapping("/turismo")
-	public String turismo(HttpSession sesion, Model model, @ModelAttribute("nuevaPubli") Publicacion publi) {
+	public String turismo(HttpSession sesion, Model model) {
 		Long userId = (Long) sesion.getAttribute("userID");
 
 		// Verifica si el usuario ha iniciado sesión
@@ -112,7 +114,8 @@ public class MainController {
 	}
 
 	@GetMapping("/vecinos")
-	public String vecinos(@ModelAttribute("nuevacategoria") Temas tema, HttpSession sesion, Model model) {
+	public String vecinos(@ModelAttribute("nuevacategoria") Temas tema, HttpSession sesion, Model model,
+			@ModelAttribute("nuevaPubli") Publicacion publi) {
 		Long userId = (Long) sesion.getAttribute("userID");
 
 		// Verifica si el usuario ha iniciado sesión

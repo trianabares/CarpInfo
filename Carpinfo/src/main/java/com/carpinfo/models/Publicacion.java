@@ -29,13 +29,19 @@ public class Publicacion {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@NotBlank(message=" Por favor ingresa un nombre")
+	@NotBlank(message= "Por favor ingrese un nombre")
 	@Size(min=3, max=30, message="Nombre debe ser mayor a 3 caracteres y menor a 30")
 	private String nombre;
 	
-	@NotNull(message=" Por favor ingresa un contenido")
-	@Size(min=3,  message="El mensaje debe ser mayor a 3 caracteres")
+	@NotNull(message= "Por favor ingrese un contenido")
+	@Size(min=3, max=250, message="La descripción debe ser entre 3 a 250 caracteres")
 	private String contenidos;
+	
+	@NotBlank(message="Debe ingresar el enlace de contacto a su servicio")
+	private String enlace;
+	
+	@Column(name = "publi_image")
+	private String publiImage;
 	
 	@ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name="user.id")

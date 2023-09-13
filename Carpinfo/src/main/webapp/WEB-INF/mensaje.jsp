@@ -36,7 +36,7 @@
 							</div>
 							<div id="menu">
 								<ul>
-									<li><a href="/info">INFO UTIL</a></li>
+									<li><a href="/">INFO UTIL</a></li>
 									<li><a href="/turismo">TURISMO</a></li>
 									<li><a href="/vecinos">VECINOS</a></li>
 									<li><a href="/contacto">CONTACTO</a></li>
@@ -134,13 +134,10 @@
 								<h2>Servicios</h2>
 								<c:forEach var="publicacion" items="${publicaciones}">
 									<h3>${publicacion.nombre}</h3>
-									<div class="image_wrapper">
-										<a href="#"><img src="images/image_01.jpg" alt=""
-											width="260" height="120" /></a>
-									</div>
+									<img src="${publicacion.publiImage }" alt="" width=220px height=120px/>
 									<p>${publicacion.contenidos}</p>
 									<div class="button_01">
-										<a href="/servicios/${publicacion.id}">Ver más</a>
+										<a href="${publicacion.enlace}">Ver más</a>
 									</div>
 									<div class="cleaner_h30"></div>
 								</c:forEach>

@@ -39,7 +39,7 @@
 							</div>
 							<div id="menu">
 								<ul>
-									<li><a href="/info">INFO UTIL</a></li>
+									<li><a href="/">INFO UTIL</a></li>
 									<li><a href="/turismo">TURISMO</a></li>
 									<li><a href="/vecinos">VECINOS</a></li>
 									<li><a href="/contacto">CONTACTO</a></li>
@@ -112,7 +112,8 @@
 										opositores al régimen de Juan Manuel de Rosas y, debido a su
 										oposición, se vieron obligados a exiliarse en Chile, donde
 										desarrollaron una relación de aprecio mutuo.</p>
-									<img style=width:500px src="/images/casasarmiento.jpg" alt="Casa Sarmiento" />
+									<img style="width: 500px" src="/images/casasarmiento.jpg"
+										alt="Casa Sarmiento" />
 									<div class="cleaner"></div>
 									<div class="button_01 my-2">
 										<a
@@ -141,7 +142,8 @@
 										biblioteca de la memoria. En la Casa-museo se dictan talleres
 										abiertos al público de literatura y artes, y se realizan
 										visitas guiadas.</p>
-									<img style=width:500px src="/images/haroldoconti.jpg" alt="Museo Haroldo Conti" />
+									<img style="width: 500px" src="/images/haroldoconti.jpg"
+										alt="Museo Haroldo Conti" />
 									<div class="cleaner"></div>
 									<div class="button_01 my-2">
 										<a
@@ -161,7 +163,8 @@
 										de aire fresco, descansar rodeado de vegetación y disfrutar de
 										hermosas vistas del río sin buscar lujos, te invito a leer
 										este artículo.</p>
-									<img style=width:500px src="/images/tresbocas.jpg" alt="Mapa del paseo Tres Bocas" />
+									<img style="width: 500px" src="/images/tresbocas.jpg"
+										alt="Mapa del paseo Tres Bocas" />
 									<div class="cleaner"></div>
 									<div class="button_01 my-2">
 										<a href="http://www.deltatresbocas.com.ar/">Ver más</a>
@@ -170,9 +173,9 @@
 								</div>
 								<div class="content_section">
 									<h2>Biblioteca Felicaria</h2>
-									<p class="em_text">La Biblioteca Felicaria es un
-										lugar especial en las islas del Delta del Tigre, que nació del
-										deseo de Genoveva Germana Agripina Lattuga de ayudar a los
+									<p class="em_text">La Biblioteca Felicaria es un lugar
+										especial en las islas del Delta del Tigre, que nació del deseo
+										de Genoveva Germana Agripina Lattuga de ayudar a los
 										habitantes de las islas en cuestiones de salud y cultura.
 										Fundada en 1958, la biblioteca se ha convertido en un centro
 										vital para la comunidad, proporcionando servicios médicos y
@@ -182,7 +185,8 @@
 										brindando libros a las escuelas locales en lancha o canoa. Su
 										financiamiento proviene de contribuciones locales y subsidios
 										gubernamentales.</p>
-									<img style=width:500px src="/images/biblioteca.JPG" alt="Biblioteca Felicaria" />
+									<img style="width: 500px" src="/images/biblioteca.JPG"
+										alt="Biblioteca Felicaria" />
 									<div class="cleaner"></div>
 									<div class="button_01 my-2">
 										<a
@@ -193,48 +197,26 @@
 								</div>
 								<div class="content_section">
 									<h2>Parque de la Costa</h2>
-									<p class="em_text">El Parque de la Costa destaca como uno de 
-										los parques de atracciones más destacados
-										del país. Su extensa extensión de catorce hectáreas se
-										encuentra estratégicamente ubicada entre los ríos Luján y
-										Tigre. Este parque se caracteriza por contar con un amplio
-										sector que alberga todas sus atracciones. Es relevante
-										mencionar que muchas de estas atracciones fueron reubicadas
-										para dar paso a AquaFan, lo que resultó en la división del
-										parque en dos áreas: una dedicada a las atracciones mecánicas
-										y otra enfocada en las atracciones acuáticas. La sección
-										mecánica del parque cuenta con cuatro emocionantes montañas
-										rusas, incluyendo tres de acero y una de agua.</p>
-									<img style=width:500px src="/images/parque-de-la-costa.jpg" alt="Parque de la Costa" />
+									<p class="em_text">El Parque de la Costa destaca como uno
+										de los parques de atracciones más destacados del país. Su
+										extensa extensión de catorce hectáreas se encuentra
+										estratégicamente ubicada entre los ríos Luján y Tigre. Este
+										parque se caracteriza por contar con un amplio sector que
+										alberga todas sus atracciones. Es relevante mencionar que
+										muchas de estas atracciones fueron reubicadas para dar paso a
+										AquaFan, lo que resultó en la división del parque en dos
+										áreas: una dedicada a las atracciones mecánicas y otra
+										enfocada en las atracciones acuáticas. La sección mecánica del
+										parque cuenta con cuatro emocionantes montañas rusas,
+										incluyendo tres de acero y una de agua.</p>
+									<img style="width: 500px" src="/images/parque-de-la-costa.jpg"
+										alt="Parque de la Costa" />
 									<div class="cleaner"></div>
 									<div class="button_01 my-2">
 										<a href="https://www.parquedelacosta.com.ar/">Ver más</a>
 									</div>
 									<div class="cleaner"></div>
 								</div>
-								
-								<c:choose>
-									<c:when test="${usuario.id != null }">
-										<h2>Agregue su Servicio</h2>
-
-										<form:form action="/servicios/nuevo" method="POST"
-											modelAttribute="nuevaPubli">
-											<div class="form-group">
-												<form:label class="form-label" path="nombre">Nombre: </form:label>
-												<form:errors class="text-danger" path="nombre" />
-												<form:input class="form-control" path="nombre" />
-											</div>
-											<div class="form-group">
-												<form:label class="form-label" path="contenidos">Contenido: </form:label>
-												<form:errors class="text-danger" path="contenidos" />
-												<form:input class="form-control" path="contenidos" />
-											</div>
-											<form:input type="hidden" path="creador"
-												value="${usuario.id}" />
-											<button class="btn btn-success mt-2">Agregar</button>
-										</form:form>
-									</c:when>
-								</c:choose>
 							</div>
 							<!-- end of content -->
 							<div id="content_bottom"></div>
@@ -246,13 +228,10 @@
 								<h2>Servicios</h2>
 								<c:forEach var="publicacion" items="${publicaciones}">
 									<h3>${publicacion.nombre}</h3>
-									<div class="image_wrapper">
-										<a href="#"><img src="images/image_01.jpg" alt=""
-											width="260" height="120" /></a>
-									</div>
+									<img src="${publicacion.publiImage }" alt="" width=220px height=120px/>
 									<p>${publicacion.contenidos}</p>
 									<div class="button_01">
-										<a href="/servicios/${publicacion.id}">Ver más</a>
+										<a href="${publicacion.enlace}">Ver más</a>
 									</div>
 									<div class="cleaner_h30"></div>
 								</c:forEach>

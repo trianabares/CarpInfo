@@ -17,6 +17,7 @@ import org.springframework.web.multipart.MultipartFile;
 import com.carpinfo.models.LogReg;
 import com.carpinfo.models.User;
 import com.carpinfo.services.FileUpService;
+import com.carpinfo.services.PublicidadService;
 import com.carpinfo.services.UserService;
 
 import jakarta.servlet.http.HttpSession;
@@ -26,12 +27,13 @@ import jakarta.validation.Valid;
 public class UserController {
 
 	private final UserService userServ;
+	private final PublicidadService publiServ;
 	private final FileUpService fileUpServ;
 
-	public UserController(UserService uSer, FileUpService fileUpServ) {
+	public UserController(UserService uSer, PublicidadService publiServ, FileUpService fileUpServ) {
 		this.userServ = uSer;
+		this.publiServ = publiServ;
 		this.fileUpServ = fileUpServ;
-
 	}
 	
 	//ruta donde se suben las fotos
@@ -49,7 +51,7 @@ public class UserController {
 		}
 		viewModel.addAttribute("user", new User());
 		viewModel.addAttribute("login", new LogReg());
-
+		viewModel.addAttribute("publicaciones", publiServ.findAllPublicaciones());
 		return "registro.jsp";
 	}
 
