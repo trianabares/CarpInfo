@@ -67,13 +67,13 @@
 										Hola,
 										<c:out value="${usuario.nombre}"></c:out>
 									</h2>
-									<img alt="Foto de perfil" src="${usuario.profileImage}" width=70px height=70px>
-									<h6 class="my-2">
-										E-mail:
-										<c:out value="${usuario.email}"></c:out>
-									</h6>
+									<img alt="Foto de perfil" src="${usuario.profileImage}" width=50px height=50px>
+<!-- 									<h6 class="my-2"> -->
+<!-- 										E-mail: -->
+<%-- 										<c:out value="${usuario.email}"></c:out> --%>
+<!-- 									</h6> -->
 									<hr>
-									<a class="m-5" href="/logout">Cerrar sesión</a>
+									<a href="/logout">Cerrar sesión</a>
 								</c:otherwise>
 							</c:choose>
 
