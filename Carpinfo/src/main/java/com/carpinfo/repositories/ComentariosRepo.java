@@ -6,7 +6,6 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
 import com.carpinfo.models.Comentarios;
-import com.carpinfo.models.Temas;
 
 public interface ComentariosRepo extends CrudRepository <Comentarios, Long> {
 	
