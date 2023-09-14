@@ -21,7 +21,6 @@
 <!-- Incluye jQuery antes de Bootstrap -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
-<script src="/script.js"></script>
 
 <link rel="stylesheet" href="/style.css">
 </head>
@@ -61,7 +60,7 @@
 										<label>Password</label> <input type="password" value=""
 											name="password" class="input_field" />
 										<div class="cleaner"></div>
-										<input type="submit" name="login" value="Login" alt="login"
+										<input type="submit" name="login" value="Login" alt="login" class="submit_btn"
 											id="submit_btn" />
 									</form>
 									<a href="/registro">Registrarse</a>
@@ -257,6 +256,6 @@
 			</div>
 		</div>
 	</div>
-	
+	<script src="/script.js"></script>
 </body>
 </html>
