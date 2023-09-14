@@ -24,7 +24,6 @@ a:active, a:hover {
 .button_01 a {
 	display: block;
 	width: 80px;
-	height: 21px;
 	padding: 3px 0 0 0;
 	color: rgb(0, 0, 0);
 	font-size: 12px;
@@ -42,19 +41,6 @@ a:active, a:hover {
 	border: 1px solid #000000;
 	border-radius: 3px;
 	background-color: #ffffff;
-	opacity: 0.75;
-}
-
-.submit_btn{
-	padding: 3px 0 0 0;
-	color: rgb(0, 0, 0);
-	font-size: 12px;
-	font-weight: bold;
-	text-align: center;
-	text-decoration: none;
-	border: 1px solid #000000;
-	border-radius: 3px;
-	background-color: #71950f;
 	opacity: 0.75;
 }
 
@@ -277,6 +263,19 @@ img {
 	outline: none;
 }
 
+.submit_btn{
+	padding: 3px 0 0 0;
+	color: rgb(0, 0, 0);
+	font-size: 12px;
+	font-weight: bold;
+	text-align: center;
+	text-decoration: none;
+	border: 1px solid #000000;
+	border-radius: 3px;
+	background-color: #A1DC8C;
+	opacity: 0.75;
+}
+
 /* end of login */
 
 /* content */
@@ -450,3 +449,46 @@ img {
 }
 
 /* end of footer */
+
+#verHorariosSemana{
+	 margin-bottom: 10px;
+	padding: 3px 0 0 0;
+	width: 160px;
+	color: rgb(0, 0, 0);
+	font-size: 12px;
+	font-weight: bold;
+	text-align: center;
+	text-decoration: none;
+	border: 1px solid #000000;
+	border-radius: 3px;
+	background-color: #A1DC8C;
+	opacity: 0.75;
+}
+
+#verHorariosFinde{
+	padding: 3px 0 0 0;
+	width: 160px;
+	color: rgb(0, 0, 0);
+	font-size: 12px;
+	font-weight: bold;
+	text-align: center;
+	text-decoration: none;
+	border: 1px solid #000000;
+	border-radius: 3px;
+	background-color: #A1DC8C;
+	opacity: 0.75;
+}
+
+#verRecorridoCata{
+	padding: 3px 0 0 0;
+	width: 160px;
+	color: rgb(0, 0, 0);
+	font-size: 12px;
+	font-weight: bold;
+	text-align: center;
+	text-decoration: none;
+	border: 1px solid #000000;
+	border-radius: 3px;
+	background-color: #A1DC8C;
+	opacity: 0.75;
+}
