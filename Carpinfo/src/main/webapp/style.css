@@ -115,6 +115,11 @@ img {
 }
 
 /* menu */
+
+.active {
+      background-color: yellow; /* Cambia el color de fondo al hacer clic */
+    }
+
 #header_left #menu {
 	clear: both;
 	width: 564px;

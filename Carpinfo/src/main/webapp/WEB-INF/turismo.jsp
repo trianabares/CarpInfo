@@ -21,6 +21,7 @@
 <!-- Incluye jQuery antes de Bootstrap -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+<script src="/script.js"></script>
 
 <link rel="stylesheet" href="/style.css">
 </head>
@@ -256,5 +257,6 @@
 			</div>
 		</div>
 	</div>
+	
 </body>
 </html>
