@@ -243,12 +243,14 @@
 					<!-- end of content_wrapper -->
 					<div id="footer">
 						<ul class="footer_menu">
-							<li><a href="#">Inicio</a></li>
-							<li><a href="#">Turismo</a></li>
-							<li class="last_menu"><a href="#">Contact</a></li>
+							<li><a href="/">Info</a></li>
+							<li><a href="/turismo">Turismo</a></li>
+							<li><a href="/vecinos">Vecinos</a></li>
+							<li class="last_menu"><a href="/contacto">Contacto</a></li>
 						</ul>
-						Copyright &copy; 2048 <a href="#">CarpInfo</a> | Designed by <a
-							target="_blank" rel="nofollow" href="http://www.templatemo.com">templatemo</a>
+						Copyright &copy; 2023 <a href="#">CarpInfo</a> | Designed
+						by <a target="_blank" rel="nofollow"
+							href="http://www.templatemo.com">templatemo</a>
 					</div>
 					<!-- end of footer -->
 					<div class="cleaner"></div>

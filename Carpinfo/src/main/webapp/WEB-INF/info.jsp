@@ -201,7 +201,7 @@
 
 									<div class="cleaner"></div>
 									<div class="button_01">
-										<button id="verHorariosSemana">Dias de semana</button>
+										<button id="verHorariosSemana">Días de semana</button>
 									</div>
 									<script>
 										const btnVerHorarios = document
@@ -321,7 +321,7 @@
 
 									<div class="cleaner"></div>
 									<div class="button_01">
-										<button id="verHorariosFinde">fines de semana</button>
+										<button id="verHorariosFinde">Fines de semana</button>
 									</div>
 									<script>
 										const btnVerHorariosFinde = document
@@ -479,46 +479,15 @@
 						<div id="template_sidebar">
 							<div class="sidebar_section">
 								<h2>Servicios</h2>
-								<div class="image_wrapper">
-									<a href="#"><img src="images/image_01.jpg" alt=""
-										width="260" height="120" /></a>
-								</div>
-								<h3>Remises</h3>
-								<p>Sed et quam vitae ipsum vulputate varius vitae semper
-									nunc. Quisque eget elit quis augue pharetra feugiat.</p>
-								<div class="button_01">
-									<a href="#">Read more</a>
-								</div>
-								<div class="cleaner_h30"></div>
-								<div class="image_wrapper">
-									<a href="#"><img src="images/image_02.jpg" alt=""
-										width="260" height="120" /></a>
-								</div>
-								<h3>Almacenes</h3>
-								<p>Donec augue sem, interdum sed elementum a, feugiat id
-									ligula. Sed id blandit dolor. Curabitur nibh ligula.</p>
-							</div>
-							<div class="button_01">
-								<a href="#">Read more</a>
-							</div>
-							<div class="cleaner_h30"></div>
-							<div class="image_wrapper">
-								<a href="#"><img src="images/image_02.jpg" alt=""
-									width="260" height="120" /></a>
-							</div>
-							<h3>Jardinería</h3>
-							<p>Donec augue sem, interdum sed elementum a, feugiat id
-								ligula. Sed id blandit dolor. Curabitur nibh ligula.</p>
-							<div class="cleaner_h30"></div>
-							<div class="image_wrapper">
-								<a href="#"><img src="images/image_02.jpg" alt=""
-									width="260" height="120" /></a>
-							</div>
-							<h3>Construcción</h3>
-							<p>Donec augue sem, interdum sed elementum a, feugiat id
-								ligula. Sed id blandit dolor. Curabitur nibh ligula.</p>
-							<div class="button_01">
-								<a href="#">Read more</a>
+								<c:forEach var="publicacion" items="${publicaciones}">
+									<h3>${publicacion.nombre}</h3>
+									<img src="${publicacion.publiImage }" alt="" width=220px height=120px/>
+									<p>${publicacion.contenidos}</p>
+									<div class="button_01">
+										<a href="${publicacion.enlace}">Ver más</a>
+									</div>
+									<div class="cleaner_h30"></div>
+								</c:forEach>
 							</div>
 						</div>
 						<!-- end of template_sidebar -->
@@ -527,13 +496,12 @@
 					<!-- end of content_wrapper -->
 					<div id="footer">
 						<ul class="footer_menu">
-							<li><a href="#">Home</a></li>
-							<li><a href="#">Tours</a></li>
-							<li><a href="#">News</a></li>
-							<li><a href="#">Gallery</a></li>
-							<li class="last_menu"><a href="#">Contact</a></li>
+							<li><a href="/">Info</a></li>
+							<li><a href="/turismo">Turismo</a></li>
+							<li><a href="/vecinos">Vecinos</a></li>
+							<li class="last_menu"><a href="/contacto">Contacto</a></li>
 						</ul>
-						Copyright &copy; 2048 <a href="#">Your Company Name</a> | Designed
+						Copyright &copy; 2023 <a href="#">CarpInfo</a> | Designed
 						by <a target="_blank" rel="nofollow"
 							href="http://www.templatemo.com">templatemo</a>
 					</div>

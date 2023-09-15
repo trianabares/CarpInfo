@@ -223,7 +223,7 @@
 									<div id="content_bottom"></div>
 									<div class="cleaner"></div>
 									<div class="button_01">
-										<a href="/info">Atras</a>
+										<a href="/">Atrás</a>
 									</div>
 								</div>
 							</div>
@@ -252,13 +252,12 @@
 					<!-- end of content_wrapper -->
 					<div id="footer">
 						<ul class="footer_menu">
-							<li><a href="#">Home</a></li>
-							<li><a href="#">Tours</a></li>
-							<li><a href="#">News</a></li>
-							<li><a href="#">Gallery</a></li>
-							<li class="last_menu"><a href="#">Contact</a></li>
+							<li><a href="/">Info</a></li>
+							<li><a href="/turismo">Turismo</a></li>
+							<li><a href="/vecinos">Vecinos</a></li>
+							<li class="last_menu"><a href="/contacto">Contacto</a></li>
 						</ul>
-						Copyright &copy; 2048 <a href="#">Your Company Name</a> | Designed
+						Copyright &copy; 2023 <a href="#">CarpInfo</a> | Designed
 						by <a target="_blank" rel="nofollow"
 							href="http://www.templatemo.com">templatemo</a>
 					</div>
