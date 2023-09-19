@@ -229,7 +229,7 @@
 									class="table table-striped float_r">
 									<thead>
 										<tr>
-											<th>DE LUNES A VIERNES</th>
+											<th>SÁBADOS Y DOMINGOS</th>
 											<th>SALIDA DE TIGRE</th>
 											<th>LLEGA A TIGRE</th>
 										</tr>
@@ -257,68 +257,83 @@
 										</tr>
 										<tr>
 											<td></td>
-											<td>11:30</td>
+											<td>10:30</td>
 											<td>11:30</td>
 										</tr>
 										<tr>
 											<td></td>
-											<td>12:45</td>
+											<td>11:00</td>
 											<td>12:30</td>
 										</tr>
 										<tr>
 											<td>TARDE</td>
-											<td>13:20</td>
+											<td>11:30</td>
 											<td>14:00</td>
 										</tr>
 										<tr>
 											<td></td>
-											<td>15:00</td>
+											<td>12:00</td>
 											<td>15:00</td>
 										</tr>
 										<tr>
 											<td></td>
-											<td>15:30</td>
+											<td>13:00</td>
 											<td>16:15</td>
 										</tr>
 										<tr>
 											<td></td>
-											<td>15:00</td>
-											<td>15:00</td>
-										</tr>
-										<tr>
-											<td></td>
-											<td>16:15</td>
+											<td>13:20</td>
 											<td>16:45</td>
 										</tr>
 										<tr>
 											<td></td>
-											<td>17:30</td>
-											<td>17:00</td>
+											<td>14:00</td>
+											<td>18:00</td>
 										</tr>
 										<tr>
 											<td></td>
-											<td>18:10</td>
-											<td>17:45</td>
-										</tr>
-										<tr>
-											<td></td>
-											<td>18:30</td>
+											<td>15:00</td>
 											<td>18:15</td>
 										</tr>
 										<tr>
 											<td></td>
-											<td>19:00</td>
+											<td>15:30</td>
 											<td>18:30</td>
 										</tr>
 										<tr>
-											<td>NOCHE</td>
-											<td>20:00</td>
+											<td></td>
+											<td>16:00</td>
 											<td>18:50</td>
 										</tr>
 										<tr>
-											<td></td>
-											<td>21:00</td>
+											<td>NOCHE</td>
+											<td>17:00</td>
 											<td>20:00</td>
+										</tr>
+										<tr>
+											<td></td>
+											<td>17:30</td>
+											<td></td>
+										</tr>
+										<tr>
+											<td></td>
+											<td>18:10</td>
+											<td></td>
+										</tr>
+										<tr>
+											<td></td>
+											<td>18:30</td>
+											<td></td>
+										</tr>
+										<tr>
+											<td></td>
+											<td>19:00</td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>*Unicamente los días Sabado</td>
+											<td>20:00</td>
+											<td></td>
 										</tr>
 									</tbody>
 								</table>
@@ -344,6 +359,10 @@
 														}
 													});
 								</script>
+								<div class="mt-4">
+								<img src="/images/phone.png" class="phone" alt="phone" />
+								<h6 class="contacto">4749-0900</h6>
+								</div>
 
 								<br>
 								<!-- 									DIAS DEL CATAMARÁN SANITARIO -->
@@ -361,7 +380,13 @@
 								<p class="em_text">Nuestra prioridad es tu bienestar, por lo
 									que te invitamos a explorar esta sección y tener a mano esta
 									información valiosa.</p>
-
+									
+									<div class="mt-3">
+									<h5>Prefectura:</h5>
+								<img src="/images/phone.png" class="phone" alt="phone" />
+								<h6 class="contacto">011 4512-4902</h6>
+								</div>
+								
 								<h2>RECORRIDO DEL CATA (CATAMARAN SANITARIO)</h2>
 								<table id="tablaCatamaranSanitario" style="display: none;"
 									class="table table-striped float_r">

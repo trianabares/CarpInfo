@@ -519,6 +519,14 @@ img {
 	opacity: 0.75;
 }
 
+.phone{
+	width: 20px;
+	height: 20px;
+	border-radius: 10px;
+}
+.contacto{
+	display: inline-block;
+}
 
 	
 	
