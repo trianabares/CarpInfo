@@ -48,7 +48,7 @@
 						<div id="header_right">
 							<c:choose>
 								<c:when test="${usuario.id == null }">
-									<h2>Member Login</h2>
+									<h2>Inicio de Sesión</h2>
 									<form action="/login" method="POST">
 										<label>Email</label> <input type="text" name="email"
 											class="input_field" />
@@ -63,15 +63,19 @@
 								</c:when>
 								<c:otherwise>
 									<h2>
-										Hola,
-										<c:out value="${usuario.nombre }"></c:out>
+										Bienvenido,
+										<c:out value="${usuario.nombre}"></c:out>
 									</h2>
-									<h6>
-										email:
-										<c:out value="${usuario.email }"></c:out>
-									</h6>
+									<div class="d-flex">
+										<img class="rounded-circle" alt="Foto de perfil"
+											src="${usuario.profileImage}" width=90px height=60px>
+										<p class="my-2">
+											E-mail:
+											<c:out value="${usuario.email}"></c:out>
+										</p>
+									</div>
 									<hr>
-									<a class="m-5" href="/logout">Cerrar sesión</a>
+									<a href="/logout">Cerrar sesión</a>
 								</c:otherwise>
 							</c:choose>
 
@@ -102,10 +106,10 @@
 											<form:textarea class="form-control" path="contenidos" />
 										</div>
 										<div class="form-group">
-											<label class="form-label">Adjuntar imagen:</label>
-		                    				<input type="file" name="imageUpload" class="form-control">
-		                    			</div>
-										<form:input type="hidden" path="creador" value="${usuario.id}"/>
+											<label class="form-label">Adjuntar imagen:</label> <input
+												type="file" name="imageUpload" class="form-control">
+										</div>
+										<form:input type="hidden" path="creador" value="${usuario.id}" />
 										<form:input type="hidden" path="tema" value="${tema.id}" />
 										<button class="btn btn-success my-2">Agregar</button>
 									</form:form>
@@ -121,7 +125,8 @@
 												<tr>
 													<td>
 														<h5>
-															<a href="/foro/${tema.id}/${mensaje.id}"> <c:out value="${mensaje.titulo}"></c:out></a>
+															<a href="/foro/${tema.id}/${mensaje.id}"> <c:out
+																	value="${mensaje.titulo}"></c:out></a>
 														</h5>
 													</td>
 													<td>
@@ -148,7 +153,8 @@
 								<h2>Servicios</h2>
 								<c:forEach var="publicacion" items="${publicaciones}">
 									<h3>${publicacion.nombre}</h3>
-									<img src="${publicacion.publiImage }" alt="" width=220px height=120px/>
+									<img src="${publicacion.publiImage }" alt="" width=220px
+										height=120px />
 									<p>${publicacion.contenidos}</p>
 									<div class="button_01">
 										<a href="${publicacion.enlace}">Ver más</a>
@@ -168,9 +174,8 @@
 							<li><a href="/vecinos">Vecinos</a></li>
 							<li class="last_menu"><a href="/contacto">Contacto</a></li>
 						</ul>
-						Copyright &copy; 2023 <a href="#">CarpInfo</a> | Designed
-						by <a target="_blank" rel="nofollow"
-							href="http://www.templatemo.com">templatemo</a>
+						Copyright &copy; 2023 <a href="#">CarpInfo</a> | Designed by <a
+							target="_blank" rel="nofollow" href="http://www.templatemo.com">templatemo</a>
 					</div>
 					<!-- end of footer -->
 					<div class="cleaner"></div>

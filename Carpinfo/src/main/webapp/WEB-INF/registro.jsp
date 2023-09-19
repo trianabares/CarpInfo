@@ -47,7 +47,7 @@
 						<div id="header_right">
 							<c:choose>
 								<c:when test="${usuario.id == null }">
-									<h2>Member Login</h2>
+									<h2>Inicio de Sesión</h2>
 									<form action="/login" method="POST">
 										<label>Email</label> <input type="text" name="email"
 											class="input_field" />
@@ -62,107 +62,114 @@
 								</c:when>
 								<c:otherwise>
 									<h2>
-										Hola,
-										<c:out value="${usuario.nombre }"></c:out>
+										Bienvenido,
+										<c:out value="${usuario.nombre}"></c:out>
 									</h2>
-									<h6>
-										email:
-										<c:out value="${usuario.email }"></c:out>
-									</h6>
+									<div class="d-flex">
+										<img class="rounded-circle" alt="Foto de perfil"
+											src="${usuario.profileImage}" width=90px height=60px>
+										<p class="my-2">
+											E-mail:
+											<c:out value="${usuario.email}"></c:out>
+										</p>
+									</div>
 									<hr>
-									<a class="m-5" href="/logout">Cerrar sesión</a>
+									<a href="/logout">Cerrar sesión</a>
 								</c:otherwise>
 							</c:choose>
+
 						</div>
 						<!-- end of header right -->
 						<div class="cleaner"></div>
 					</div>
-					<!-- end of header -->
-					<div id="content_wrapper">
-						<div id="content_outer">
-							<div id="content">
-								<div class="content_section">
-									<div class=" offset-1 formulario-registro">
-										<h2>Registrarse</h2>
-										<div class="text-danger">
-											<form:errors class="text-danger" path="user.*" />
-										</div>
-
-										<form:form method="POST" action="/registration"
-											modelAttribute="user" enctype="multipart/form-data">
-											<div class="mb-3">
-												<form:label path="nombre" class="form-label">Nombre:</form:label>
-												<form:input type="text" path="nombre" class="form-control" />
-											</div>
-
-											<div class="mb-3">
-												<label class="form-label">Foto de perfil:</label> <input
-													type="file" name="imageUpload" class="form-control">
-											</div>
-
-											<div class="mb-3">
-												<form:label path="email" class="form-label">Email:</form:label>
-												<form:input type="email" path="email" class="form-control" />
-											</div>
-
-											<div class="mb-3">
-												<form:label path="password" class="form-label">Contraseña:</form:label>
-												<form:password path="password" class="form-control" />
-											</div>
-											<div class="mb-3">
-												<form:label path="passwordConfirmation" class="form-label">Confirmar Contraseña:</form:label>
-												<form:password path="passwordConfirmation"
-													class="form-control" />
-											</div>
-											<input type="submit" value="Registrarse"
-												class="btn btn-primary" />
-										</form:form>
-										<p class="text-success">
-											<c:out value="${registro }"></c:out>
-										</p>
-									</div>
-								</div>
-							</div>
-							<!-- end of content -->
-							<div id="content_bottom"></div>
-							<div class="cleaner"></div>
-						</div>
-						<!-- end of content_outer -->
-						<div id="template_sidebar">
-							<div class="sidebar_section">
-								<h2>Servicios</h2>
-								<c:forEach var="publicacion" items="${publicaciones}">
-									<h3>${publicacion.nombre}</h3>
-									<img src="${publicacion.publiImage }" alt="" width=220px
-										height=120px />
-									<p>${publicacion.contenidos}</p>
-									<div class="button_01">
-										<a href="${publicacion.enlace}">Ver más</a>
-									</div>
-									<div class="cleaner_h30"></div>
-								</c:forEach>
-							</div>
-						</div>
-						<!-- end of template_sidebar -->
-						<div class="cleaner"></div>
-					</div>
-					<!-- end of content_wrapper -->
-					<div id="footer">
-						<ul class="footer_menu">
-							<li><a href="/">Info</a></li>
-							<li><a href="/turismo">Turismo</a></li>
-							<li><a href="/vecinos">Vecinos</a></li>
-							<li class="last_menu"><a href="/contacto">Contacto</a></li>
-						</ul>
-						Copyright &copy; 2023 <a href="#">CarpInfo</a> | Designed
-						by <a target="_blank" rel="nofollow"
-							href="http://www.templatemo.com">templatemo</a>
-					</div>
-					<!-- end of footer -->
+					<!-- end of header right -->
 					<div class="cleaner"></div>
 				</div>
+				<!-- end of header -->
+				<div id="content_wrapper">
+					<div id="content_outer">
+						<div id="content">
+							<div class="content_section">
+								<div class=" offset-1 formulario-registro">
+									<h2>Registrarse</h2>
+									<div class="text-danger">
+										<form:errors class="text-danger" path="user.*" />
+									</div>
+
+									<form:form method="POST" action="/registration"
+										modelAttribute="user" enctype="multipart/form-data">
+										<div class="mb-3">
+											<form:label path="nombre" class="form-label">Nombre:</form:label>
+											<form:input type="text" path="nombre" class="form-control" />
+										</div>
+
+										<div class="mb-3">
+											<label class="form-label">Foto de perfil:</label> <input
+												type="file" name="imageUpload" class="form-control">
+										</div>
+
+										<div class="mb-3">
+											<form:label path="email" class="form-label">Email:</form:label>
+											<form:input type="email" path="email" class="form-control" />
+										</div>
+
+										<div class="mb-3">
+											<form:label path="password" class="form-label">Contraseña:</form:label>
+											<form:password path="password" class="form-control" />
+										</div>
+										<div class="mb-3">
+											<form:label path="passwordConfirmation" class="form-label">Confirmar Contraseña:</form:label>
+											<form:password path="passwordConfirmation"
+												class="form-control" />
+										</div>
+										<input type="submit" value="Registrarse"
+											class="btn btn-primary" />
+									</form:form>
+									<p class="text-success">
+										<c:out value="${registro }"></c:out>
+									</p>
+								</div>
+							</div>
+						</div>
+						<!-- end of content -->
+						<div id="content_bottom"></div>
+						<div class="cleaner"></div>
+					</div>
+					<!-- end of content_outer -->
+					<div id="template_sidebar">
+						<div class="sidebar_section">
+							<h2>Servicios</h2>
+							<c:forEach var="publicacion" items="${publicaciones}">
+								<h3>${publicacion.nombre}</h3>
+								<img src="${publicacion.publiImage }" alt="" width=220px
+									height=120px />
+								<p>${publicacion.contenidos}</p>
+								<div class="button_01">
+									<a href="${publicacion.enlace}">Ver más</a>
+								</div>
+								<div class="cleaner_h30"></div>
+							</c:forEach>
+						</div>
+					</div>
+					<!-- end of template_sidebar -->
+					<div class="cleaner"></div>
+				</div>
+				<!-- end of content_wrapper -->
+				<div id="footer">
+					<ul class="footer_menu">
+						<li><a href="/">Info</a></li>
+						<li><a href="/turismo">Turismo</a></li>
+						<li><a href="/vecinos">Vecinos</a></li>
+						<li class="last_menu"><a href="/contacto">Contacto</a></li>
+					</ul>
+					Copyright &copy; 2023 <a href="#">CarpInfo</a> | Designed by <a
+						target="_blank" rel="nofollow" href="http://www.templatemo.com">templatemo</a>
+				</div>
+				<!-- end of footer -->
+				<div class="cleaner"></div>
 			</div>
 		</div>
+	</div>
 	</div>
 </body>
 </html>

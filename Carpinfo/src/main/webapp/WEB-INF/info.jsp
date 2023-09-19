@@ -35,7 +35,7 @@
 							</div>
 							<div id="menu">
 								<ul>
-									<li><a href="/info">INFO UTIL</a></li>
+									<li><a href="/">INFO UTIL</a></li>
 									<li><a href="/turismo">TURISMO</a></li>
 									<li><a href="/vecinos">VECINOS</a></li>
 									<li><a href="/contacto">CONTACTO</a></li>
@@ -45,10 +45,9 @@
 						</div>
 						<!-- end of header left -->
 						<div id="header_right">
-
 							<c:choose>
 								<c:when test="${usuario.id == null }">
-									<h2>Member Login</h2>
+									<h2>Inicio de Sesión</h2>
 									<form action="/login" method="POST">
 										<label>Email</label> <input type="text" name="email"
 											class="input_field" />
@@ -63,453 +62,461 @@
 								</c:when>
 								<c:otherwise>
 									<h2>
-										Hola,
-										<c:out value="${usuario.nombre }"></c:out>
+										Bienvenido,
+										<c:out value="${usuario.nombre}"></c:out>
 									</h2>
-									<h6>
-										email:
-										<c:out value="${usuario.email }"></c:out>
-									</h6>
+									<div class="d-flex">
+										<img class="rounded-circle" alt="Foto de perfil"
+											src="${usuario.profileImage}" width=90px height=60px>
+										<p class="my-2">
+											E-mail:
+											<c:out value="${usuario.email}"></c:out>
+										</p>
+									</div>
 									<hr>
-									<a class="m-5" href="/logout">Cerrar sesión</a>
+									<a href="/logout">Cerrar sesión</a>
 								</c:otherwise>
 							</c:choose>
+
 						</div>
 						<!-- end of header right -->
 						<div class="cleaner"></div>
 					</div>
-					<!-- end of header -->
-					<div id="content_wrapper">
-						<div id="content_outer">
-							<div id="content">
-								<div class="content_section">
-									<h2>¡Bienvenidos a la sección informacion util del Delta
-										de Tigre!</h2>
-									<p>Aquí encontrarás toda la información necesaria para
-										disfrutar al máximo de este hermoso destino. Ya sea que estés
-										planeando un relajante paseo en lancha o si eres residente y
-										necesitas conocer los horarios de interisleña, el catamarán
-										sanitario, estés interesado en las alturas de la marea o
-										quieras saber cuándo pasa AYSA (la chata que reparte agua
-										potable), ¡has llegado al lugar indicado!</p>
-
-								</div>
-								<!-- 								HORARIOS DE LANCHA -->
-								<div class="content_section">
-									<h2>Horarios de Interisleña</h2>
-									<p>Aquí encontrarás todos los horarios de lancha colectiva
-										para que regreses a tu hogar o planifiques tu visita de manera
-										conveniente y disfrutes al máximo de este hermoso destino.
-										¡Explora y descubre todos los horarios disponibles!</p>
-									<table id="tablaHorariosSemana" style="display: none;"
-										class="table table-striped float_r">
-										<thead>
-											<tr>
-												<th>DE LUNES A VIERNES</th>
-												<th>SALIDA DE TIGRE</th>
-												<th>LLEGA A TIGRE</th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<td>MAÑANA</td>
-												<td>07:00</td>
-												<td>06:30</td>
-											</tr>
-											<tr>
-												<td></td>
-												<td>08:00</td>
-												<td>07:30</td>
-											</tr>
-											<tr>
-												<td></td>
-												<td>09:00</td>
-												<td>08:30</td>
-											</tr>
-											<tr>
-												<td></td>
-												<td>10:00</td>
-												<td>10:15</td>
-											</tr>
-											<tr>
-												<td></td>
-												<td>11:30</td>
-												<td>11:30</td>
-											</tr>
-											<tr>
-												<td></td>
-												<td>12:45</td>
-												<td>12:30</td>
-											</tr>
-											<tr>
-												<td>TARDE</td>
-												<td>13:20</td>
-												<td>14:00</td>
-											</tr>
-											<tr>
-												<td></td>
-												<td>15:00</td>
-												<td>15:00</td>
-											</tr>
-											<tr>
-												<td></td>
-												<td>15:30</td>
-												<td>16:15</td>
-											</tr>
-											<tr>
-												<td></td>
-												<td>15:00</td>
-												<td>15:00</td>
-											</tr>
-											<tr>
-												<td></td>
-												<td>16:15</td>
-												<td>16:45</td>
-											</tr>
-											<tr>
-												<td></td>
-												<td>17:30</td>
-												<td>17:00</td>
-											</tr>
-											<tr>
-												<td></td>
-												<td>18:10</td>
-												<td>17:45</td>
-											</tr>
-											<tr>
-												<td></td>
-												<td>18:30</td>
-												<td>18:15</td>
-											</tr>
-											<tr>
-												<td></td>
-												<td>19:00</td>
-												<td>18:30</td>
-											</tr>
-											<tr>
-												<td>NOCHE</td>
-												<td>20:00</td>
-												<td>18:50</td>
-											</tr>
-											<tr>
-												<td></td>
-												<td>21:00</td>
-												<td>20:00</td>
-											</tr>
-										</tbody>
-									</table>
-
-									<div class="cleaner"></div>
-									<div class="button_01">
-										<button id="verHorariosSemana">Días de semana</button>
-									</div>
-									<script>
-										const btnVerHorarios = document
-												.getElementById('verHorariosSemana');
-										const tablaHorarios = document
-												.getElementById('tablaHorariosSemana');
-
-										btnVerHorarios
-												.addEventListener(
-														'click',
-														function() {
-															if (tablaHorarios.style.display === 'none') {
-																tablaHorarios.style.display = 'block';
-															} else {
-																tablaHorarios.style.display = 'none';
-															}
-														});
-									</script>
-
-									<table id="tablaHorariosFinde" style="display: none;"
-										class="table table-striped float_r">
-										<thead>
-											<tr>
-												<th>DE LUNES A VIERNES</th>
-												<th>SALIDA DE TIGRE</th>
-												<th>LLEGA A TIGRE</th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<td>MAÑANA</td>
-												<td>07:00</td>
-												<td>06:30</td>
-											</tr>
-											<tr>
-												<td></td>
-												<td>08:00</td>
-												<td>07:30</td>
-											</tr>
-											<tr>
-												<td></td>
-												<td>09:00</td>
-												<td>08:30</td>
-											</tr>
-											<tr>
-												<td></td>
-												<td>10:00</td>
-												<td>10:15</td>
-											</tr>
-											<tr>
-												<td></td>
-												<td>11:30</td>
-												<td>11:30</td>
-											</tr>
-											<tr>
-												<td></td>
-												<td>12:45</td>
-												<td>12:30</td>
-											</tr>
-											<tr>
-												<td>TARDE</td>
-												<td>13:20</td>
-												<td>14:00</td>
-											</tr>
-											<tr>
-												<td></td>
-												<td>15:00</td>
-												<td>15:00</td>
-											</tr>
-											<tr>
-												<td></td>
-												<td>15:30</td>
-												<td>16:15</td>
-											</tr>
-											<tr>
-												<td></td>
-												<td>15:00</td>
-												<td>15:00</td>
-											</tr>
-											<tr>
-												<td></td>
-												<td>16:15</td>
-												<td>16:45</td>
-											</tr>
-											<tr>
-												<td></td>
-												<td>17:30</td>
-												<td>17:00</td>
-											</tr>
-											<tr>
-												<td></td>
-												<td>18:10</td>
-												<td>17:45</td>
-											</tr>
-											<tr>
-												<td></td>
-												<td>18:30</td>
-												<td>18:15</td>
-											</tr>
-											<tr>
-												<td></td>
-												<td>19:00</td>
-												<td>18:30</td>
-											</tr>
-											<tr>
-												<td>NOCHE</td>
-												<td>20:00</td>
-												<td>18:50</td>
-											</tr>
-											<tr>
-												<td></td>
-												<td>21:00</td>
-												<td>20:00</td>
-											</tr>
-										</tbody>
-									</table>
-
-									<div class="cleaner"></div>
-									<div class="button_01">
-										<button id="verHorariosFinde">Fines de semana</button>
-									</div>
-									<script>
-										const btnVerHorariosFinde = document
-												.getElementById('verHorariosFinde');
-										const tablaHorariosFinde = document
-												.getElementById('tablaHorariosFinde');
-
-										btnVerHorariosFinde
-												.addEventListener(
-														'click',
-														function() {
-															if (tablaHorariosFinde.style.display === 'none') {
-																tablaHorariosFinde.style.display = 'block';
-															} else {
-																tablaHorariosFinde.style.display = 'none';
-															}
-														});
-									</script>
-
-									<br>
-									<!-- 									DIAS DEL CATAMARÁN SANITARIO -->
-									<h2>Salud y seguridad</h2>
-
-									<p class="em_text">En esta sección, podrás acceder al
-										recorrido del catamarán sanitario, diseñado para brindar
-										asistencia médica en el delta. Te proporcionaremos los
-										horarios y lugares donde podrás abordar este servicio.</p>
-									<p class="em_text">Además, te facilitaremos los números de
-										teléfono de las salas de primeros auxilios, los bomberos, la
-										prefectura y la policía. Estos contactos son fundamentales
-										para que puedas recibir ayuda y asistencia en caso de
-										cualquier eventualidad.</p>
-									<p class="em_text">Nuestra prioridad es tu bienestar, por
-										lo que te invitamos a explorar esta sección y tener a mano
-										esta información valiosa.</p>
-
-									<h2>RECORRIDO DEL CATA (CATAMARAN SANITARIO)</h2>
-									<table id="tablaCatamaranSanitario" style="display: none;"
-										class="table table-striped float_r">
-										<thead>
-											<tr>
-											
-												<th>Miercoles</th>
-												<th>Jueves</th>
-												<th>Viernes</th>
-												<th>Lunes</th>
-												<th>Martes</th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<td>Rio Sarmiento</td>
-												<td>Arroyo Espera</td>
-												<td>Caraguatá 800</td>
-												<td>Canal Honda</td>
-												<td>Arroyo Correa y Pajarito</td>
-											</tr>
-											<tr>
-												<td>Esc Nº 12</td>
-												<td>Esc Nº 8</td>
-												<td></td>
-												<td>Esc Nº 17</td>
-												<td></td>
-											</tr>
-										</tbody>
-									</table>
-									<div class="cleaner"></div>
-									<div class="button_01">
-										<button id="verRecorridoCata">Recorrido del Cata</button>
-									</div>
-									<script>
-										const btnVerRecorridoCata = document
-												.getElementById('verRecorridoCata');
-										const tablaCatamaranSanitario = document
-												.getElementById('tablaCatamaranSanitario');
-
-										btnVerRecorridoCata
-												.addEventListener(
-														'click',
-														function() {
-															if (tablaCatamaranSanitario.style.display === 'none') {
-																tablaCatamaranSanitario.style.display = 'block';
-															} else {
-																tablaCatamaranSanitario.style.display = 'none';
-															}
-														});
-									</script>
-									<!-- 								AGUA POTABLE -->
-									<br>
-									<h2>Dias y horarios de AYSA</h2>
-
-									<p class="em_text">Aquí encontrarás toda la información
-										necesaria sobre los horarios en los que la empresa de agua
-										potable Aysa realiza la distribución en esta región. Sabemos
-										lo importante que es contar con agua potable en el delta, y
-										nos aseguraremos de que estés informado sobre cuándo puedes
-										esperar la llegada del suministro.</p>
-									<ul class="featured_tour float_l">
-										<li><a href="#">Por la mañana <span>7:00 hs</span></a></li>
-										<li><a href="#">Proin at urna eu sem convallis
-												elementum <span>Ut dapibus tincidunt tempus. Aliquam
-													ac pellentesque mauris. Donec at nisl tellus. </span>
-										</a></li>
-										<li><a href="#">Aenean tristique vehicula laoreet <span>Vestibulum
-													ante ipsum primis in faucibus orci luctus.</span></a></li>
-										<li><a href="#">Praesent et odio sit amet <span>Pellentesque
-													euismod auctor libero, in euismod eros.</span></a></li>
-									</ul>
-									<ul class="featured_tour float_r">
-										<li><a href="#">Vestibulum euismod vulputate
-												consectetur <span>Suspendisse risus tortor, sagittis
-													ac ante.</span>
-										</a></li>
-										<li><a href="#">tiam turpis arcu, tempus id mauris <span>Nulla
-													dictum rhoncus lacinia. Quisque feugiat malesuada nulla,
-													sit amet fringilla dui.</span></a></li>
-										<li><a href="#">Suspendisse id mauris nec mi <span>Pellentesque
-													euismod auctor libero, in euismod eros.</span></a></li>
-										<li><a href="#">Aenean tristique vehicula laoreet. <span>Cras
-													eget massa aliquam dolor consectetur pharetra. Vivamus
-													vehicula tincidunt eleifend</span></a></li>
-									</ul>
-									<div class="cleaner"></div>
-									<div class="button_01">
-										<a href="/info/aysa">Recorrido AYSA</a>
-									</div>
-									<!-- 						ALTURA DE MAREA -->
-									<br>
-									<h2>Pronostico mareologico</h2>
-
-									<p class="em_text">Aquí encontrarás información actualizada
-										sobre las alturas de la marea en el delta, tanto si eres
-										visitante como residente de esta hermosa región. Sabemos que
-										el conocimiento de las mareas es esencial para planificar tus
-										actividades y aprovechar al máximo este entorno.</p>
-
-
-
-
-
-									<div class="cleaner"></div>
-									<div class="button_01">
-										<a href="/info/mareas">Pronóstico de mareas</a>
-									</div>
-									<div class="cleaner"></div>
-								</div>
-							</div>
-
-
-							<!-- end of content -->
-							<div id="content_bottom"></div>
-							<div class="cleaner"></div>
-						</div>
-						<!-- end of content_outer -->
-						<div id="template_sidebar">
-							<div class="sidebar_section">
-								<h2>Servicios</h2>
-								<c:forEach var="publicacion" items="${publicaciones}">
-									<h3>${publicacion.nombre}</h3>
-									<img src="${publicacion.publiImage }" alt="" width=220px height=120px/>
-									<p>${publicacion.contenidos}</p>
-									<div class="button_01">
-										<a href="${publicacion.enlace}">Ver más</a>
-									</div>
-									<div class="cleaner_h30"></div>
-								</c:forEach>
-							</div>
-						</div>
-						<!-- end of template_sidebar -->
-						<div class="cleaner"></div>
-					</div>
-					<!-- end of content_wrapper -->
-					<div id="footer">
-						<ul class="footer_menu">
-							<li><a href="/">Info</a></li>
-							<li><a href="/turismo">Turismo</a></li>
-							<li><a href="/vecinos">Vecinos</a></li>
-							<li class="last_menu"><a href="/contacto">Contacto</a></li>
-						</ul>
-						Copyright &copy; 2023 <a href="#">CarpInfo</a> | Designed
-						by <a target="_blank" rel="nofollow"
-							href="http://www.templatemo.com">templatemo</a>
-					</div>
-					<!-- end of footer -->
+					<!-- end of header right -->
 					<div class="cleaner"></div>
 				</div>
+				<!-- end of header -->
+				<div id="content_wrapper">
+					<div id="content_outer">
+						<div id="content">
+							<div class="content_section">
+								<h2>¡Bienvenidos a la sección informacion util del Delta de
+									Tigre!</h2>
+								<p>Aquí encontrarás toda la información necesaria para
+									disfrutar al máximo de este hermoso destino. Ya sea que estés
+									planeando un relajante paseo en lancha o si eres residente y
+									necesitas conocer los horarios de interisleña, el catamarán
+									sanitario, estés interesado en las alturas de la marea o
+									quieras saber cuándo pasa AYSA (la chata que reparte agua
+									potable), ¡has llegado al lugar indicado!</p>
+
+							</div>
+							<!-- 								HORARIOS DE LANCHA -->
+							<div class="content_section">
+								<h2>Horarios de Interisleña</h2>
+								<p>Aquí encontrarás todos los horarios de lancha colectiva
+									para que regreses a tu hogar o planifiques tu visita de manera
+									conveniente y disfrutes al máximo de este hermoso destino.
+									¡Explora y descubre todos los horarios disponibles!</p>
+								<table id="tablaHorariosSemana" style="display: none;"
+									class="table table-striped float_r">
+									<thead>
+										<tr>
+											<th>DE LUNES A VIERNES</th>
+											<th>SALIDA DE TIGRE</th>
+											<th>LLEGA A TIGRE</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>MAÑANA</td>
+											<td>07:00</td>
+											<td>06:30</td>
+										</tr>
+										<tr>
+											<td></td>
+											<td>08:00</td>
+											<td>07:30</td>
+										</tr>
+										<tr>
+											<td></td>
+											<td>09:00</td>
+											<td>08:30</td>
+										</tr>
+										<tr>
+											<td></td>
+											<td>10:00</td>
+											<td>10:15</td>
+										</tr>
+										<tr>
+											<td></td>
+											<td>11:30</td>
+											<td>11:30</td>
+										</tr>
+										<tr>
+											<td></td>
+											<td>12:45</td>
+											<td>12:30</td>
+										</tr>
+										<tr>
+											<td>TARDE</td>
+											<td>13:20</td>
+											<td>14:00</td>
+										</tr>
+										<tr>
+											<td></td>
+											<td>15:00</td>
+											<td>15:00</td>
+										</tr>
+										<tr>
+											<td></td>
+											<td>15:30</td>
+											<td>16:15</td>
+										</tr>
+										<tr>
+											<td></td>
+											<td>15:00</td>
+											<td>15:00</td>
+										</tr>
+										<tr>
+											<td></td>
+											<td>16:15</td>
+											<td>16:45</td>
+										</tr>
+										<tr>
+											<td></td>
+											<td>17:30</td>
+											<td>17:00</td>
+										</tr>
+										<tr>
+											<td></td>
+											<td>18:10</td>
+											<td>17:45</td>
+										</tr>
+										<tr>
+											<td></td>
+											<td>18:30</td>
+											<td>18:15</td>
+										</tr>
+										<tr>
+											<td></td>
+											<td>19:00</td>
+											<td>18:30</td>
+										</tr>
+										<tr>
+											<td>NOCHE</td>
+											<td>20:00</td>
+											<td>18:50</td>
+										</tr>
+										<tr>
+											<td></td>
+											<td>21:00</td>
+											<td>20:00</td>
+										</tr>
+									</tbody>
+								</table>
+
+								<div class="cleaner"></div>
+								<div class="button_01">
+									<button id="verHorariosSemana">Días de semana</button>
+								</div>
+								<script>
+									const btnVerHorarios = document
+											.getElementById('verHorariosSemana');
+									const tablaHorarios = document
+											.getElementById('tablaHorariosSemana');
+
+									btnVerHorarios
+											.addEventListener(
+													'click',
+													function() {
+														if (tablaHorarios.style.display === 'none') {
+															tablaHorarios.style.display = 'block';
+														} else {
+															tablaHorarios.style.display = 'none';
+														}
+													});
+								</script>
+
+								<table id="tablaHorariosFinde" style="display: none;"
+									class="table table-striped float_r">
+									<thead>
+										<tr>
+											<th>DE LUNES A VIERNES</th>
+											<th>SALIDA DE TIGRE</th>
+											<th>LLEGA A TIGRE</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>MAÑANA</td>
+											<td>07:00</td>
+											<td>06:30</td>
+										</tr>
+										<tr>
+											<td></td>
+											<td>08:00</td>
+											<td>07:30</td>
+										</tr>
+										<tr>
+											<td></td>
+											<td>09:00</td>
+											<td>08:30</td>
+										</tr>
+										<tr>
+											<td></td>
+											<td>10:00</td>
+											<td>10:15</td>
+										</tr>
+										<tr>
+											<td></td>
+											<td>11:30</td>
+											<td>11:30</td>
+										</tr>
+										<tr>
+											<td></td>
+											<td>12:45</td>
+											<td>12:30</td>
+										</tr>
+										<tr>
+											<td>TARDE</td>
+											<td>13:20</td>
+											<td>14:00</td>
+										</tr>
+										<tr>
+											<td></td>
+											<td>15:00</td>
+											<td>15:00</td>
+										</tr>
+										<tr>
+											<td></td>
+											<td>15:30</td>
+											<td>16:15</td>
+										</tr>
+										<tr>
+											<td></td>
+											<td>15:00</td>
+											<td>15:00</td>
+										</tr>
+										<tr>
+											<td></td>
+											<td>16:15</td>
+											<td>16:45</td>
+										</tr>
+										<tr>
+											<td></td>
+											<td>17:30</td>
+											<td>17:00</td>
+										</tr>
+										<tr>
+											<td></td>
+											<td>18:10</td>
+											<td>17:45</td>
+										</tr>
+										<tr>
+											<td></td>
+											<td>18:30</td>
+											<td>18:15</td>
+										</tr>
+										<tr>
+											<td></td>
+											<td>19:00</td>
+											<td>18:30</td>
+										</tr>
+										<tr>
+											<td>NOCHE</td>
+											<td>20:00</td>
+											<td>18:50</td>
+										</tr>
+										<tr>
+											<td></td>
+											<td>21:00</td>
+											<td>20:00</td>
+										</tr>
+									</tbody>
+								</table>
+
+								<div class="cleaner"></div>
+								<div class="button_01">
+									<button id="verHorariosFinde">Fines de semana</button>
+								</div>
+								<script>
+									const btnVerHorariosFinde = document
+											.getElementById('verHorariosFinde');
+									const tablaHorariosFinde = document
+											.getElementById('tablaHorariosFinde');
+
+									btnVerHorariosFinde
+											.addEventListener(
+													'click',
+													function() {
+														if (tablaHorariosFinde.style.display === 'none') {
+															tablaHorariosFinde.style.display = 'block';
+														} else {
+															tablaHorariosFinde.style.display = 'none';
+														}
+													});
+								</script>
+
+								<br>
+								<!-- 									DIAS DEL CATAMARÁN SANITARIO -->
+								<h2>Salud y seguridad</h2>
+
+								<p class="em_text">En esta sección, podrás acceder al
+									recorrido del catamarán sanitario, diseñado para brindar
+									asistencia médica en el delta. Te proporcionaremos los horarios
+									y lugares donde podrás abordar este servicio.</p>
+								<p class="em_text">Además, te facilitaremos los números de
+									teléfono de las salas de primeros auxilios, los bomberos, la
+									prefectura y la policía. Estos contactos son fundamentales para
+									que puedas recibir ayuda y asistencia en caso de cualquier
+									eventualidad.</p>
+								<p class="em_text">Nuestra prioridad es tu bienestar, por lo
+									que te invitamos a explorar esta sección y tener a mano esta
+									información valiosa.</p>
+
+								<h2>RECORRIDO DEL CATA (CATAMARAN SANITARIO)</h2>
+								<table id="tablaCatamaranSanitario" style="display: none;"
+									class="table table-striped float_r">
+									<thead>
+										<tr>
+
+											<th>Miercoles</th>
+											<th>Jueves</th>
+											<th>Viernes</th>
+											<th>Lunes</th>
+											<th>Martes</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>Rio Sarmiento</td>
+											<td>Arroyo Espera</td>
+											<td>Caraguatá 800</td>
+											<td>Canal Honda</td>
+											<td>Arroyo Correa y Pajarito</td>
+										</tr>
+										<tr>
+											<td>Esc Nº 12</td>
+											<td>Esc Nº 8</td>
+											<td></td>
+											<td>Esc Nº 17</td>
+											<td></td>
+										</tr>
+									</tbody>
+								</table>
+								<div class="cleaner"></div>
+								<div class="button_01">
+									<button id="verRecorridoCata">Recorrido del Cata</button>
+								</div>
+								<script>
+									const btnVerRecorridoCata = document
+											.getElementById('verRecorridoCata');
+									const tablaCatamaranSanitario = document
+											.getElementById('tablaCatamaranSanitario');
+
+									btnVerRecorridoCata
+											.addEventListener(
+													'click',
+													function() {
+														if (tablaCatamaranSanitario.style.display === 'none') {
+															tablaCatamaranSanitario.style.display = 'block';
+														} else {
+															tablaCatamaranSanitario.style.display = 'none';
+														}
+													});
+								</script>
+								<!-- 								AGUA POTABLE -->
+								<br>
+								<h2>Dias y horarios de AYSA</h2>
+
+								<p class="em_text">Aquí encontrarás toda la información
+									necesaria sobre los horarios en los que la empresa de agua
+									potable Aysa realiza la distribución en esta región. Sabemos lo
+									importante que es contar con agua potable en el delta, y nos
+									aseguraremos de que estés informado sobre cuándo puedes esperar
+									la llegada del suministro.</p>
+								<ul class="featured_tour float_l">
+									<li><a href="#">Por la mañana <span>7:00 hs</span></a></li>
+									<li><a href="#">Proin at urna eu sem convallis
+											elementum <span>Ut dapibus tincidunt tempus. Aliquam
+												ac pellentesque mauris. Donec at nisl tellus. </span>
+									</a></li>
+									<li><a href="#">Aenean tristique vehicula laoreet <span>Vestibulum
+												ante ipsum primis in faucibus orci luctus.</span></a></li>
+									<li><a href="#">Praesent et odio sit amet <span>Pellentesque
+												euismod auctor libero, in euismod eros.</span></a></li>
+								</ul>
+								<ul class="featured_tour float_r">
+									<li><a href="#">Vestibulum euismod vulputate
+											consectetur <span>Suspendisse risus tortor, sagittis
+												ac ante.</span>
+									</a></li>
+									<li><a href="#">tiam turpis arcu, tempus id mauris <span>Nulla
+												dictum rhoncus lacinia. Quisque feugiat malesuada nulla, sit
+												amet fringilla dui.</span></a></li>
+									<li><a href="#">Suspendisse id mauris nec mi <span>Pellentesque
+												euismod auctor libero, in euismod eros.</span></a></li>
+									<li><a href="#">Aenean tristique vehicula laoreet. <span>Cras
+												eget massa aliquam dolor consectetur pharetra. Vivamus
+												vehicula tincidunt eleifend</span></a></li>
+								</ul>
+								<div class="cleaner"></div>
+								<div class="button_01">
+									<a href="/info/aysa">Recorrido AYSA</a>
+								</div>
+								<!-- 						ALTURA DE MAREA -->
+								<br>
+								<h2>Pronostico mareologico</h2>
+
+								<p class="em_text">Aquí encontrarás información actualizada
+									sobre las alturas de la marea en el delta, tanto si eres
+									visitante como residente de esta hermosa región. Sabemos que el
+									conocimiento de las mareas es esencial para planificar tus
+									actividades y aprovechar al máximo este entorno.</p>
+
+
+
+
+
+								<div class="cleaner"></div>
+								<div class="button_01">
+									<a href="/info/mareas">Pronóstico de mareas</a>
+								</div>
+								<div class="cleaner"></div>
+							</div>
+						</div>
+
+
+						<!-- end of content -->
+						<div id="content_bottom"></div>
+						<div class="cleaner"></div>
+					</div>
+					<!-- end of content_outer -->
+					<div id="template_sidebar">
+						<div class="sidebar_section">
+							<h2>Servicios</h2>
+							<c:forEach var="publicacion" items="${publicaciones}">
+								<h3>${publicacion.nombre}</h3>
+								<img src="${publicacion.publiImage }" alt="" width=220px
+									height=120px />
+								<p>${publicacion.contenidos}</p>
+								<div class="button_01">
+									<a href="${publicacion.enlace}">Ver más</a>
+								</div>
+								<div class="cleaner_h30"></div>
+							</c:forEach>
+						</div>
+					</div>
+					<!-- end of template_sidebar -->
+					<div class="cleaner"></div>
+				</div>
+				<!-- end of content_wrapper -->
+				<div id="footer">
+					<ul class="footer_menu">
+						<li><a href="/">Info</a></li>
+						<li><a href="/turismo">Turismo</a></li>
+						<li><a href="/vecinos">Vecinos</a></li>
+						<li class="last_menu"><a href="/contacto">Contacto</a></li>
+					</ul>
+					Copyright &copy; 2023 <a href="#">CarpInfo</a> | Designed by <a
+						target="_blank" rel="nofollow" href="http://www.templatemo.com">templatemo</a>
+				</div>
+				<!-- end of footer -->
+				<div class="cleaner"></div>
 			</div>
 		</div>
+	</div>
 	</div>
 </body>
 </html>
