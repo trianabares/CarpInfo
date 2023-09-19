@@ -113,6 +113,14 @@ img {
 	height: 250px;
 }
 
+
+#fotoPerfil img{
+	border-radius: 50%;
+	height: 60px;
+	width: 60px;
+	object-fit:cover;
+}
+
 /* menu */
 
 .active {
@@ -198,6 +206,9 @@ img {
 /* end of site title */
 
 /* login */
+
+
+
 #header #header_right {
 	float: right;
 	width: 300px;
@@ -492,3 +503,7 @@ img {
 	background-color: #A1DC8C;
 	opacity: 0.75;
 }
+
+
+	
+	

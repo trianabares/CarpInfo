@@ -65,9 +65,9 @@
 										Bienvenido,
 										<c:out value="${usuario.nombre}"></c:out>
 									</h2>
-									<div class="d-flex">
+									<div id="fotoPerfil" class="d-flex">
 										<img class="rounded-circle" alt="Foto de perfil"
-											src="${usuario.profileImage}" width=90px height=60px>
+											src="${usuario.profileImage}">
 										<p class="my-2">
 											E-mail:
 											<c:out value="${usuario.email}"></c:out>
