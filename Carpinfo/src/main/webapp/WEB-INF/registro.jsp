@@ -82,12 +82,11 @@
 						<!-- end of header right -->
 						<div class="cleaner"></div>
 					</div>
-				<!-- end of header -->
-				<div id="content_wrapper">
-					<div id="content_outer">
-						<div id="content">
-							<div class="content_section">
-								<div class=" offset-1 formulario-registro">
+					<!-- end of header -->
+					<div id="content_wrapper">
+						<div id="content_outer">
+							<div id="content">
+								<div class="content_section">
 									<h2>Registrarse</h2>
 									<div class="text-danger">
 										<form:errors class="text-danger" path="user.*" />
@@ -119,54 +118,49 @@
 											<form:password path="passwordConfirmation"
 												class="form-control" />
 										</div>
-										<input type="submit" value="Registrarse"
-											class="btn btn-primary" />
-									</form:form>
-									<p class="text-success">
-										<c:out value="${registro }"></c:out>
-									</p>
+										<input type="submit" class="button_01" value="Registrarse" alt="Registrarse"/>
+										</form:form>
 								</div>
 							</div>
+							<!-- end of content -->
+							<div id="content_bottom"></div>
+							<div class="cleaner"></div>
 						</div>
-						<!-- end of content -->
-						<div id="content_bottom"></div>
+						<!-- end of content_outer -->
+						<div id="template_sidebar">
+							<div class="sidebar_section">
+								<h2>Servicios</h2>
+								<c:forEach var="publicacion" items="${publicaciones}">
+									<h3>${publicacion.nombre}</h3>
+									<img src="${publicacion.publiImage }" alt="" width=220px
+										height=120px />
+									<p>${publicacion.contenidos}</p>
+									<div class="button_01">
+										<a href="${publicacion.enlace}">Ver más</a>
+									</div>
+									<div class="cleaner_h30"></div>
+								</c:forEach>
+							</div>
+						</div>
+						<!-- end of template_sidebar -->
 						<div class="cleaner"></div>
 					</div>
-					<!-- end of content_outer -->
-					<div id="template_sidebar">
-						<div class="sidebar_section">
-							<h2>Servicios</h2>
-							<c:forEach var="publicacion" items="${publicaciones}">
-								<h3>${publicacion.nombre}</h3>
-								<img src="${publicacion.publiImage }" alt="" width=220px
-									height=120px />
-								<p>${publicacion.contenidos}</p>
-								<div class="button_01">
-									<a href="${publicacion.enlace}">Ver más</a>
-								</div>
-								<div class="cleaner_h30"></div>
-							</c:forEach>
-						</div>
+					<!-- end of content_wrapper -->
+					<div id="footer">
+						<ul class="footer_menu">
+							<li><a href="/">Info</a></li>
+							<li><a href="/turismo">Turismo</a></li>
+							<li><a href="/vecinos">Vecinos</a></li>
+							<li class="last_menu"><a href="/contacto">Contacto</a></li>
+						</ul>
+						Copyright &copy; 2023 <a href="#">CarpInfo</a> | Designed by <a
+							target="_blank" rel="nofollow" href="http://www.templatemo.com">templatemo</a>
 					</div>
-					<!-- end of template_sidebar -->
+					<!-- end of footer -->
 					<div class="cleaner"></div>
 				</div>
-				<!-- end of content_wrapper -->
-				<div id="footer">
-					<ul class="footer_menu">
-						<li><a href="/">Info</a></li>
-						<li><a href="/turismo">Turismo</a></li>
-						<li><a href="/vecinos">Vecinos</a></li>
-						<li class="last_menu"><a href="/contacto">Contacto</a></li>
-					</ul>
-					Copyright &copy; 2023 <a href="#">CarpInfo</a> | Designed by <a
-						target="_blank" rel="nofollow" href="http://www.templatemo.com">templatemo</a>
-				</div>
-				<!-- end of footer -->
-				<div class="cleaner"></div>
 			</div>
 		</div>
-	</div>
 	</div>
 </body>
 </html>
