@@ -83,197 +83,194 @@
 						<!-- end of header right -->
 						<div class="cleaner"></div>
 					</div>
-					<!-- end of header right -->
-					<div class="cleaner"></div>
-				</div>
-				<!-- end of header -->
-				<div id="content_wrapper">
+					<!-- end of header -->
+					<div id="content_wrapper">
 
-					<div id="content_outer">
-						<div id="content">
-							<div class="content_section">
-								<h2>RECORRIDO DE AYSA</h2>
-							</div>
-							<div class="content_section">
-								<table class="table table-striped float_r">
+						<div id="content_outer">
+							<div id="content">
+								<div class="content_section">
+									<h2>RECORRIDO DE AYSA</h2>
+								</div>
+								<div class="content_section">
+									<table class="table table-striped float_r">
 
-									<thead>
-										<tr>
-											<th>RECORRIDO</th>
-											<th>FECHA</th>
-											<th>RIO / ARROYO</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>1</td>
-											<td>VIERNES 8/9</td>
-											<td>A° DURAZNO</td>
+										<thead>
+											<tr>
+												<th>RECORRIDO</th>
+												<th>FECHA</th>
+												<th>RIO / ARROYO</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>1</td>
+												<td>VIERNES 8/9</td>
+												<td>A° DURAZNO</td>
 
-										</tr>
-										<tr>
-											<td></td>
-											<td>VIERNES 8/9</td>
-											<td>A° CAPITANCITO</td>
-										</tr>
-										<tr>
-											<td></td>
-											<td>VIERNES 8/9</td>
-											<td>A° CARACOLES</td>
-										</tr>
-										<tr>
-											<td></td>
-											<td>VIERNES 8/9</td>
-											<td>A° LUCIANO</td>
-										</tr>
-										<tr>
-											<td></td>
-											<td>VIERNES 8/9</td>
-											<td>A° CHANÁ</td>
-										</tr>
-										<tr>
-											<td></td>
-											<td>VIERNES 8/9</td>
-											<td>RÍO PARANÁ MINÍ</td>
-										</tr>
+											</tr>
+											<tr>
+												<td></td>
+												<td>VIERNES 8/9</td>
+												<td>A° CAPITANCITO</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>VIERNES 8/9</td>
+												<td>A° CARACOLES</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>VIERNES 8/9</td>
+												<td>A° LUCIANO</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>VIERNES 8/9</td>
+												<td>A° CHANÁ</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>VIERNES 8/9</td>
+												<td>RÍO PARANÁ MINÍ</td>
+											</tr>
 
-									</tbody>
+										</tbody>
 
-								</table>
+									</table>
 
-								<!-- 									RECORRIDO DOS -->
-								<table class="table table-striped float_r">
+									<!-- 									RECORRIDO DOS -->
+									<table class="table table-striped float_r">
 
-									<thead>
-										<tr>
-											<th>RECORRIDO</th>
-											<th>FECHA</th>
-											<th>RIO / ARROYO</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>2</td>
-											<td>VIERNES 8/9</td>
-											<td>A° PAYCARABY</td>
+										<thead>
+											<tr>
+												<th>RECORRIDO</th>
+												<th>FECHA</th>
+												<th>RIO / ARROYO</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>2</td>
+												<td>VIERNES 8/9</td>
+												<td>A° PAYCARABY</td>
 
-										</tr>
-										<tr>
-											<td></td>
-											<td>VIERNES 8/9</td>
-											<td>A° ESTUDIANTE</td>
-										</tr>
-										<tr>
-											<td></td>
-											<td>VIERNES 8/9</td>
-											<td>A° C AMBROSONI</td>
-										</tr>
-										<tr>
-											<td></td>
-											<td>VIERNES 8/9</td>
-											<td>A° FELICARIA</td>
-										</tr>
-										<tr>
-											<td></td>
-											<td>VIERNES 8/9</td>
-											<td>A° FELICARIA ABAJO</td>
-										</tr>
+											</tr>
+											<tr>
+												<td></td>
+												<td>VIERNES 8/9</td>
+												<td>A° ESTUDIANTE</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>VIERNES 8/9</td>
+												<td>A° C AMBROSONI</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>VIERNES 8/9</td>
+												<td>A° FELICARIA</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>VIERNES 8/9</td>
+												<td>A° FELICARIA ABAJO</td>
+											</tr>
 
-									</tbody>
+										</tbody>
 
-								</table>
+									</table>
 
-								<!-- 									RECRRIDO TRES -->
-								<table class="table table-striped float_r">
+									<!-- 									RECRRIDO TRES -->
+									<table class="table table-striped float_r">
 
-									<thead>
-										<tr>
-											<th>RECORRIDO</th>
-											<th>FECHA</th>
-											<th>RIO / ARROYO</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>3</td>
-											<td>VIERNES 8/9</td>
-											<td>RÍO LUJÁN</td>
+										<thead>
+											<tr>
+												<th>RECORRIDO</th>
+												<th>FECHA</th>
+												<th>RIO / ARROYO</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>3</td>
+												<td>VIERNES 8/9</td>
+												<td>RÍO LUJÁN</td>
 
-										</tr>
-										<tr>
-											<td></td>
-											<td>VIERNES 8/9</td>
-											<td>RÍO CARAPACHAY</td>
-										</tr>
-										<tr>
-											<td></td>
-											<td>VIERNES 8/9</td>
-											<td>MUELLE ZANJÓN</td>
-										</tr>
-										<tr>
-											<td></td>
-											<td>VIERNES 8/9</td>
-											<td>A° ANGOSTURA</td>
-										</tr>
-										<tr>
-											<td></td>
-											<td>VIERNES 8/9</td>
-											<td>CANAL ORTIZ</td>
-										</tr>
+											</tr>
+											<tr>
+												<td></td>
+												<td>VIERNES 8/9</td>
+												<td>RÍO CARAPACHAY</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>VIERNES 8/9</td>
+												<td>MUELLE ZANJÓN</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>VIERNES 8/9</td>
+												<td>A° ANGOSTURA</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>VIERNES 8/9</td>
+												<td>CANAL ORTIZ</td>
+											</tr>
 
-									</tbody>
+										</tbody>
 
-								</table>
+									</table>
 
 
 
 
-								<div id="content_bottom"></div>
-								<div class="cleaner"></div>
-								<div class="button_01">
-									<a href="/">Atrás</a>
+									<div id="content_bottom"></div>
+									<div class="cleaner"></div>
+									<div class="button_01">
+										<a href="/">Atrás</a>
+									</div>
 								</div>
 							</div>
+							<!-- end of content -->
+							<div id="content_bottom"></div>
+							<div class="cleaner"></div>
 						</div>
-						<!-- end of content -->
-						<div id="content_bottom"></div>
+						<!-- end of content_outer -->
+						<div id="template_sidebar">
+							<div class="sidebar_section">
+								<h2>Servicios</h2>
+								<c:forEach var="publicacion" items="${publicaciones}">
+									<h3>${publicacion.nombre}</h3>
+									<img src="${publicacion.publiImage }" alt="" width=220px
+										height=120px />
+									<p>${publicacion.contenidos}</p>
+									<div class="button_01">
+										<a href="${publicacion.enlace}">Ver más</a>
+									</div>
+									<div class="cleaner_h30"></div>
+								</c:forEach>
+							</div>
+						</div>
+						<!-- end of template_sidebar -->
 						<div class="cleaner"></div>
 					</div>
-					<!-- end of content_outer -->
-					<div id="template_sidebar">
-						<div class="sidebar_section">
-							<h2>Servicios</h2>
-							<c:forEach var="publicacion" items="${publicaciones}">
-								<h3>${publicacion.nombre}</h3>
-								<img src="${publicacion.publiImage }" alt="" width=220px
-									height=120px />
-								<p>${publicacion.contenidos}</p>
-								<div class="button_01">
-									<a href="${publicacion.enlace}">Ver más</a>
-								</div>
-								<div class="cleaner_h30"></div>
-							</c:forEach>
-						</div>
+					<!-- end of content_wrapper -->
+					<div id="footer">
+						<ul class="footer_menu">
+							<li><a href="/">Info</a></li>
+							<li><a href="/turismo">Turismo</a></li>
+							<li><a href="/vecinos">Vecinos</a></li>
+							<li class="last_menu"><a href="/contacto">Contacto</a></li>
+						</ul>
+						Copyright &copy; 2023 <a href="#">CarpInfo</a> | Designed by <a
+							target="_blank" rel="nofollow" href="http://www.templatemo.com">templatemo</a>
 					</div>
-					<!-- end of template_sidebar -->
+					<!-- end of footer -->
 					<div class="cleaner"></div>
 				</div>
-				<!-- end of content_wrapper -->
-				<div id="footer">
-					<ul class="footer_menu">
-						<li><a href="/">Info</a></li>
-						<li><a href="/turismo">Turismo</a></li>
-						<li><a href="/vecinos">Vecinos</a></li>
-						<li class="last_menu"><a href="/contacto">Contacto</a></li>
-					</ul>
-					Copyright &copy; 2023 <a href="#">CarpInfo</a> | Designed by <a
-						target="_blank" rel="nofollow" href="http://www.templatemo.com">templatemo</a>
-				</div>
-				<!-- end of footer -->
-				<div class="cleaner"></div>
 			</div>
 		</div>
-	</div>
 	</div>
 </body>
 </html>

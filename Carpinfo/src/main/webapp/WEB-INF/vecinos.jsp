@@ -83,9 +83,6 @@
 						<!-- end of header right -->
 						<div class="cleaner"></div>
 					</div>
-					<!-- end of header right -->
-					<div class="cleaner"></div>
-				</div>
 				<!-- end of header -->
 				<div id="content_wrapper">
 					<div id="content_outer">

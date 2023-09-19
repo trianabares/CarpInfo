@@ -83,96 +83,93 @@
 						<!-- end of header right -->
 						<div class="cleaner"></div>
 					</div>
-					<!-- end of header right -->
-					<div class="cleaner"></div>
-				</div>
-				<!-- end of header -->
-				<div id="content_wrapper">
+					<!-- end of header -->
+					<div id="content_wrapper">
 
-					<div id="content_outer">
-						<div id="content">
-							<div class="content_section">
-								<h2>PRONOSTICO MAREOLOGICO</h2>
-								<p>Corrección a las alturas de la Tablas de Marea para los
-									puertos de La Plata, Buenos Aires, San Fernando e Isla Martín
-									García.</p>
-								<p>
-									<strong>CINCUENTA CENTIMETROS SOBRE LOS VALORES
-										INDICADOS EN LAS TABLAS DE MAREA, LUEGO DISMINUYENDO HASTA
-										CUARENTA CENTIMETROS SOBRE DE ESTOS.-</strong>
-								</p>
-							</div>
-							<div class="content_section">
-								<table class="table table-striped float_r">
+						<div id="content_outer">
+							<div id="content">
+								<div class="content_section">
+									<h2>PRONOSTICO MAREOLOGICO</h2>
+									<p>Corrección a las alturas de la Tablas de Marea para los
+										puertos de La Plata, Buenos Aires, San Fernando e Isla Martín
+										García.</p>
+									<p>
+										<strong>CINCUENTA CENTIMETROS SOBRE LOS VALORES
+											INDICADOS EN LAS TABLAS DE MAREA, LUEGO DISMINUYENDO HASTA
+											CUARENTA CENTIMETROS SOBRE DE ESTOS.-</strong>
+									</p>
+								</div>
+								<div class="content_section">
+									<table class="table table-striped float_r">
 
-									<thead>
-										<tr>
-											<th>LUGAR</th>
-											<th>HORA</th>
+										<thead>
+											<tr>
+												<th>LUGAR</th>
+												<th>HORA</th>
 
-											<th>ALTURA (m)</th>
-											<th>FECHA</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>SAN FERNANDO / TIGRE</td>
-											<td>${hora}</td>
+												<th>ALTURA (m)</th>
+												<th>FECHA</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>SAN FERNANDO / TIGRE</td>
+												<td>${hora}</td>
 
-											<td>${altura }</td>
-											<td>${fecha }</td>
+												<td>${altura }</td>
+												<td>${fecha }</td>
 
-										</tr>
-									</tbody>
-								</table>
+											</tr>
+										</tbody>
+									</table>
 
-								<div id="content_bottom"></div>
-								<div class="cleaner"></div>
+									<div id="content_bottom"></div>
+									<div class="cleaner"></div>
 
-								<div class="button_01">
-									<a href="/">Atrás</a>
+									<div class="button_01">
+										<a href="/">Atrás</a>
+									</div>
 								</div>
 							</div>
+							<!-- end of content -->
+							<div id="content_bottom"></div>
+							<div class="cleaner"></div>
 						</div>
-						<!-- end of content -->
-						<div id="content_bottom"></div>
+						<!-- end of content_outer -->
+						<div id="template_sidebar">
+							<div class="sidebar_section">
+								<h2>Servicios</h2>
+								<c:forEach var="publicacion" items="${publicaciones}">
+									<h3>${publicacion.nombre}</h3>
+									<img src="${publicacion.publiImage }" alt="" width=220px
+										height=120px />
+									<p>${publicacion.contenidos}</p>
+									<div class="button_01">
+										<a href="${publicacion.enlace}">Ver más</a>
+									</div>
+									<div class="cleaner_h30"></div>
+								</c:forEach>
+							</div>
+						</div>
+						<!-- end of template_sidebar -->
 						<div class="cleaner"></div>
 					</div>
-					<!-- end of content_outer -->
-					<div id="template_sidebar">
-						<div class="sidebar_section">
-							<h2>Servicios</h2>
-							<c:forEach var="publicacion" items="${publicaciones}">
-								<h3>${publicacion.nombre}</h3>
-								<img src="${publicacion.publiImage }" alt="" width=220px
-									height=120px />
-								<p>${publicacion.contenidos}</p>
-								<div class="button_01">
-									<a href="${publicacion.enlace}">Ver más</a>
-								</div>
-								<div class="cleaner_h30"></div>
-							</c:forEach>
-						</div>
+					<!-- end of content_wrapper -->
+					<div id="footer">
+						<ul class="footer_menu">
+							<li><a href="/">Info</a></li>
+							<li><a href="/turismo">Turismo</a></li>
+							<li><a href="/vecinos">Vecinos</a></li>
+							<li class="last_menu"><a href="/contacto">Contacto</a></li>
+						</ul>
+						Copyright &copy; 2023 <a href="#">CarpInfo</a> | Designed by <a
+							target="_blank" rel="nofollow" href="http://www.templatemo.com">templatemo</a>
 					</div>
-					<!-- end of template_sidebar -->
+					<!-- end of footer -->
 					<div class="cleaner"></div>
 				</div>
-				<!-- end of content_wrapper -->
-				<div id="footer">
-					<ul class="footer_menu">
-						<li><a href="/">Info</a></li>
-						<li><a href="/turismo">Turismo</a></li>
-						<li><a href="/vecinos">Vecinos</a></li>
-						<li class="last_menu"><a href="/contacto">Contacto</a></li>
-					</ul>
-					Copyright &copy; 2023 <a href="#">CarpInfo</a> | Designed by <a
-						target="_blank" rel="nofollow" href="http://www.templatemo.com">templatemo</a>
-				</div>
-				<!-- end of footer -->
-				<div class="cleaner"></div>
 			</div>
 		</div>
-	</div>
 	</div>
 </body>
 </html>
