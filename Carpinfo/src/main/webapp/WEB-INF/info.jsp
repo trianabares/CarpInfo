@@ -423,31 +423,7 @@
 									importante que es contar con agua potable en el delta, y nos
 									aseguraremos de que estés informado sobre cuándo puedes esperar
 									la llegada del suministro.</p>
-								<ul class="featured_tour float_l">
-									<li><a href="#">Por la mañana <span>7:00 hs</span></a></li>
-									<li><a href="#">Proin at urna eu sem convallis
-											elementum <span>Ut dapibus tincidunt tempus. Aliquam
-												ac pellentesque mauris. Donec at nisl tellus. </span>
-									</a></li>
-									<li><a href="#">Aenean tristique vehicula laoreet <span>Vestibulum
-												ante ipsum primis in faucibus orci luctus.</span></a></li>
-									<li><a href="#">Praesent et odio sit amet <span>Pellentesque
-												euismod auctor libero, in euismod eros.</span></a></li>
-								</ul>
-								<ul class="featured_tour float_r">
-									<li><a href="#">Vestibulum euismod vulputate
-											consectetur <span>Suspendisse risus tortor, sagittis
-												ac ante.</span>
-									</a></li>
-									<li><a href="#">tiam turpis arcu, tempus id mauris <span>Nulla
-												dictum rhoncus lacinia. Quisque feugiat malesuada nulla, sit
-												amet fringilla dui.</span></a></li>
-									<li><a href="#">Suspendisse id mauris nec mi <span>Pellentesque
-												euismod auctor libero, in euismod eros.</span></a></li>
-									<li><a href="#">Aenean tristique vehicula laoreet. <span>Cras
-												eget massa aliquam dolor consectetur pharetra. Vivamus
-												vehicula tincidunt eleifend</span></a></li>
-								</ul>
+								
 								<div class="cleaner"></div>
 								<div class="button_01">
 									<a href="/info/aysa">Recorrido AYSA</a>
