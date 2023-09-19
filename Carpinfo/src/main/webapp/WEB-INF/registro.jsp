@@ -118,7 +118,7 @@
 											<form:password path="passwordConfirmation"
 												class="form-control" />
 										</div>
-										<input type="submit" class="button_01" value="Registrarse" alt="Registrarse"/>
+										<input type="submit" class="button_registro" value="Registrarse" alt="Registrarse"/>
 										</form:form>
 								</div>
 							</div>

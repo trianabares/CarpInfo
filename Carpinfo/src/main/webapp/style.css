@@ -44,6 +44,21 @@ a:active, a:hover {
 	opacity: 0.75;
 }
 
+.button_registro {
+	display: block;
+	width: 100px;
+	padding: 3px;
+	color: rgb(0, 0, 0);
+	font-size: 15px;
+	font-weight: bold;
+	text-align: center;
+	text-decoration: none;
+	border: 1px solid #000000;
+	border-radius: 3px;
+	background-color: #A1DC8C;
+	opacity: 0.75;	
+}
+
 p {
 	margin: 0px;
 	padding: 0px;
