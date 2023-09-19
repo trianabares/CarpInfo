@@ -46,7 +46,7 @@ public class MainController {
 			model.addAttribute("usuario", usuario);
 
 		}
-		
+
 		model.addAttribute("publicaciones", publiServ.findAllPublicaciones());
 		return "info.jsp";
 	}
@@ -62,21 +62,19 @@ public class MainController {
 			model.addAttribute("usuario", usuario);
 
 		}
-		
-		
-		
+
 		SimpleDateFormat fechaFormat = new SimpleDateFormat("d MMMM, yyyy");
 		Date fechaActual = new Date();
 		model.addAttribute("fecha", fechaFormat.format(fechaActual));
-		
+
 		SimpleDateFormat horaFormat = new SimpleDateFormat("HH:mm");
 		model.addAttribute("hora", horaFormat.format(fechaActual));
-		
-		double[] arrayDouble = {0.80, 0.95, 1.05, 1.30, 1.45};
+
+		double[] arrayDouble = { 0.80, 0.95, 1.05, 1.30, 1.45 };
 		Random r = new Random();
 		int altura = r.nextInt(5);
 		model.addAttribute("altura", arrayDouble[altura]);
-		
+
 		model.addAttribute("publicaciones", publiServ.findAllPublicaciones());
 		return "mareas.jsp";
 	}
@@ -92,7 +90,7 @@ public class MainController {
 			model.addAttribute("usuario", usuario);
 
 		}
-		
+
 		model.addAttribute("publicaciones", publiServ.findAllPublicaciones());
 		return "aysa.jsp";
 	}
@@ -108,7 +106,7 @@ public class MainController {
 			model.addAttribute("usuario", usuario);
 
 		}
-		
+
 		model.addAttribute("publicaciones", publiServ.findAllPublicaciones());
 		return "turismo.jsp";
 	}
@@ -123,7 +121,7 @@ public class MainController {
 
 			return "redirect:/registro";
 		}
-		
+
 		User usuario = userServ.encontrarUserPorId(userId);
 		model.addAttribute("usuario", usuario);
 		List<Temas> temas = foroServ.allTemas();
@@ -131,13 +129,20 @@ public class MainController {
 		model.addAttribute("publicaciones", publiServ.findAllPublicaciones());
 		return "vecinos.jsp";
 	}
-	
+
 	@PostMapping("/vecinos")
-	public String addLang(@Valid @ModelAttribute("nuevacategoria") Temas tema, BindingResult result) {
+	public String addLang(@Valid @ModelAttribute("nuevacategoria") Temas tema, BindingResult result, HttpSession sesion,
+			Model model, @ModelAttribute("nuevaPubli") Publicacion publi) {
 		if (result.hasErrors()) {
+			Long userId = (Long) sesion.getAttribute("userID");
+			User usuario = userServ.encontrarUserPorId(userId);
+			model.addAttribute("usuario", usuario);
+			List<Temas> temas = foroServ.allTemas();
+			model.addAttribute("temas", temas);
+			model.addAttribute("publicaciones", publiServ.findAllPublicaciones());
 			return "vecinos.jsp";
 		}
-		
+
 		foroServ.addTema(tema);
 		return "redirect:/vecinos";
 	}
