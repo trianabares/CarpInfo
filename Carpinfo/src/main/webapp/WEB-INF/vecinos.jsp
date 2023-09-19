@@ -83,129 +83,137 @@
 						<!-- end of header right -->
 						<div class="cleaner"></div>
 					</div>
-				<!-- end of header -->
-				<div id="content_wrapper">
-					<div id="content_outer">
-						<div id="content">
-							<div class="content_section">
-								<h2>Bienvenido a la comunidad CARPINFO</h2>
-								<p>En esta seccion vas a poder:</p>
-								<ul>
-									<li>Interactuar con la comunidad</li>
-									<li>Expresar tus opiniones</li>
-									<li>Organizar eventos</li>
-									<li>Comunicar inconvenientes</li>
-									<li>Proponer cambios positivos para la comunidad</li>
+					<!-- end of header -->
+					<div id="content_wrapper">
+						<div id="content_outer">
+							<div id="content">
+								<div class="content_section">
+									<h2>Bienvenido a la comunidad CARPINFO</h2>
+									<p>En esta seccion vas a poder:</p>
+									<ul>
+										<li>Interactuar con la comunidad</li>
+										<li>Expresar tus opiniones</li>
+										<li>Organizar eventos</li>
+										<li>Comunicar inconvenientes</li>
+										<li>Proponer cambios positivos para la comunidad</li>
 
-								</ul>
+									</ul>
+								</div>
+								<div class="content_section">
+									<h2>El Delta es de todos</h2>
+									<p class="em_text">Por esto, creamos un espacio en el cual
+										cada vecino y vecina pueda expresarse libremente, siempre
+										desde el respeto y buenos tratos, para asi asegurarnos una
+										eperiencia positiva y constructiva.</p>
+
+									<h2>Foro</h2>
+
+									<table class="table">
+										<tbody>
+											<c:forEach var="tema" items="${temas}">
+												<tr>
+													<td>
+														<h4>
+															<a href="/foro/${tema.id}"> <c:out
+																	value="${tema.nombre}"></c:out></a>
+														</h4>
+													</td>
+												</tr>
+											</c:forEach>
+										</tbody>
+									</table>
+
+									<h2>Nuevo Categoria</h2>
+									<c:choose>
+										<c:when test="${usuario.id == 1 }">
+											<form:form action="/vecinos" method="POST"
+												modelAttribute="nuevacategoria">
+												<div class="form-group">
+													<form:label class="form-label" path="nombre">Nombre: </form:label>
+													<form:errors class="text-danger" path="nombre" />
+													<form:input class="form-control" path="nombre" />
+												</div>
+												<button class="btn btn-success mt-2">Agregar</button>
+											</form:form>
+										</c:when>
+									</c:choose>
+
+								</div>
+								<div class="content_section">
+									<c:choose>
+										<c:when test="${usuario.id == 1}">
+											<h2>Promocione su Servicio</h2>
+
+											<form:form action="/servicios/nuevo" method="POST"
+												modelAttribute="nuevaPubli" enctype="multipart/form-data">
+												<div class="form-group">
+													<form:label class="form-label" path="nombre">Nombre: </form:label>
+													<form:errors class="text-danger" path="nombre" />
+													<form:input class="form-control" path="nombre" />
+												</div>
+												<div class="form-group">
+													<form:label class="form-label" path="contenidos">Descripción: </form:label>
+													<form:errors class="text-danger" path="contenidos" />
+													<form:textarea class="form-control" path="contenidos" />
+												</div>
+												<div class="form-group">
+													<label class="form-label">Foto del emprendimiento
+														(opcional):</label> <input type="file" name="imageUpload"
+														class="form-control">
+												</div>
+												<div class="form-group">
+													<form:label class="form-label" path="enlace">Enlace a su emprendimiento: </form:label>
+													<form:errors class="text-danger" path="enlace" />
+													<form:input class="form-control" path="enlace" />
+												</div>
+												<form:input type="hidden" path="creador"
+													value="${usuario.id}" />
+												<button class="btn btn-success mt-2">Agregar</button>
+											</form:form>
+										</c:when>
+									</c:choose>
+								</div>
+
 							</div>
-							<div class="content_section">
-								<h2>El Delta es de todos</h2>
-								<p class="em_text">Por esto, creamos un espacio en el cual
-									cada vecino y vecina pueda expresarse libremente, siempre desde
-									el respeto y buenos tratos, para asi asegurarnos una eperiencia
-									positiva y constructiva.</p>
-
-								<h2>Foro</h2>
-
-								<table class="table">
-									<tbody>
-										<c:forEach var="tema" items="${temas}">
-											<tr>
-												<td>
-													<h4>
-														<a href="/foro/${tema.id}"> <c:out
-																value="${tema.nombre}"></c:out></a>
-													</h4>
-												</td>
-											</tr>
-										</c:forEach>
-									</tbody>
-								</table>
-
-								<h2>Nuevo Categoria</h2>
-								<!-- AGREGAR C:CHOOSE PARA EL ADMIN -->
-								<form:form action="/vecinos" method="POST"
-									modelAttribute="nuevacategoria">
-									<div class="form-group">
-										<form:label class="form-label" path="nombre">Nombre: </form:label>
-										<form:errors class="text-danger" path="nombre" />
-										<form:input class="form-control" path="nombre" />
-									</div>
-									<button class="btn btn-success mt-2">Agregar</button>
-								</form:form>
-
-							</div>
-							<div class="content_section">
-								<h2>Promocione su Servicio</h2>
-
-								<form:form action="/servicios/nuevo" method="POST"
-									modelAttribute="nuevaPubli" enctype="multipart/form-data">
-									<div class="form-group">
-										<form:label class="form-label" path="nombre">Nombre: </form:label>
-										<form:errors class="text-danger" path="nombre" />
-										<form:input class="form-control" path="nombre" />
-									</div>
-									<div class="form-group">
-										<form:label class="form-label" path="contenidos">Descripción: </form:label>
-										<form:errors class="text-danger" path="contenidos" />
-										<form:textarea class="form-control" path="contenidos" />
-									</div>
-									<div class="form-group">
-										<label class="form-label">Foto del emprendimiento
-											(opcional):</label> <input type="file" name="imageUpload"
-											class="form-control">
-									</div>
-									<div class="form-group">
-										<form:label class="form-label" path="enlace">Enlace a su emprendimiento: </form:label>
-										<form:errors class="text-danger" path="enlace" />
-										<form:input class="form-control" path="enlace" />
-									</div>
-									<form:input type="hidden" path="creador" value="${usuario.id}" />
-									<button class="btn btn-success mt-2">Agregar</button>
-								</form:form>
-							</div>
-
+							<!-- end of content -->
+							<div id="content_bottom"></div>
+							<div class="cleaner"></div>
 						</div>
-						<!-- end of content -->
-						<div id="content_bottom"></div>
+						<!-- end of content_outer -->
+						<div id="template_sidebar">
+							<div class="sidebar_section">
+								<h2>Servicios</h2>
+								<c:forEach var="publicacion" items="${publicaciones}">
+									<h3>${publicacion.nombre}</h3>
+									<img src="${publicacion.publiImage }" alt="" width=220px
+										height=120px />
+									<p>${publicacion.contenidos}</p>
+									<div class="button_01">
+										<a href="${publicacion.enlace}">Ver más</a>
+									</div>
+									<div class="cleaner_h30"></div>
+								</c:forEach>
+							</div>
+						</div>
+						<!-- end of template_sidebar -->
 						<div class="cleaner"></div>
 					</div>
-					<!-- end of content_outer -->
-					<div id="template_sidebar">
-						<div class="sidebar_section">
-							<h2>Servicios</h2>
-							<c:forEach var="publicacion" items="${publicaciones}">
-								<h3>${publicacion.nombre}</h3>
-								<img src="${publicacion.publiImage }" alt="" width=220px
-									height=120px />
-								<p>${publicacion.contenidos}</p>
-								<div class="button_01">
-									<a href="${publicacion.enlace}">Ver más</a>
-								</div>
-								<div class="cleaner_h30"></div>
-							</c:forEach>
-						</div>
+					<!-- end of content_wrapper -->
+					<div id="footer">
+						<ul class="footer_menu">
+							<li><a href="/">Info</a></li>
+							<li><a href="/turismo">Turismo</a></li>
+							<li><a href="/vecinos">Vecinos</a></li>
+							<li class="last_menu"><a href="/contacto">Contacto</a></li>
+						</ul>
+						Copyright &copy; 2023 <a href="#">CarpInfo</a> | Designed by <a
+							target="_blank" rel="nofollow" href="http://www.templatemo.com">templatemo</a>
 					</div>
-					<!-- end of template_sidebar -->
+					<!-- end of footer -->
 					<div class="cleaner"></div>
 				</div>
-				<!-- end of content_wrapper -->
-				<div id="footer">
-					<ul class="footer_menu">
-						<li><a href="/">Info</a></li>
-						<li><a href="/turismo">Turismo</a></li>
-						<li><a href="/vecinos">Vecinos</a></li>
-						<li class="last_menu"><a href="/contacto">Contacto</a></li>
-					</ul>
-					Copyright &copy; 2023 <a href="#">CarpInfo</a> | Designed by <a
-						target="_blank" rel="nofollow" href="http://www.templatemo.com">templatemo</a>
-				</div>
-				<!-- end of footer -->
-				<div class="cleaner"></div>
 			</div>
 		</div>
-	</div>
 	</div>
 </body>
 </html>
