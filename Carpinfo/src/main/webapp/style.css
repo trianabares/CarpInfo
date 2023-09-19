@@ -129,11 +129,21 @@ img {
 }
 
 
+#fotoPerfil{
+	align-items: center;
+}
 #fotoPerfil img{
 	border-radius: 50%;
 	height: 60px;
 	width: 60px;
 	object-fit:cover;
+}
+#fotoPerfil p{
+	padding-left: 10px;
+}
+
+#header_right hr{
+	margin: 10px 0px;
 }
 
 /* menu */
