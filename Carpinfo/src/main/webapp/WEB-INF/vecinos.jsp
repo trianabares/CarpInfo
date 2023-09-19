@@ -53,10 +53,10 @@
 										<label>Email</label> <input type="text" name="email"
 											class="input_field" />
 										<div class="cleaner"></div>
-										<label>Password</label> <input type="password" value=""
+										<label>Clave</label> <input type="password" value=""
 											name="password" class="input_field" />
 										<div class="cleaner"></div>
-										<input type="submit" name="login" value="Login" alt="login"
+										<input type="submit" name="login" value="Ingresar" alt="login"
 											id="submit_btn" />
 									</form>
 									<a href="/registro">Registrarse</a>
@@ -123,9 +123,9 @@
 										</tbody>
 									</table>
 
-									<h2>Nuevo Categoria</h2>
 									<c:choose>
 										<c:when test="${usuario.id == 1 }">
+											<h2>Nuevo Categoria</h2>
 											<form:form action="/vecinos" method="POST"
 												modelAttribute="nuevacategoria">
 												<div class="form-group">
@@ -139,9 +139,9 @@
 									</c:choose>
 
 								</div>
-								<div class="content_section">
-									<c:choose>
-										<c:when test="${usuario.id == 1}">
+								<c:choose>
+									<c:when test="${usuario.id == 1}">
+										<div class="content_section">
 											<h2>Promocione su Servicio</h2>
 
 											<form:form action="/servicios/nuevo" method="POST"
@@ -170,9 +170,9 @@
 													value="${usuario.id}" />
 												<button class="btn btn-success mt-2">Agregar</button>
 											</form:form>
-										</c:when>
-									</c:choose>
-								</div>
+										</div>
+									</c:when>
+								</c:choose>
 
 							</div>
 							<!-- end of content -->

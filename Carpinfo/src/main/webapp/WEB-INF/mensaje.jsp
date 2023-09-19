@@ -53,10 +53,10 @@
 										<label>Email</label> <input type="text" name="email"
 											class="input_field" />
 										<div class="cleaner"></div>
-										<label>Password</label> <input type="password" value=""
+										<label>Clave</label> <input type="password" value=""
 											name="password" class="input_field" />
 										<div class="cleaner"></div>
-										<input type="submit" name="login" value="Login" alt="login"
+										<input type="submit" name="login" value="Ingresar" alt="login"
 											id="submit_btn" />
 									</form>
 									<a href="/registro">Registrarse</a>
@@ -93,7 +93,7 @@
 										<c:out value="${mensaje.titulo}"></c:out>
 									</h1>
 									<h2>
-										<c:out value="${mensaje.creador.nombre}"></c:out>
+										- <c:out value="${mensaje.creador.nombre}"></c:out>
 									</h2>
 									<p>
 										<c:out value="${mensaje.createdAt}"></c:out>
@@ -102,20 +102,21 @@
 									<p>
 										<c:out value="${mensaje.contenidos}"></c:out>
 									</p>
+									<img class="rounded-circle" alt="Foto del Post"
+											src="${mensaje.postImage}" style="width: 500px">
 									<hr>
 									<h2>Comentarios</h2>
 
 									<c:forEach var="comentario" items="${comentarios}">
 										<p>
-											<c:out value="${comentario.contenidos}"></c:out>
+											" <c:out value="${comentario.contenidos}"></c:out> "
 										</p>
 										<p>
-											<c:out value="${comentario.creador.nombre}"></c:out>
+											- <c:out value="${comentario.creador.nombre}"></c:out>
 										</p>
 										<p>
 											<c:out value="${comentario.createdAt}"></c:out>
 										</p>
-										<p>-</p>
 									</c:forEach>
 
 
