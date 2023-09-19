@@ -53,10 +53,10 @@
 										<label>Email</label> <input type="text" name="email"
 											class="input_field" />
 										<div class="cleaner"></div>
-										<label>Password</label> <input type="password" value=""
+										<label>Clave</label> <input type="password" value=""
 											name="password" class="input_field" />
 										<div class="cleaner"></div>
-										<input type="submit" name="login" value="Login" alt="login"
+										<input type="submit" name="login" value="Ingresar" alt="login"
 											id="submit_btn" />
 									</form>
 									<a href="/registro">Registrarse</a>
