@@ -92,7 +92,7 @@ public class UserController {
 			HttpSession sesion) {
 		if (resultado.hasErrors()) {
 			viewModel.addAttribute("user", new User());
-			return "inicio.jsp";
+			return "info.jsp";
 		}
 
 		if (userServ.authenthicateUser(loginuser.getEmail(), loginuser.getPassword(), resultado)) {
@@ -103,7 +103,7 @@ public class UserController {
 		} else {
 			viewModel.addAttribute("errorLog", "Por favor intenta de nuevo");
 			viewModel.addAttribute("user", new User());
-			return "inicio.jsp";
+			return "info.jsp";
 		}
 
 	}
