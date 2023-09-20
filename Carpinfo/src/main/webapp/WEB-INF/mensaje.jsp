@@ -102,7 +102,7 @@
 									<p>
 										<c:out value="${mensaje.contenidos}"></c:out>
 									</p>
-									<img class="rounded-circle" alt="Foto del Post"
+									<img alt="Foto del Post"
 											src="${mensaje.postImage}" style="width: 500px">
 									<hr>
 									<h2>Comentarios</h2>

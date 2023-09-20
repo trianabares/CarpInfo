@@ -172,6 +172,9 @@
 											</form:form>
 										</div>
 									</c:when>
+									<c:otherwise>
+										<h5>¿Quiere promocionar su emprendimiento en nuestra página? Haga click <a href="#">aquí</a>.</h5>
+									</c:otherwise>
 								</c:choose>
 
 							</div>
