@@ -44,6 +44,21 @@ a:active, a:hover {
 	opacity: 0.75;
 }
 
+.button_registro {
+	display: block;
+	width: 100px;
+	padding: 3px;
+	color: rgb(0, 0, 0);
+	font-size: 15px;
+	font-weight: bold;
+	text-align: center;
+	text-decoration: none;
+	border: 1px solid #000000;
+	border-radius: 3px;
+	background-color: #A1DC8C;
+	opacity: 0.75;	
+}
+
 p {
 	margin: 0px;
 	padding: 0px;
@@ -111,6 +126,24 @@ img {
 	float: left;
 	width: 570px;
 	height: 250px;
+}
+
+
+#fotoPerfil{
+	align-items: center;
+}
+#fotoPerfil img{
+	border-radius: 50%;
+	height: 60px;
+	width: 60px;
+	object-fit:cover;
+}
+#fotoPerfil p{
+	padding-left: 10px;
+}
+
+#header_right hr{
+	margin: 10px 0px;
 }
 
 /* menu */
@@ -198,6 +231,9 @@ img {
 /* end of site title */
 
 /* login */
+
+
+
 #header #header_right {
 	float: right;
 	width: 300px;
@@ -492,3 +528,15 @@ img {
 	background-color: #A1DC8C;
 	opacity: 0.75;
 }
+
+.phone{
+	width: 20px;
+	height: 20px;
+	border-radius: 10px;
+}
+.contacto{
+	display: inline-block;
+}
+
+	
+	
