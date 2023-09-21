@@ -62,7 +62,7 @@ public class UserController {
 		
 		if (resultado.hasErrors()) {
 			viewModel.addAttribute("login", new LogReg());
-
+			viewModel.addAttribute("publicaciones", publiServ.findAllPublicaciones());
 			return "registro.jsp";
 		}
 		
