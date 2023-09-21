@@ -49,7 +49,7 @@
 						<div id="header_right">
 							<c:choose>
 								<c:when test="${usuario.id == null }">
-									<h2>Inicio de Sesiï¿½n</h2>
+									<h2>Inicio de Sesión</h2>
 									<form action="/login" method="POST">
 										<label>Email</label> <input type="text" name="email"
 											class="input_field" />
@@ -84,7 +84,7 @@
 										</p>
 									</div>
 									<hr>
-									<a href="/logout">Cerrar sesiï¿½n</a>
+									<a href="/logout">Cerrar sesión</a>
 								</c:otherwise>
 							</c:choose>
 
@@ -198,7 +198,7 @@
 										height=120px />
 									<p>${publicacion.contenidos}</p>
 									<div class="button_01">
-										<a href="${publicacion.enlace}">Ver mï¿½s</a>
+										<a href="${publicacion.enlace}">Ver más</a>
 									</div>
 									<div class="cleaner_h30"></div>
 								</c:forEach>

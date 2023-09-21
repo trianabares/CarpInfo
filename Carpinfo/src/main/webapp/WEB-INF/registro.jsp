@@ -148,7 +148,7 @@
 										height=120px />
 									<p>${publicacion.contenidos}</p>
 									<div class="button_01">
-										<a href="${publicacion.enlace}">Ver mï¿½s</a>
+										<a href="${publicacion.enlace}">Ver más</a>
 									</div>
 									<div class="cleaner_h30"></div>
 								</c:forEach>
