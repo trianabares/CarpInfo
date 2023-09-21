@@ -60,6 +60,8 @@ public class UserController {
 			@RequestParam("imageUpload") MultipartFile profileImage, Model viewModel)
 					throws IOException{
 		
+		userServ.registroUsuario(usuario, resultado);
+		
 		if (resultado.hasErrors()) {
 			viewModel.addAttribute("login", new LogReg());
 			viewModel.addAttribute("publicaciones", publiServ.findAllPublicaciones());
@@ -82,7 +84,6 @@ public class UserController {
 		}
 	    
 		usuario.setProfileImage("/images/" + profileImage.getOriginalFilename());
-		userServ.registroUsuario(usuario, resultado);
 		viewModel.addAttribute("login", new LogReg());
 		return "redirect:/";
 	}
