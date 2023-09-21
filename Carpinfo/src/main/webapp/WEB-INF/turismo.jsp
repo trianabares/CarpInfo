@@ -72,7 +72,7 @@
 									</h2>
 									<div id="fotoPerfil" class="d-flex">
 										<c:choose>
-											<c:when test="${usuario.profileImage == null }">
+											<c:when test="${usuario.profileImage != '/images/'}">
 												<img class="rounded-circle" alt="Foto de perfil"
 													src="${usuario.profileImage}">
 											</c:when>
