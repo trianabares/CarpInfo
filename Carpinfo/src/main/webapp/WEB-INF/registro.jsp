@@ -73,7 +73,7 @@
 											</c:when>
 											<c:otherwise>
 												<img class="rounded-circle" alt="Foto de perfil"
-													src="/images/sin-foto.jpg">
+													src="/images/carpincho-icono.png">
 											</c:otherwise>
 										</c:choose>
 										<p class="my-2">
@@ -126,6 +126,10 @@
 											<form:password path="passwordConfirmation"
 												class="form-control" />
 										</div>
+										<form:input type="hidden" path="ciudad" value="${usuario.ciudad}" />
+										<form:input type="hidden" path="edad" value="${usuario.edad}" />
+										<form:input type="hidden" path="rol" value="${usuario.rol}" />
+										<form:input type="hidden" path="biografia" value="${usuario.biografia}" />
 										<input type="submit" class="button_registro" value="Registrarse" alt="Registrarse"/>
 										</form:form>
 								</div>
@@ -161,6 +165,7 @@
 							<li><a href="/vecinos">Vecinos</a></li>
 							<li class="last_menu"><a href="/contacto">Contacto</a></li>
 						</ul>
+						
 						Copyright &copy; 2023 <a href="#">CarpInfo</a> | Designed by <a
 							target="_blank" rel="nofollow" href="http://www.templatemo.com">templatemo</a>
 					</div>

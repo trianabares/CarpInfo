@@ -14,7 +14,7 @@
 
 <head>
 <meta charset="ISO-8859-1">
-<title>Mareas</title>
+<title>CarpInfo Inicio</title>
 <!-- BOOTSTRAP  -->
 <link rel="stylesheet"
 	href="/webjars/bootstrap/5.2.3/css/bootstrap.min.css">
@@ -44,7 +44,6 @@
 							</div>
 							<!-- end of menu -->
 						</div>
-						<!-- end of header left -->
 						<div id="header_right">
 							<c:choose>
 								<c:when test="${usuario.id == null }">
@@ -93,50 +92,19 @@
 					</div>
 					<!-- end of header -->
 					<div id="content_wrapper">
-
 						<div id="content_outer">
 							<div id="content">
 								<div class="content_section">
-									<h2>PRONOSTICO MAREOLOGICO</h2>
-									<p>Corrección a las alturas de la Tablas de Marea para los
-										puertos de La Plata, Buenos Aires, San Fernando e Isla Martín
-										García.</p>
-									<p>
-										<strong>CINCUENTA CENTIMETROS SOBRE LOS VALORES
-											INDICADOS EN LAS TABLAS DE MAREA, LUEGO DISMINUYENDO HASTA
-											CUARENTA CENTIMETROS SOBRE DE ESTOS.-</strong>
-									</p>
-								</div>
-								<div class="content_section">
-									<table class="table table-striped float_r">
-
-										<thead>
-											<tr>
-												<th>LUGAR</th>
-												<th>HORA</th>
-
-												<th>ALTURA (m)</th>
-												<th>FECHA</th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<td>SAN FERNANDO / TIGRE</td>
-												<td>${hora}</td>
-
-												<td>${altura }</td>
-												<td>${fecha }</td>
-
-											</tr>
-										</tbody>
-									</table>
-
-									<div id="content_bottom"></div>
-									<div class="cleaner"></div>
-
-									<div class="button_01">
-										<a href="/">Atrás</a>
-									</div>
+									<h1>Perfil de ${usuarioPerfil.nombre }</h1>
+									
+									<h4>Nombre ${usuarioPerfil.nombre }</h4>
+									<h4>Edad ${usuarioPerfil.edad }</h4>
+									<h4>Ciudad ${usuarioPerfil.ciudad }</h4>
+									<h4>Email ${usuarioPerfil.email }</h4>
+									<h4>Biografía ${usuarioPerfil.biografia }</h4>
+									
+									<img alt="Foto de perfil" src="${usuarioPerfil.profileImage}">
+									
 								</div>
 							</div>
 							<!-- end of content -->

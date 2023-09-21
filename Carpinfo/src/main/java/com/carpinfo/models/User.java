@@ -47,6 +47,14 @@ public class User {
 	@Size(min=8, message= "Password debe contener minimo 8 caracteres")
 	private String passwordConfirmation;
 	
+	private String ciudad;
+	
+	private String rol;
+	
+	private String biografia;
+	
+	private int edad;
+	
 	@OneToMany(mappedBy="creador", fetch=FetchType.LAZY)
     private List<Mensajes> mensajes;
 	
@@ -138,6 +146,38 @@ public class User {
 
 	public void setUpdatedAt(Date updatedAt) {
 		this.updatedAt = updatedAt;
+	}
+	
+	public String getCiudad() {
+		return ciudad;
+	}
+
+	public void setCiudad(String ciudad) {
+		this.ciudad = ciudad;
+	}
+
+	public String getRol() {
+		return rol;
+	}
+
+	public void setRol(String rol) {
+		this.rol = rol;
+	}
+
+	public String getBiografia() {
+		return biografia;
+	}
+
+	public void setBiografia(String biografia) {
+		this.biografia = biografia;
+	}
+	
+	public int getEdad() {
+		return edad;
+	}
+
+	public void setEdad(int edad) {
+		this.edad = edad;
 	}
 
 	@PrePersist

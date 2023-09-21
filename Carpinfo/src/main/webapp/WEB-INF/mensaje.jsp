@@ -49,7 +49,7 @@
 						<div id="header_right">
 							<c:choose>
 								<c:when test="${usuario.id == null }">
-									<h2>Inicio de Sesiï¿½n</h2>
+									<h2>Inicio de Sesión</h2>
 									<form action="/login" method="POST">
 										<label>Email</label> <input type="text" name="email"
 											class="input_field" />
@@ -75,7 +75,7 @@
 											</c:when>
 											<c:otherwise>
 												<img class="rounded-circle" alt="Foto de perfil"
-													src="/images/sin-foto.jpg">
+													src="/images/carpincho-icono.png">
 											</c:otherwise>
 										</c:choose>
 										<p class="my-2">
@@ -84,7 +84,7 @@
 										</p>
 									</div>
 									<hr>
-									<a href="/logout">Cerrar sesiï¿½n</a>
+									<a href="/logout">Cerrar sesión</a>
 								</c:otherwise>
 							</c:choose>
 
@@ -103,7 +103,7 @@
 									</h1>
 									<h2>
 										-
-										<c:out value="${mensaje.creador.nombre}"></c:out>
+										<a href="/perfil/${mensaje.creador.id}"> ${mensaje.creador.nombre}</a>
 									</h2>
 									<p>
 										<c:out value="${mensaje.createdAt}"></c:out>
@@ -160,7 +160,7 @@
 										</p>
 										<p>
 											-
-											<c:out value="${comentario.creador.nombre}"></c:out>
+											<a href="/perfil/${comentario.creador.id}"> ${comentario.creador.nombre}</a>
 										</p>
 										<p>
 											<c:out value="${comentario.createdAt}"></c:out>
@@ -198,7 +198,7 @@
 										height=120px />
 									<p>${publicacion.contenidos}</p>
 									<div class="button_01">
-										<a href="${publicacion.enlace}">Ver mï¿½s</a>
+										<a href="${publicacion.enlace}">Ver más</a>
 									</div>
 									<div class="cleaner_h30"></div>
 								</c:forEach>

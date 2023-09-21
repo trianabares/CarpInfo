@@ -73,7 +73,7 @@
 											</c:when>
 											<c:otherwise>
 												<img class="rounded-circle" alt="Foto de perfil"
-													src="/images/sin-foto.jpg">
+													src="/images/carpincho-icono.png">
 											</c:otherwise>
 										</c:choose>
 										<p class="my-2">
