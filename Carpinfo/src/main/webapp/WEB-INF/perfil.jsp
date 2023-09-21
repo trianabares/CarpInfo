@@ -96,6 +96,10 @@
 							<div id="content">
 								<div class="content_section">
 									<h1>Perfil del Usuario</h1>
+									
+									<p>${usuarioPerfil.nombre }</p>
+									
+									
 							<!-- end of content -->
 							<div id="content_bottom"></div>
 							<div class="cleaner"></div>

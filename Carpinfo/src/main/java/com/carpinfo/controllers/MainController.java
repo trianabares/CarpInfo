@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.carpinfo.models.Publicacion;
@@ -160,6 +161,20 @@ public class MainController {
 		}
 		model.addAttribute("publicaciones", publiServ.findAllPublicaciones());
 		return "contacto.jsp";
+	}
+	
+	@GetMapping("/perfil/{id}")
+	public String perfil(@PathVariable("id") Long id, HttpSession sesion, Model model) {
+		Long userId = (Long) sesion.getAttribute("userID");
+		if (userId != null) {
+			User usuarioSesion = userServ.encontrarUserPorId(userId);
+			model.addAttribute("usuarioSesion", usuarioSesion);
+		}
+		
+		model.addAttribute("usuarioPerfil", userServ.encontrarUserPorId(id));
+		
+		model.addAttribute("publicaciones", publiServ.findAllPublicaciones());
+		return "perfil.jsp";
 	}
 
 }
