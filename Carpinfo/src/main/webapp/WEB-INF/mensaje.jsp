@@ -103,7 +103,7 @@
 									</h1>
 									<h2>
 										-
-										<c:out value="${mensaje.creador.nombre}"></c:out>
+										<a href="/perfil/${mensaje.creador.id}"> ${mensaje.creador.nombre}</a>
 									</h2>
 									<p>
 										<c:out value="${mensaje.createdAt}"></c:out>
@@ -160,7 +160,7 @@
 										</p>
 										<p>
 											-
-											<c:out value="${comentario.creador.nombre}"></c:out>
+											<a href="/perfil/${comentario.creador.id}"> ${comentario.creador.nombre}</a>
 										</p>
 										<p>
 											<c:out value="${comentario.createdAt}"></c:out>
