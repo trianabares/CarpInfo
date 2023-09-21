@@ -78,8 +78,7 @@
 											</c:otherwise>
 										</c:choose>
 										<p class="my-2">
-											E-mail:
-											<c:out value="${usuario.email}"></c:out>
+											<a href="/perfil/${usuario.id}">Ir a mi perfil</a>
 										</p>
 									</div>
 									<hr>

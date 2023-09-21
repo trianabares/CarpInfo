@@ -78,8 +78,7 @@
 											</c:otherwise>
 										</c:choose>
 										<p class="my-2">
-											E-mail:
-											<c:out value="${usuario.email}"></c:out>
+											<a href="/perfil/${usuario.id}">Ir a mi perfil</a>
 										</p>
 									</div>
 									<hr>
@@ -102,7 +101,8 @@
 									</h1>
 									<h2>Nuevo Mensaje</h2>
 									<form:form action="/foro/${tema.id}/nuevo" method="POST"
-										modelAttribute="nuevomensaje" enctype="multipart/form-data" accept-charset="UTF-8">
+										modelAttribute="nuevomensaje" enctype="multipart/form-data"
+										accept-charset="UTF-8">
 										<div class="form-group my-2">
 											<form:label class="form-label" path="titulo">Nombre: </form:label>
 											<form:errors class="text-danger" path="titulo" />
@@ -139,7 +139,8 @@
 													</td>
 													<td>
 														<p>
-															<c:out value="${mensaje.creador.nombre}"></c:out>
+															<a href="/perfil/${mensaje.creador.id}">
+																${mensaje.creador.nombre}</a>
 														</p>
 														<p>
 															<c:out value="${mensaje.createdAt}"></c:out>
