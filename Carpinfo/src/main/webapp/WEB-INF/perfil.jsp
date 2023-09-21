@@ -99,7 +99,8 @@
 									
 									<p>${usuarioPerfil.nombre }</p>
 									
-									
+								</div>
+							</div>
 							<!-- end of content -->
 							<div id="content_bottom"></div>
 							<div class="cleaner"></div>
