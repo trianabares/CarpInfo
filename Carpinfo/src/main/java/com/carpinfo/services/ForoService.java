@@ -59,4 +59,8 @@ public class ForoService {
 		mensajesRepo.deleteById(id);
 	}
 	
+	public void eliminarComentario(Long id) {
+		comentariosRepo.deleteById(id);
+	}
+	
 }

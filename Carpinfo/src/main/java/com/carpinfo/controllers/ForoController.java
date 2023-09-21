@@ -147,6 +147,10 @@ public class ForoController {
 		if (userId == null) {
 			return "redirect:/registro";
 		}
+		List<Comentarios> comentarios = foroServ.findComentarioByMensaje(idMensaje);
+		for(Comentarios comentario : comentarios) {
+            foroServ.eliminarComentario(comentario.getId());
+        }
 		foroServ.eliminarMensaje(idMensaje);
 		return "redirect:/foro/{idTema}";
 	}
