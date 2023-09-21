@@ -95,9 +95,16 @@
 						<div id="content_outer">
 							<div id="content">
 								<div class="content_section">
-									<h1>Perfil del Usuario</h1>
+									<h1>Perfil de ${usuarioPerfil.nombre }</h1>
 									
-									<p>${usuarioPerfil.nombre }</p>
+									<h4>Nombre ${usuarioPerfil.nombre }</h4>
+									<h4>Edad ${usuarioPerfil.edad }</h4>
+									<h4>Ciudad ${usuarioPerfil.ciudad }</h4>
+									<h4>Email ${usuarioPerfil.email }</h4>
+									<h4>Biografía ${usuarioPerfil.biografia }</h4>
+									
+									<img alt="Foto de perfil"
+													src="${usuario.profileImage}">
 									
 								</div>
 							</div>

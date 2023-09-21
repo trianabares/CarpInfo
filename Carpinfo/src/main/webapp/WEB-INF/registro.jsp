@@ -47,7 +47,7 @@
 						<div id="header_right">
 							<c:choose>
 								<c:when test="${usuario.id == null }">
-									<h2>Inicio de Sesión</h2>
+									<h2>Inicio de Sesiï¿½n</h2>
 									<form action="/login" method="POST">
 										<label>Email</label> <input type="text" name="email"
 											class="input_field" />
@@ -82,7 +82,7 @@
 										</p>
 									</div>
 									<hr>
-									<a href="/logout">Cerrar sesión</a>
+									<a href="/logout">Cerrar sesiï¿½n</a>
 								</c:otherwise>
 							</c:choose>
 
@@ -118,14 +118,18 @@
 										</div>
 
 										<div class="mb-3">
-											<form:label path="password" class="form-label">Contraseña:</form:label>
+											<form:label path="password" class="form-label">Contraseï¿½a:</form:label>
 											<form:password path="password" class="form-control" />
 										</div>
 										<div class="mb-3">
-											<form:label path="passwordConfirmation" class="form-label">Confirmar Contraseña:</form:label>
+											<form:label path="passwordConfirmation" class="form-label">Confirmar Contraseï¿½a:</form:label>
 											<form:password path="passwordConfirmation"
 												class="form-control" />
 										</div>
+										<form:input type="hidden" path="ciudad" value="${usuario.ciudad}" />
+										<form:input type="hidden" path="edad" value="${usuario.edad}" />
+										<form:input type="hidden" path="rol" value="${usuario.rol}" />
+										<form:input type="hidden" path="biografia" value="${usuario.biografia}" />
 										<input type="submit" class="button_registro" value="Registrarse" alt="Registrarse"/>
 										</form:form>
 								</div>
@@ -144,7 +148,7 @@
 										height=120px />
 									<p>${publicacion.contenidos}</p>
 									<div class="button_01">
-										<a href="${publicacion.enlace}">Ver más</a>
+										<a href="${publicacion.enlace}">Ver mï¿½s</a>
 									</div>
 									<div class="cleaner_h30"></div>
 								</c:forEach>

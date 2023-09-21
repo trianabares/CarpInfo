@@ -167,8 +167,8 @@ public class MainController {
 	public String perfil(@PathVariable("id") Long id, HttpSession sesion, Model model) {
 		Long userId = (Long) sesion.getAttribute("userID");
 		if (userId != null) {
-			User usuarioSesion = userServ.encontrarUserPorId(userId);
-			model.addAttribute("usuarioSesion", usuarioSesion);
+			User usuario = userServ.encontrarUserPorId(userId);
+			model.addAttribute("usuario", usuario);
 		}
 		
 		model.addAttribute("usuarioPerfil", userServ.encontrarUserPorId(id));
