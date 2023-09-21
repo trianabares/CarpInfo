@@ -35,8 +35,8 @@ public class UserController {
 		this.publiServ = publiServ;
 		this.fileUpServ = fileUpServ;
 	}
-	
-	//ruta donde se suben las fotos
+
+	// ruta donde se suben las fotos
 	private String UPLOAD_FOLDER = "src/main/webapp/images/";
 
 	@GetMapping("/registro")
@@ -56,34 +56,34 @@ public class UserController {
 	}
 
 	@PostMapping("/registration")
-	public String registro(@Valid @ModelAttribute("user") User usuario, BindingResult resultado, 
-			@RequestParam("imageUpload") MultipartFile profileImage, Model viewModel)
-					throws IOException{
-		
+	public String registro(@Valid @ModelAttribute("user") User usuario, BindingResult resultado,
+			@RequestParam("imageUpload") MultipartFile profileImage, Model viewModel) throws IOException {
+
+		// subir foto de perfil
+		if (profileImage == null) {
+			throw new RuntimeException("Por favor subir un archivo");
+		}
+
+		fileUpServ.subirArchivoABD(profileImage);
+
+		try {
+			byte[] bytes = profileImage.getBytes();
+			Path ruta = Paths.get(UPLOAD_FOLDER, profileImage.getOriginalFilename());
+			Files.write(ruta, bytes);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		usuario.setProfileImage("/images/" + profileImage.getOriginalFilename());
+
 		userServ.registroUsuario(usuario, resultado);
-		
+
 		if (resultado.hasErrors()) {
 			viewModel.addAttribute("login", new LogReg());
 			viewModel.addAttribute("publicaciones", publiServ.findAllPublicaciones());
 			return "registro.jsp";
 		}
-		
-		//subir foto de perfil
-		if(profileImage == null) {
-			throw new RuntimeException ("Por favor subir un archivo");
-		}
-		
-		fileUpServ.subirArchivoABD(profileImage);
-		
-		try {
-			byte[] bytes = profileImage.getBytes();
-			Path ruta = Paths.get(UPLOAD_FOLDER, profileImage.getOriginalFilename());
-			Files.write(ruta, bytes);
-		}catch(IOException e) {
-			e.printStackTrace();
-		}
-	    
-		usuario.setProfileImage("/images/" + profileImage.getOriginalFilename());
+
 		viewModel.addAttribute("login", new LogReg());
 		return "redirect:/";
 	}
