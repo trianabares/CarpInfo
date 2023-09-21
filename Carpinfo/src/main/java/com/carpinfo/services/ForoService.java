@@ -55,4 +55,8 @@ public class ForoService {
 		return mensajesRepo.findById(id).orElse(null);
 	}
 	
+	public void eliminarMensaje(Long id) {
+		mensajesRepo.deleteById(id);
+	}
+	
 }

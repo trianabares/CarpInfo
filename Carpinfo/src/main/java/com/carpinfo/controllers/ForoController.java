@@ -9,6 +9,7 @@ import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -136,5 +137,20 @@ public class ForoController {
 			return "redirect:/foro/" + idTema.toString() + "/" + idMensaje.toString();
 		}
 	}
+	
+
+	
+	// ELIMINAR MENSAJE
+	@DeleteMapping("/foro/{idTema}/{idMensaje}/delete")
+	public String eliminarLenguaje(@PathVariable("idTema") Long idTema, @PathVariable("idMensaje") Long idMensaje, HttpSession sesion) {
+		Long userId = (Long) sesion.getAttribute("userID");
+		if (userId == null) {
+			return "redirect:/registro";
+		}
+		foroServ.eliminarMensaje(idMensaje);
+		return "redirect:/foro/{idTema}";
+	}
+	
+	
 	
 }

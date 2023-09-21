@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-	
+
 <!-- c:out ; c:forEach etc. -->
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!-- Formateo fechas (dates) -->
@@ -49,7 +49,7 @@
 						<div id="header_right">
 							<c:choose>
 								<c:when test="${usuario.id == null }">
-									<h2>Inicio de Sesión</h2>
+									<h2>Inicio de Sesiï¿½n</h2>
 									<form action="/login" method="POST">
 										<label>Email</label> <input type="text" name="email"
 											class="input_field" />
@@ -84,7 +84,7 @@
 										</p>
 									</div>
 									<hr>
-									<a href="/logout">Cerrar sesión</a>
+									<a href="/logout">Cerrar sesiï¿½n</a>
 								</c:otherwise>
 							</c:choose>
 
@@ -102,7 +102,8 @@
 										<c:out value="${mensaje.titulo}"></c:out>
 									</h1>
 									<h2>
-										- <c:out value="${mensaje.creador.nombre}"></c:out>
+										-
+										<c:out value="${mensaje.creador.nombre}"></c:out>
 									</h2>
 									<p>
 										<c:out value="${mensaje.createdAt}"></c:out>
@@ -111,25 +112,55 @@
 									<p>
 										<c:out value="${mensaje.contenidos}"></c:out>
 									</p>
-									
+
 									<c:choose>
-                                        <c:when test="${mensaje.postImage == '/images/'}">
-                                        </c:when>
-                                		<c:otherwise>
-                                    	<img alt="Foto del Post"
-                                          	  src="${mensaje.postImage}" style="width: 500px">
-                                		</c:otherwise>
-                            		</c:choose>
-                            		
+										<c:when test="${mensaje.postImage == '/images/'}">
+										</c:when>
+										<c:otherwise>
+											<img alt="Foto del Post" src="${mensaje.postImage}"
+												style="width: 500px">
+										</c:otherwise>
+									</c:choose>
+
+
+									<c:choose>
+										<c:when test="${usuario.id == 1}">
+
+											<form action="/foro/${idTema}/${idMensaje}/delete"
+												method="post">
+												<input type="hidden" name="_method" value="delete">
+												<input class="btn btn-danger m-2" type="submit"
+													value="Borrar">
+											</form>
+
+										</c:when>
+										<c:when test="${usuario.id == mensaje.creador.id}">
+
+											<form action="/foro/${idTema}/${idMensaje}/delete"
+												method="post">
+												<input type="hidden" name="_method" value="delete">
+												<input class="btn btn-danger m-2" type="submit"
+													value="Borrar">
+											</form>
+
+										</c:when>
+										<c:otherwise>
+										</c:otherwise>
+									</c:choose>
+
+
 									<hr>
 									<h2>Comentarios</h2>
 
 									<c:forEach var="comentario" items="${comentarios}">
 										<p>
-											" <c:out value="${comentario.contenidos}"></c:out> "
+											"
+											<c:out value="${comentario.contenidos}"></c:out>
+											"
 										</p>
 										<p>
-											- <c:out value="${comentario.creador.nombre}"></c:out>
+											-
+											<c:out value="${comentario.creador.nombre}"></c:out>
 										</p>
 										<p>
 											<c:out value="${comentario.createdAt}"></c:out>
@@ -139,7 +170,8 @@
 
 									<h2>Nuevo Comentario</h2>
 									<form:form action="/foro/${idTema}/${idMensaje}/nuevo"
-										method="POST" modelAttribute="nuevocomentario" accept-charset="UTF-8">
+										method="POST" modelAttribute="nuevocomentario"
+										accept-charset="UTF-8">
 										<div class="form-group">
 											<form:label class="form-label" path="contenidos"></form:label>
 											<form:errors class="text-danger" path="contenidos" />
@@ -166,7 +198,7 @@
 										height=120px />
 									<p>${publicacion.contenidos}</p>
 									<div class="button_01">
-										<a href="${publicacion.enlace}">Ver más</a>
+										<a href="${publicacion.enlace}">Ver mï¿½s</a>
 									</div>
 									<div class="cleaner_h30"></div>
 								</c:forEach>
