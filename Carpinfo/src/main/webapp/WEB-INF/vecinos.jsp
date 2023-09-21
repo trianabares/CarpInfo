@@ -125,9 +125,9 @@
 
 									<c:choose>
 										<c:when test="${usuario.id == 1 }">
-											<h2>Nuevo Categoria</h2>
+											<h2>Nueva Categoria</h2>
 											<form:form action="/vecinos" method="POST"
-												modelAttribute="nuevacategoria">
+												modelAttribute="nuevacategoria" accept-charset="UTF-8">
 												<div class="form-group">
 													<form:label class="form-label" path="nombre">Nombre: </form:label>
 													<form:errors class="text-danger" path="nombre" />
