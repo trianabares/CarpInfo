@@ -94,7 +94,7 @@
 									</h1>
 									<h2>Nuevo Mensaje</h2>
 									<form:form action="/foro/${tema.id}/nuevo" method="POST"
-										modelAttribute="nuevomensaje" enctype="multipart/form-data">
+										modelAttribute="nuevomensaje" enctype="multipart/form-data" accept-charset="UTF-8">
 										<div class="form-group my-2">
 											<form:label class="form-label" path="titulo">Nombre: </form:label>
 											<form:errors class="text-danger" path="titulo" />
