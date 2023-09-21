@@ -67,9 +67,17 @@
 										Bienvenido,
 										<c:out value="${usuario.nombre}"></c:out>
 									</h2>
-									<div class="d-flex">
-										<img class="rounded-circle" alt="Foto de perfil"
-											src="${usuario.profileImage}" width=90px height=60px>
+									<div id="fotoPerfil" class="d-flex">
+										<c:choose>
+											<c:when test="${usuario.profileImage != '/images/'}">
+												<img class="rounded-circle" alt="Foto de perfil"
+													src="${usuario.profileImage}">
+											</c:when>
+											<c:otherwise>
+												<img class="rounded-circle" alt="Foto de perfil"
+													src="/images/sin-foto.jpg">
+											</c:otherwise>
+										</c:choose>
 										<p class="my-2">
 											E-mail:
 											<c:out value="${usuario.email}"></c:out>
