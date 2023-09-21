@@ -103,8 +103,7 @@
 									<h4>Email ${usuarioPerfil.email }</h4>
 									<h4>Biografía ${usuarioPerfil.biografia }</h4>
 									
-									<img alt="Foto de perfil"
-													src="${usuario.profileImage}">
+									<img alt="Foto de perfil" src="${usuarioPerfil.profileImage}">
 									
 								</div>
 							</div>
