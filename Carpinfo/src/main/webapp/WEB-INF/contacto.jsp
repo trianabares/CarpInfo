@@ -131,9 +131,9 @@
 														class="btn btn-outline-success">Enviar correo</a>
 													<div class="d-flex mt-3" id="custom-align-center">
 														<!-- Agrega 'id' aquí -->
-														<a href="#" class="btn btn-primary px-1"><img
+														<a href="https://www.linkedin.com/in/elias-garcia-686779249/" class="btn btn-primary px-1"><img
 															src="/images/linkedin-logo.png" alt="LinkedIn"
-															width="32px"></a> <a href="#"
+															width="32px"></a> <a href="https://github.com/elias-garcia-0"
 															class="btn btn-secondary px-1"><img
 															src="/images/github-logo.png" alt="GitHub" width="32px"></a>
 													</div>
@@ -218,13 +218,13 @@
 												<div class="card-body">
 													<h5 class="card-title">Triana</h5>
 													<h5 class="card-title">Bares</h5>
-													<a href="mailto:trianaxd@gmail.com"
+													<a href="mailto:trianabares@gmail.com"
 														class="btn btn-outline-success">Enviar correo</a>
 													<div class="d-flex mt-3" id="custom-align-center">
 														<!-- Agrega 'id' aquí -->
-														<a href="#" class="btn btn-primary px-1"><img
+														<a href="https://www.linkedin.com/in/triana-bares/" class="btn btn-primary px-1"><img
 															src="/images/linkedin-logo.png" alt="LinkedIn"
-															width="32px"></a> <a href="#"
+															width="32px"></a> <a href="https://github.com/trianabares"
 															class="btn btn-secondary px-1"><img
 															src="/images/github-logo.png" alt="GitHub" width="32px"></a>
 													</div>
