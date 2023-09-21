@@ -103,8 +103,16 @@
 									<p>
 										<c:out value="${mensaje.contenidos}"></c:out>
 									</p>
-									<img alt="Foto del Post"
-											src="${mensaje.postImage}" style="width: 500px">
+									
+									<c:choose>
+                                        <c:when test="${mensaje.postImage == '/images/'}">
+                                        </c:when>
+                                		<c:otherwise>
+                                    	<img alt="Foto del Post"
+                                          	  src="${mensaje.postImage}" style="width: 500px">
+                                		</c:otherwise>
+                            		</c:choose>
+                            		
 									<hr>
 									<h2>Comentarios</h2>
 
