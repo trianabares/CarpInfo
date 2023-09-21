@@ -47,7 +47,7 @@
 						<div id="header_right">
 							<c:choose>
 								<c:when test="${usuario.id == null }">
-									<h2>Inicio de Sesiï¿½n</h2>
+									<h2>Inicio de Sesión</h2>
 									<form action="/login" method="POST">
 										<label>Email</label> <input type="text" name="email"
 											class="input_field" />
@@ -82,7 +82,7 @@
 										</p>
 									</div>
 									<hr>
-									<a href="/logout">Cerrar sesiï¿½n</a>
+									<a href="/logout">Cerrar sesión</a>
 								</c:otherwise>
 							</c:choose>
 
@@ -118,11 +118,11 @@
 										</div>
 
 										<div class="mb-3">
-											<form:label path="password" class="form-label">Contraseï¿½a:</form:label>
+											<form:label path="password" class="form-label">Contraseña:</form:label>
 											<form:password path="password" class="form-control" />
 										</div>
 										<div class="mb-3">
-											<form:label path="passwordConfirmation" class="form-label">Confirmar Contraseï¿½a:</form:label>
+											<form:label path="passwordConfirmation" class="form-label">Confirmar Contraseña:</form:label>
 											<form:password path="passwordConfirmation"
 												class="form-control" />
 										</div>
@@ -165,6 +165,7 @@
 							<li><a href="/vecinos">Vecinos</a></li>
 							<li class="last_menu"><a href="/contacto">Contacto</a></li>
 						</ul>
+						
 						Copyright &copy; 2023 <a href="#">CarpInfo</a> | Designed by <a
 							target="_blank" rel="nofollow" href="http://www.templatemo.com">templatemo</a>
 					</div>
