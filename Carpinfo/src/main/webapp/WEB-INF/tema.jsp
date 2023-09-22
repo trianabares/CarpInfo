@@ -48,7 +48,7 @@
 						<div id="header_right">
 							<c:choose>
 								<c:when test="${usuario.id == null }">
-									<h2>Inicio de Sesiï¿½n</h2>
+									<h2>Inicio de Sesión</h2>
 									<form action="/login" method="POST">
 										<label>Email</label> <input type="text" name="email"
 											class="input_field" />
@@ -57,7 +57,7 @@
 											name="password" class="input_field" />
 										<div class="cleaner"></div>
 										<input type="submit" name="login" value="Ingresar" alt="login"
-											id="submit_btn" class="button_login"/>
+											id="submit_btn" class="button_login" />
 									</form>
 									<a href="/registro">Registrarse</a>
 								</c:when>
@@ -82,7 +82,7 @@
 										</p>
 									</div>
 									<hr>
-									<a href="/logout">Cerrar sesiï¿½n</a>
+									<a href="/logout">Cerrar sesión</a>
 								</c:otherwise>
 							</c:choose>
 
@@ -125,7 +125,7 @@
 									<table class="table table-bordered">
 										<thead>
 											<tr>
-												<th>Titulo</th>
+												<th>Título</th>
 												<th>Autor</th>
 											</tr>
 										</thead>
@@ -151,22 +151,19 @@
 											</c:forEach>
 										</tbody>
 									</table>
+									<c:choose>
+										<c:when test="${usuario.id == 1}">
+											<form action="/foro/${idTema}/delete" method="post">
+												<input type="hidden" name="_method" value="delete">
+												<input class="btn btn-danger mt-3" type="submit"
+													value="Borrar Tema">
+											</form>
+										</c:when>
+										<c:otherwise>
+										</c:otherwise>
+									</c:choose>
 								</div>
 							</div>
-
-							<p>Eliimnar Tema</p>
-							
-							<c:choose>
-								<c:when test="${usuario.id == 1}">
-									<form action="/foro/${idTema}/delete"
-										method="post">
-										<input type="hidden" name="_method" value="delete"> <input class="btn btn-danger mt-3" type="submit" value="Borrar">
-									</form>
-								</c:when>
-								<c:otherwise>
-								</c:otherwise>
-							</c:choose>
-
 
 							<!-- end of content -->
 							<div id="content_bottom"></div>
@@ -182,7 +179,7 @@
 										height=120px />
 									<p class="my-2">${publicacion.contenidos}</p>
 									<div class="button_01">
-										<a href="${publicacion.enlace}">Ver mï¿½s</a>
+										<a href="${publicacion.enlace}">Ver más</a>
 									</div>
 									<div class="cleaner_h30"></div>
 								</c:forEach>
