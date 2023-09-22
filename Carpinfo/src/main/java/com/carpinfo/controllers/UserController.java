@@ -112,6 +112,26 @@ public class UserController {
 
 	}
 	
+	//editar perfil de user
+	@GetMapping("/perfil/{id}/edit")
+	public String editGet(@PathVariable("id") Long id, Model viewModel, HttpSession sesion) {
+		Long userId = (Long) sesion.getAttribute("userID");
+
+		// Verifica si el usuario ha iniciado sesión
+		if (userId != null) {
+			if(userId != id) {
+				return "redirect:/";
+			}
+			User usuarioSesion = userServ.encontrarUserPorId(userId);
+			viewModel.addAttribute("usuario", usuarioSesion);
+		}
+		
+		viewModel.addAttribute("user", userServ.encontrarUserPorId(userId));
+		viewModel.addAttribute("login", new LogReg());
+		viewModel.addAttribute("publicaciones", publiServ.findAllPublicaciones());
+		return "editarperfil.jsp";
+	}
+	
 	@PutMapping("/perfil/{id}/edit")
 	public String edit(@Valid @ModelAttribute("user") User usuario, BindingResult resultado,
 			@RequestParam("imageUpload") MultipartFile profileImage, @PathVariable("id") Long id, Model viewModel) throws IOException {
@@ -133,7 +153,7 @@ public class UserController {
 
 		usuario.setProfileImage("/images/" + profileImage.getOriginalFilename());
 
-		userServ.actualizarUsuario(usuario, resultado);
+		userServ.actualizarUsuario(usuario, id);
 
 		if (resultado.hasErrors()) {
 			viewModel.addAttribute("login", new LogReg());
