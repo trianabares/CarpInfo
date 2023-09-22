@@ -27,24 +27,23 @@ public class User {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@NotBlank(message=" Por favor ingresa un nombre")
-	@Size(min=3, max=30, message="Nombre debe ser mayor a 3 caracteres y menor a 30")
+	@NotBlank(message= "Por favor ingrese su nombre")
+	@Size(min=3, max=30, message= "Nombre debe ser mayor a 3 caracteres y menor a 30")
 	private String nombre;
 	
 	@Column(name = "profile_image")
 	private String profileImage;
 	
-	@NotBlank(message=" Por favor ingresa un correo electronico")
+	@NotBlank(message= "Por favor ingrese su dirección de correo electrónico")
 	@Email(message="El correo ingresado no es correcto")
 	private String email;
 
-	@NotBlank(message="Por favor, ingresa el password")
-	@Size(min=8, max=64, message= "Password debe contener minimo 8 caracteres")
+	@NotBlank(message="Por favor ingrese una contraseña")
+	@Size(min=8, max=64, message= "La contraseña debe contener mínimo 8 caracteres")
 	private String password;
 	
 	@Transient
-	@NotBlank(message="Por favor confirma la contrasenia")
-	@Size(min=8, message= "Password debe contener minimo 8 caracteres")
+	@NotBlank(message="Por favor confirme la contraseña")
 	private String passwordConfirmation;
 	
 	private String ciudad;

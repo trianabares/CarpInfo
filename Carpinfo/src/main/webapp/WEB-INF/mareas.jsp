@@ -150,7 +150,7 @@
 									<h3>${publicacion.nombre}</h3>
 									<img src="${publicacion.publiImage }" alt="" width=220px
 										height=120px />
-									<p>${publicacion.contenidos}</p>
+									<p class="my-2">${publicacion.contenidos}</p>
 									<div class="button_01">
 										<a href="${publicacion.enlace}">Ver más</a>
 									</div>

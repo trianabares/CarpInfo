@@ -151,7 +151,7 @@
 										<div class="content_section">
 											<h2>Promocione su Servicio</h2>
 
-											<form:form action="/servicios/nuevo" method="POST"
+											<form:form action="/servicios/nuevo" method="POST" accept-charset="UTF-8"
 												modelAttribute="nuevaPubli" enctype="multipart/form-data">
 												<div class="form-group">
 													<form:label class="form-label" path="nombre">Nombre: </form:label>
@@ -197,7 +197,7 @@
 									<h3>${publicacion.nombre}</h3>
 									<img src="${publicacion.publiImage }" alt="" width=220px
 										height=120px />
-									<p>${publicacion.contenidos}</p>
+									<p class="my-2">${publicacion.contenidos}</p>
 									<div class="button_01">
 										<a href="${publicacion.enlace}">Ver más</a>
 									</div>

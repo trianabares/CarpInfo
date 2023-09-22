@@ -29,15 +29,15 @@ public class Publicacion {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@NotBlank(message= "Por favor ingrese un nombre")
+	@NotBlank(message= "Por favor ingrese el nombre del servicio")
 	@Size(min=3, max=30, message="Nombre debe ser mayor a 3 caracteres y menor a 30")
 	private String nombre;
 	
-	@NotNull(message= "Por favor ingrese un contenido")
+	@NotNull(message= "Por favor ingrese una descripción del servicio")
 	@Size(min=3, max=250, message="La descripción debe ser entre 3 a 250 caracteres")
 	private String contenidos;
 	
-	@NotBlank(message="Debe ingresar el enlace de contacto a su servicio")
+	@NotBlank(message="Debe ingresar el enlace de contacto al servicio")
 	private String enlace;
 	
 	@Column(name = "publi_image")
