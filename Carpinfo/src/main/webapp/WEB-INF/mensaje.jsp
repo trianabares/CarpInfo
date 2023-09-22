@@ -161,6 +161,29 @@
 										<p>
 											<c:out value="${comentario.createdAt}"></c:out>
 										</p>
+										
+										
+										<c:choose>
+										<c:when test="${usuario.id == 1}">
+											<form action="/foro/${idTema}/${idMensaje}/${comentario.id}/delete"
+												method="post">
+												<input type="hidden" name="_method" value="delete">
+												<input type="submit" value="Borrar">
+											</form>
+										</c:when>
+										<c:when test="${usuario.id == comentario.creador.id}">
+											<form action="/foro/${idTema}/${idMensaje}/${comentario.id}/delete"
+												method="post">
+												<input type="hidden" name="_method" value="delete">
+												<input type="submit" value="Borrar">
+											</form>
+										</c:when>
+										<c:otherwise>
+										</c:otherwise>
+									</c:choose>
+									
+									
+									
 									</c:forEach>
 
 

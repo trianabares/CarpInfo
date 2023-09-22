@@ -48,6 +48,25 @@ public class UserService {
 		return userRepo.save(user);
 
 	}
+	
+	public User actualizarUsuario(User user, BindingResult resultado) {
+
+		User usuarioRegistrado = userRepo.findByEmail(user.getEmail());
+
+		if (usuarioRegistrado != null) {
+			resultado.rejectValue("email", "Matches", "El correo electrónico ingresado ya existe en nuestra base de datos");
+		}
+		if (!user.getPassword().equals(user.getPasswordConfirmation())) {
+			resultado.rejectValue("password", "Matches", "La contraseña no coincide");
+		}
+		if (resultado.hasErrors()) {
+			return null;
+		}
+		String hashed = BCrypt.hashpw(user.getPassword(), BCrypt.gensalt());
+		user.setPassword(hashed);
+		return userRepo.save(user);
+
+	}
 
 	// Autenticacion del usuario (LOGIN)
 	public boolean authenthicateUser(String email, String password, BindingResult resultado) {
