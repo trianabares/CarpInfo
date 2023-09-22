@@ -59,6 +59,21 @@ a:active, a:hover {
 	opacity: 0.75;	
 }
 
+.button_login {
+	display: block;
+	width: 80px;
+	padding: 3px;
+	color: rgb(0, 0, 0);
+	font-size: 12px;
+	font-weight: bold;
+	text-align: center;
+	text-decoration: none;
+	border: 1px solid #000000;
+	border-radius: 3px;
+	background-color: #A1DC8C;
+	opacity: 0.75;
+}
+
 p {
 	margin: 0px;
 	padding: 0px;
@@ -291,7 +306,7 @@ img {
 	float: right;
 	height: 25px;
 	width: 80px;
-	padding: 0 0 10px 0;
+	padding: 0px;
 	cursor: pointer;
 	font-size: 12px;
 	text-align: center;

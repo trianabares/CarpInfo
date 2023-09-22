@@ -29,8 +29,8 @@ public class Temas {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@NotBlank(message= "Por favor ingrese el nombre del tema del foro")
-	@Size(min=3, max=30, message="Nombre debe ser mayor a 3 caracteres y menor a 30")
+	@NotBlank(message= "Por favor ingrese la temática del foro")
+	@Size(min=3, max=30, message="Nombre debe ser de entre 3 y 30 caracteres")
 	private String nombre;
 	
 	@Column(updatable = false)

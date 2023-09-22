@@ -29,12 +29,13 @@ public class Mensajes {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@NotNull(message=" Por favor ingresa un contenido")
-	@Size(min=3,  message="El mensaje debe ser mayor a 3 caracteres")
+	@NotNull(message= "Por favor ingrese el título de su mensaje")
+	@Size(min=3, max=30, message= "El título debe ser de entre 3 y 30 caracteres")
 	private String titulo;
 	
-	@NotNull(message=" Por favor ingresa un contenido")
-	@Size(min=3,  message="El mensaje debe ser mayor a 3 caracteres")
+	@NotNull(message= "Por favor ingrese el contenido de su mensaje")
+	@Size(min=3, message= "El mensaje debe ser mayor a 3 caracteres")
+	@Size(max=800, message= "El comentario es demasiado largo")
 	private String contenidos;
 	
 	@Column(name = "post_image")

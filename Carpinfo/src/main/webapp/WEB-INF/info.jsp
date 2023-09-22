@@ -56,7 +56,7 @@
 											name="password" class="input_field" />
 										<div class="cleaner"></div>
 										<input type="submit" name="login" value="Ingresar" alt="login"
-											id="submit_btn" />
+											id="submit_btn" class="button_login" />
 									</form>
 									<a href="/registro">Registrarse</a>
 									<p class="text-danger my-4"> ${error} </p>

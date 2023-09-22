@@ -28,7 +28,7 @@ public class User {
 	private Long id;
 	
 	@NotBlank(message= "Por favor ingrese su nombre")
-	@Size(min=3, max=30, message= "Nombre debe ser mayor a 3 caracteres y menor a 30")
+	@Size(min=3, max=30, message= "Nombre debe ser de entre 3 y 30 caracteres")
 	private String nombre;
 	
 	@Column(name = "profile_image")
