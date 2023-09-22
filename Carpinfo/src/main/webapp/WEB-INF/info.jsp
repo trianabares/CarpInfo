@@ -59,6 +59,7 @@
 											id="submit_btn" />
 									</form>
 									<a href="/registro">Registrarse</a>
+									<p class="text-danger my-4"> ${error} </p>
 								</c:when>
 								<c:otherwise>
 									<h2>

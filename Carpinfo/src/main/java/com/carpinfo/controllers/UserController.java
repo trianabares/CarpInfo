@@ -93,6 +93,7 @@ public class UserController {
 			HttpSession sesion) {
 		if (resultado.hasErrors()) {
 			viewModel.addAttribute("user", new User());
+			viewModel.addAttribute("error", "E-mail y/o contraseña ingresados son inválidos");
 			return "info.jsp";
 		}
 
