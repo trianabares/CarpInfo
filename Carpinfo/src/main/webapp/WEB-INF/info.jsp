@@ -56,7 +56,7 @@
 											name="password" class="input_field" />
 										<div class="cleaner"></div>
 										<input type="submit" name="login" value="Ingresar" alt="login"
-											id="submit_btn" />
+											id="submit_btn" class="button_login" />
 									</form>
 									<a href="/registro">Registrarse</a>
 									<p class="text-danger my-4"> ${error} </p>
@@ -523,7 +523,7 @@
 									<h3>${publicacion.nombre}</h3>
 									<img src="${publicacion.publiImage }" alt="" width=220px
 										height=120px />
-									<p>${publicacion.contenidos}</p>
+									<p class="my-2">${publicacion.contenidos}</p>
 									<div class="button_01">
 										<a href="${publicacion.enlace}">Ver más</a>
 									</div>

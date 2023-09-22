@@ -28,8 +28,9 @@ public class Comentarios {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@NotNull(message=" Por favor ingresa un contenido")
-	@Size(min=3,  message="El mensaje debe ser mayor a 3 caracteres")
+	@NotNull(message= "Por favor ingrese su comentario")
+	@Size(min=3, message= "El comentario debe ser mayor a 3 caracteres")
+	@Size(max=800, message= "El comentario es demasiado largo")
 	private String contenidos;
 	
 	@ManyToOne(fetch=FetchType.LAZY)
