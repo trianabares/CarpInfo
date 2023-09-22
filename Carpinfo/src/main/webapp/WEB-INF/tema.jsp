@@ -48,7 +48,7 @@
 						<div id="header_right">
 							<c:choose>
 								<c:when test="${usuario.id == null }">
-									<h2>Inicio de Sesión</h2>
+									<h2>Inicio de Sesiï¿½n</h2>
 									<form action="/login" method="POST">
 										<label>Email</label> <input type="text" name="email"
 											class="input_field" />
@@ -82,7 +82,7 @@
 										</p>
 									</div>
 									<hr>
-									<a href="/logout">Cerrar sesión</a>
+									<a href="/logout">Cerrar sesiï¿½n</a>
 								</c:otherwise>
 							</c:choose>
 
@@ -114,8 +114,9 @@
 											<form:textarea class="form-control" path="contenidos" />
 										</div>
 										<div class="form-group">
-											<label class="form-label">Adjuntar imagen:</label> 
-											<input type="file" name="imageUpload" accept="image/png, image/jpeg" class="form-control">
+											<label class="form-label">Adjuntar imagen:</label> <input
+												type="file" name="imageUpload"
+												accept="image/png, image/jpeg" class="form-control">
 										</div>
 										<form:input type="hidden" path="creador" value="${usuario.id}" />
 										<form:input type="hidden" path="tema" value="${tema.id}" />
@@ -152,6 +153,21 @@
 									</table>
 								</div>
 							</div>
+
+							<p>Eliimnar Tema</p>
+							
+							<c:choose>
+								<c:when test="${usuario.id == 1}">
+									<form action="/foro/${idTema}/delete"
+										method="post">
+										<input type="hidden" name="_method" value="delete"> <input class="btn btn-danger mt-3" type="submit" value="Borrar">
+									</form>
+								</c:when>
+								<c:otherwise>
+								</c:otherwise>
+							</c:choose>
+
+
 							<!-- end of content -->
 							<div id="content_bottom"></div>
 							<div class="cleaner"></div>
@@ -166,7 +182,7 @@
 										height=120px />
 									<p>${publicacion.contenidos}</p>
 									<div class="button_01">
-										<a href="${publicacion.enlace}">Ver más</a>
+										<a href="${publicacion.enlace}">Ver mï¿½s</a>
 									</div>
 									<div class="cleaner_h30"></div>
 								</c:forEach>

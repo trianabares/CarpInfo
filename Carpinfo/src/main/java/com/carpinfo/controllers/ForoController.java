@@ -30,26 +30,27 @@ import jakarta.validation.Valid;
 
 @Controller
 public class ForoController {
-	
+
 	private final UserService userServ;
 	private final ForoService foroServ;
 	private final FileUpService fileUpServ;
 	private final PublicidadService publiServ;
-	
-	public ForoController(UserService uServ,ForoService fServ,FileUpService fileUpServ, PublicidadService publiServ) {
+
+	public ForoController(UserService uServ, ForoService fServ, FileUpService fileUpServ, PublicidadService publiServ) {
 		this.userServ = uServ;
 		this.foroServ = fServ;
 		this.fileUpServ = fileUpServ;
 		this.publiServ = publiServ;
 	}
-	
-	//ruta donde se suben las fotos
+
+	// ruta donde se suben las fotos
 	private String UPLOAD_FOLDER = "src/main/webapp/images/";
-	
+
 	// TEMAS Y MENSAJES
-	
+
 	@GetMapping("/foro/{idTema}")
-	public String mostrarTema(@PathVariable("idTema") Long idTema, @ModelAttribute("nuevomensaje") Mensajes mensaje, Model model, HttpSession sesion) {
+	public String mostrarTema(@PathVariable("idTema") Long idTema, @ModelAttribute("nuevomensaje") Mensajes mensaje,
+			Model model, HttpSession sesion) {
 		Long userId = (Long) sesion.getAttribute("userID");
 		if (userId == null) {
 			return "redirect:/registro";
@@ -62,12 +63,11 @@ public class ForoController {
 		model.addAttribute("publicaciones", publiServ.findAllPublicaciones());
 		return "tema.jsp";
 	}
-	
+
 	@PostMapping("/foro/{idTema}/nuevo")
-	public String addMsg(@Valid @ModelAttribute("nuevomensaje") Mensajes mensaje, BindingResult result, 
+	public String addMsg(@Valid @ModelAttribute("nuevomensaje") Mensajes mensaje, BindingResult result,
 			@PathVariable("idTema") Long idTema, HttpSession sesion, Model model,
-			@RequestParam("imageUpload") MultipartFile postImage) 
-					throws IOException{
+			@RequestParam("imageUpload") MultipartFile postImage) throws IOException {
 		Long userId = (Long) sesion.getAttribute("userID");
 		if (userId == null) {
 			return "redirect:/registro";
@@ -81,30 +81,31 @@ public class ForoController {
 			model.addAttribute("publicaciones", publiServ.findAllPublicaciones());
 			return "tema.jsp";
 		}
-		
-		//subir foto al mensaje/post
-		if(postImage == null) {
-			throw new RuntimeException ("Por favor subir un archivo");
+
+		// subir foto al mensaje/post
+		if (postImage == null) {
+			throw new RuntimeException("Por favor subir un archivo");
 		}
 		fileUpServ.subirArchivoABD(postImage);
-		
+
 		try {
 			byte[] bytes = postImage.getBytes();
 			Path ruta = Paths.get(UPLOAD_FOLDER, postImage.getOriginalFilename());
 			Files.write(ruta, bytes);
-		}catch(IOException e) {
+		} catch (IOException e) {
 			e.printStackTrace();
 		}
-	    
+
 		mensaje.setPostImage("/images/" + postImage.getOriginalFilename());
 		foroServ.addMensaje(mensaje);
 		return "redirect:/foro/" + idTema.toString();
 	}
-	
+
 	// MENSAJES Y COMENTARIOS
-	
+
 	@GetMapping("/foro/{idTema}/{idMensaje}")
-	public String mostrarTema(@PathVariable("idTema") Long idTema, @PathVariable("idMensaje") Long idMensaje, @ModelAttribute("nuevocomentario") Comentarios comentario, Model model, HttpSession sesion) {
+	public String mostrarTema(@PathVariable("idTema") Long idTema, @PathVariable("idMensaje") Long idMensaje,
+			@ModelAttribute("nuevocomentario") Comentarios comentario, Model model, HttpSession sesion) {
 		Long userId = (Long) sesion.getAttribute("userID");
 		if (userId == null) {
 			return "redirect:/registro";
@@ -117,9 +118,11 @@ public class ForoController {
 		model.addAttribute("publicaciones", publiServ.findAllPublicaciones());
 		return "mensaje.jsp";
 	}
-	
+
 	@PostMapping("/foro/{idTema}/{idMensaje}/nuevo")
-	public String addMsg(@Valid @ModelAttribute("nuevocomentario") Comentarios comentarios, BindingResult result, @PathVariable("idTema") Long idTema, @PathVariable("idMensaje") Long idMensaje, HttpSession sesion, Model model) {
+	public String addMsg(@Valid @ModelAttribute("nuevocomentario") Comentarios comentarios, BindingResult result,
+			@PathVariable("idTema") Long idTema, @PathVariable("idMensaje") Long idMensaje, HttpSession sesion,
+			Model model) {
 		Long userId = (Long) sesion.getAttribute("userID");
 		if (userId == null) {
 			return "redirect:/registro";
@@ -137,24 +140,43 @@ public class ForoController {
 			return "redirect:/foro/" + idTema.toString() + "/" + idMensaje.toString();
 		}
 	}
-	
 
-	
 	// ELIMINAR MENSAJE
 	@DeleteMapping("/foro/{idTema}/{idMensaje}/delete")
-	public String eliminarLenguaje(@PathVariable("idTema") Long idTema, @PathVariable("idMensaje") Long idMensaje, HttpSession sesion) {
+	public String eliminarLenguaje(@PathVariable("idTema") Long idTema, @PathVariable("idMensaje") Long idMensaje,
+			HttpSession sesion) {
 		Long userId = (Long) sesion.getAttribute("userID");
 		if (userId == null) {
 			return "redirect:/registro";
 		}
 		List<Comentarios> comentarios = foroServ.findComentarioByMensaje(idMensaje);
-		for(Comentarios comentario : comentarios) {
-            foroServ.eliminarComentario(comentario.getId());
-        }
+		for (Comentarios comentario : comentarios) {
+			foroServ.eliminarComentario(comentario.getId());
+		}
 		foroServ.eliminarMensaje(idMensaje);
 		return "redirect:/foro/{idTema}";
 	}
-	
-	
-	
+
+	// ELIMINAR TEMA
+	@DeleteMapping("/foro/{idTema}/delete")
+	public String eliminarTema(@PathVariable("idTema") Long idTema,
+			HttpSession sesion) {
+		Long userId = (Long) sesion.getAttribute("userID");
+		if (userId == null) {
+			return "redirect:/registro";
+		}
+
+		List<Mensajes> mensajes = foroServ.findMensajesByTema(idTema);
+		for (Mensajes mensaje : mensajes) {
+			List<Comentarios> comentarios = foroServ.findComentarioByMensaje(mensaje.getId());
+			for (Comentarios comentario : comentarios) {
+				foroServ.eliminarComentario(comentario.getId());
+			}
+			foroServ.eliminarMensaje(mensaje.getId());
+		}
+
+		foroServ.eliminarTema(idTema);
+		return "redirect:/vecinos";
+	}
+
 }
