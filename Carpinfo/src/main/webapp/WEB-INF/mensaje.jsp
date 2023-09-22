@@ -49,7 +49,7 @@
 						<div id="header_right">
 							<c:choose>
 								<c:when test="${usuario.id == null }">
-									<h2>Inicio de Sesión</h2>
+									<h2>Inicio de Sesiï¿½n</h2>
 									<form action="/login" method="POST">
 										<label>Email</label> <input type="text" name="email"
 											class="input_field" />
@@ -83,7 +83,7 @@
 										</p>
 									</div>
 									<hr>
-									<a href="/logout">Cerrar sesión</a>
+									<a href="/logout">Cerrar sesiï¿½n</a>
 								</c:otherwise>
 							</c:choose>
 
@@ -161,6 +161,29 @@
 										<p>
 											<c:out value="${comentario.createdAt}"></c:out>
 										</p>
+										
+										
+										<c:choose>
+										<c:when test="${usuario.id == 1}">
+											<form action="/foro/${idTema}/${idMensaje}/${comentario.id}/delete"
+												method="post">
+												<input type="hidden" name="_method" value="delete">
+												<input type="submit" value="Borrar">
+											</form>
+										</c:when>
+										<c:when test="${usuario.id == comentario.creador.id}">
+											<form action="/foro/${idTema}/${idMensaje}/${comentario.id}/delete"
+												method="post">
+												<input type="hidden" name="_method" value="delete">
+												<input type="submit" value="Borrar">
+											</form>
+										</c:when>
+										<c:otherwise>
+										</c:otherwise>
+									</c:choose>
+									
+									
+									
 									</c:forEach>
 
 
@@ -194,7 +217,7 @@
 										height=120px />
 									<p class="my-2">${publicacion.contenidos}</p>
 									<div class="button_01">
-										<a href="${publicacion.enlace}">Ver más</a>
+										<a href="${publicacion.enlace}">Ver mï¿½s</a>
 									</div>
 									<div class="cleaner_h30"></div>
 								</c:forEach>

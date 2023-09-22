@@ -154,13 +154,12 @@ public class ForoController {
 			foroServ.eliminarComentario(comentario.getId());
 		}
 		foroServ.eliminarMensaje(idMensaje);
-		return "redirect:/foro/{idTema}";
+		return "redirect:/foro/"+idTema.toString();
 	}
 
 	// ELIMINAR TEMA
 	@DeleteMapping("/foro/{idTema}/delete")
-	public String eliminarTema(@PathVariable("idTema") Long idTema,
-			HttpSession sesion) {
+	public String eliminarTema(@PathVariable("idTema") Long idTema, HttpSession sesion) {
 		Long userId = (Long) sesion.getAttribute("userID");
 		if (userId == null) {
 			return "redirect:/registro";
@@ -177,6 +176,18 @@ public class ForoController {
 
 		foroServ.eliminarTema(idTema);
 		return "redirect:/vecinos";
+	}
+
+	// ELIMINAR COMENTARIO
+	@DeleteMapping("/foro/{idTema}/{idMensaje}/{idComentario}/delete")
+	public String eliminarLenguaje(@PathVariable("idTema") Long idTema, @PathVariable("idMensaje") Long idMensaje,
+			@PathVariable("idComentario") Long idComentario, HttpSession sesion) {
+		Long userId = (Long) sesion.getAttribute("userID");
+		if (userId == null) {
+			return "redirect:/registro";
+		}
+		foroServ.eliminarComentario(idComentario);
+		return "redirect:/foro/"+idTema.toString()+"/"+idMensaje.toString();
 	}
 
 }
