@@ -164,8 +164,8 @@
 													<form:textarea class="form-control" path="contenidos" />
 												</div>
 												<div class="form-group">
-													<label class="form-label">Foto del emprendimiento
-														(opcional):</label> <input type="file" name="imageUpload"
+													<label class="form-label">Foto del emprendimiento (opcional):</label> 
+													<input type="file" name="imageUpload" accept="image/png, image/jpeg"
 														class="form-control">
 												</div>
 												<div class="form-group">

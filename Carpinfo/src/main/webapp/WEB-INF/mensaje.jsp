@@ -124,24 +124,21 @@
 
 									<c:choose>
 										<c:when test="${usuario.id == 1}">
-
 											<form action="/foro/${idTema}/${idMensaje}/delete"
 												method="post">
 												<input type="hidden" name="_method" value="delete">
-												<input class="btn btn-danger m-2" type="submit"
+												<input class="btn btn-danger mt-3" type="submit"
 													value="Borrar">
 											</form>
-
 										</c:when>
 										<c:when test="${usuario.id == mensaje.creador.id}">
 
 											<form action="/foro/${idTema}/${idMensaje}/delete"
 												method="post">
 												<input type="hidden" name="_method" value="delete">
-												<input class="btn btn-danger m-2" type="submit"
+												<input class="btn btn-danger mt-3" type="submit"
 													value="Borrar">
 											</form>
-
 										</c:when>
 										<c:otherwise>
 										</c:otherwise>

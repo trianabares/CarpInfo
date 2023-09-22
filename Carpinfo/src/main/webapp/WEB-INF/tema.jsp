@@ -114,8 +114,8 @@
 											<form:textarea class="form-control" path="contenidos" />
 										</div>
 										<div class="form-group">
-											<label class="form-label">Adjuntar imagen:</label> <input
-												type="file" name="imageUpload" class="form-control">
+											<label class="form-label">Adjuntar imagen:</label> 
+											<input type="file" name="imageUpload" accept="image/png, image/jpeg" class="form-control">
 										</div>
 										<form:input type="hidden" path="creador" value="${usuario.id}" />
 										<form:input type="hidden" path="tema" value="${tema.id}" />

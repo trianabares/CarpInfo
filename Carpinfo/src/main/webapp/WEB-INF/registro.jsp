@@ -107,8 +107,8 @@
 										</div>
 
 										<div class="mb-3">
-											<label class="form-label">Foto de perfil:</label> <input
-												type="file" name="imageUpload" class="form-control">
+											<label class="form-label">Foto de perfil:</label> 
+											<input type="file" name="imageUpload" accept="image/png, image/jpeg" class="form-control">
 										</div>
 
 										<div class="mb-3">
