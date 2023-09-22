@@ -10,7 +10,9 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -108,6 +110,39 @@ public class UserController {
 			return "info.jsp";
 		}
 
+	}
+	
+	@PutMapping("/perfil/{id}/edit")
+	public String edit(@Valid @ModelAttribute("user") User usuario, BindingResult resultado,
+			@RequestParam("imageUpload") MultipartFile profileImage, @PathVariable("id") Long id, Model viewModel) throws IOException {
+
+		// subir foto de perfil
+		if (profileImage == null) {
+			throw new RuntimeException("Por favor subir un archivo");
+		}
+
+		fileUpServ.subirArchivoABD(profileImage);
+
+		try {
+			byte[] bytes = profileImage.getBytes();
+			Path ruta = Paths.get(UPLOAD_FOLDER, profileImage.getOriginalFilename());
+			Files.write(ruta, bytes);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		usuario.setProfileImage("/images/" + profileImage.getOriginalFilename());
+
+		userServ.actualizarUsuario(usuario, resultado);
+
+		if (resultado.hasErrors()) {
+			viewModel.addAttribute("login", new LogReg());
+			viewModel.addAttribute("publicaciones", publiServ.findAllPublicaciones());
+			return "editarperfil.jsp";
+		}
+
+		viewModel.addAttribute("login", new LogReg());
+		return "redirect:/perfil/{id}";
 	}
 
 	@GetMapping("/logout")
