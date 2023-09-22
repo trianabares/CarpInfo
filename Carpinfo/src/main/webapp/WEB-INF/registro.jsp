@@ -95,10 +95,10 @@
 							<div id="content">
 								<div class="content_section">
 									<h2>Registrarse</h2>
-									<div class="text-danger">
-										<form:errors class="text-danger" path="user.*" />
+									<div class="text-danger my-2">
+										<form:errors path="user.*" />
 									</div>
-
+									
 									<form:form method="POST" action="/registration"
 										modelAttribute="user" enctype="multipart/form-data" accept-charset="UTF-8">
 										<div class="mb-3">

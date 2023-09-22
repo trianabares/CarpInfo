@@ -35,10 +35,10 @@ public class UserService {
 		User usuarioRegistrado = userRepo.findByEmail(user.getEmail());
 
 		if (usuarioRegistrado != null) {
-			resultado.rejectValue("email", "Matches", "Correo electronico ya existe");
+			resultado.rejectValue("email", "Matches", "El correo electrónico ingresado ya existe en nuestra base de datos");
 		}
 		if (!user.getPassword().equals(user.getPasswordConfirmation())) {
-			resultado.rejectValue("password", "Matches", "Password no coincide");
+			resultado.rejectValue("password", "Matches", "La contraseña no coincide");
 		}
 		if (resultado.hasErrors()) {
 			return null;
