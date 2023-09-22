@@ -155,7 +155,7 @@
 										<c:when test="${usuario.id == 1}">
 											<form action="/foro/${idTema}/delete" method="post">
 												<input type="hidden" name="_method" value="delete">
-												<input class="btn btn-danger mt-3" type="submit"
+												<input class="btn btn-success mt-3" type="submit"
 													value="Borrar Tema">
 											</form>
 										</c:when>

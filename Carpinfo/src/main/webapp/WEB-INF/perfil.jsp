@@ -102,8 +102,13 @@
 									<h4>Email ${usuarioPerfil.email }</h4>
 									<h4>Biografía ${usuarioPerfil.biografia }</h4>
 									
-									<img alt="Foto de perfil" src="${usuarioPerfil.profileImage}" width=500px>
-									
+									<c:choose>
+											<c:when test="${usuario.profileImage != '/images/'}">
+												<img  alt="Foto de perfil"
+													src="${usuario.profileImage}" width=500px>
+											</c:when>
+											
+										</c:choose>
 								</div>
 							</div>
 							<!-- end of content -->
