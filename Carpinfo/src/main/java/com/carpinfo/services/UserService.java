@@ -81,4 +81,9 @@ public class UserService {
 			}
 		}
 	}
+	
+	//eliminar usuario
+	public void eliminarUser(Long id) {
+		userRepo.deleteById(id);
+	}
 }

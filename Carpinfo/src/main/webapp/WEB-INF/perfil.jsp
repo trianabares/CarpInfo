@@ -56,7 +56,7 @@
 											name="password" class="input_field" />
 										<div class="cleaner"></div>
 										<input type="submit" name="login" value="Ingresar" alt="login"
-											id="submit_btn" class="button_login"/>
+											id="submit_btn" class="button_login" />
 									</form>
 									<a href="/registro">Registrarse</a>
 								</c:when>
@@ -95,20 +95,34 @@
 							<div id="content">
 								<div class="content_section">
 									<h1>Perfil de ${usuarioPerfil.nombre }</h1>
-									
+
 									<h4>Nombre ${usuarioPerfil.nombre }</h4>
 									<h4>Edad ${usuarioPerfil.edad }</h4>
 									<h4>Ciudad ${usuarioPerfil.ciudad }</h4>
 									<h4>Email ${usuarioPerfil.email }</h4>
 									<h4>Biografía ${usuarioPerfil.biografia }</h4>
-									
+
 									<c:choose>
-											<c:when test="${usuario.profileImage != '/images/'}">
-												<img  alt="Foto de perfil"
-													src="${usuario.profileImage}" width=500px>
-											</c:when>
-											
-										</c:choose>
+										<c:when test="${usuarioPerfil.profileImage != '/images/'}">
+											<img alt="Foto de perfil" src="${usuarioPerfil.profileImage}"
+												width=500px>
+										</c:when>
+									</c:choose>
+
+									<c:choose>
+										<c:when test="${usuario.id == usuarioPerfil.id}">
+											<div>
+												<a href="/perfil/${usuario.id}/edit">Editar Información</a>
+											</div>
+											<div>
+												<form action="/perfil/${usuario.id}/delete" method="post">
+													<input type="hidden" name="_method" value="delete">
+													<input class="btn btn-danger mt-3" type="submit"
+														value="Eliminar Cuenta">
+												</form>
+											</div>
+										</c:when>
+									</c:choose>
 								</div>
 							</div>
 							<!-- end of content -->

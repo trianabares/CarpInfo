@@ -47,6 +47,14 @@ public class ForoService {
 		return comentariosRepo.findComentarioByMensaje(id);
 	}
 	
+	public List<Mensajes> findMensajesByUser(Long userId){
+		return mensajesRepo.findMensajesByUser(userId);
+	}
+	
+	public List<Comentarios> findComentariosByUser(Long userId) {
+		return comentariosRepo.findComentariosByUser(userId);
+	}
+	
 	public Temas mostrar(Long id) {
 		return temasRepo.findById(id).orElse(null);
 	}
