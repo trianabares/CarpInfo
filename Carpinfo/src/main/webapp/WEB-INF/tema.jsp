@@ -14,7 +14,7 @@
 
 <head>
 <meta charset="ISO-8859-1">
-<title>CarpInfo Inicio</title>
+<title>CarpInfo Foro</title>
 <!-- BOOTSTRAP  -->
 <link rel="stylesheet"
 	href="/webjars/bootstrap/5.2.3/css/bootstrap.min.css">
@@ -181,6 +181,17 @@
 									<div class="button_01">
 										<a href="${publicacion.enlace}">Ver más</a>
 									</div>
+									<c:choose>
+										<c:when test="${usuario.id == 1}">
+											<div>
+												<form action="/servicios/${publicacion.id}/delete" method="post">
+													<input type="hidden" name="_method" value="delete">
+													<input class="btn btn-danger mt-3" type="submit"
+														value="Eliminar Publicación">
+												</form>
+											</div>
+										</c:when>
+									</c:choose>
 									<div class="cleaner_h30"></div>
 								</c:forEach>
 							</div>
