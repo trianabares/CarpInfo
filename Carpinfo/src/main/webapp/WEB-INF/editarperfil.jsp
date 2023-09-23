@@ -158,7 +158,19 @@
 									<div class="button_01">
 										<a href="${publicacion.enlace}">Ver más</a>
 									</div>
+									<c:choose>
+										<c:when test="${usuario.id == 1}">
+											<div>
+												<form action="/servicios/${publicacion.id}/delete" method="post">
+													<input type="hidden" name="_method" value="delete">
+													<input  class="botoncito" type="submit"
+														value="Eliminar Servicio">
+												</form>
+											</div>
+										</c:when>
+									</c:choose>
 									<div class="cleaner_h30"></div>
+									
 								</c:forEach>
 							</div>
 						</div>

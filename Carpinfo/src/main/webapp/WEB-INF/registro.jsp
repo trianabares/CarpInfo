@@ -154,8 +154,8 @@
 											<div>
 												<form action="/servicios/${publicacion.id}/delete" method="post">
 													<input type="hidden" name="_method" value="delete">
-													<input class="btn btn-danger mt-3" type="submit"
-														value="Eliminar Publicación">
+													<input  class="botoncito" type="submit"
+														value="Eliminar Servicio">
 												</form>
 											</div>
 										</c:when>

@@ -94,33 +94,37 @@
 						<div id="content_outer">
 							<div id="content">
 								<div class="content_section">
-									<h1>Perfil de ${usuarioPerfil.nombre }</h1>
+									<h1 class="text-center">Perfil de ${usuarioPerfil.nombre }</h1>
 
-									<h4>Nombre ${usuarioPerfil.nombre }</h4>
-									<h4>Edad ${usuarioPerfil.edad }</h4>
-									<h4>Ciudad ${usuarioPerfil.ciudad }</h4>
-									<h4>Email ${usuarioPerfil.email }</h4>
-									<h4>Biografía ${usuarioPerfil.biografia }</h4>
+									<h5 class="mb-3">Nombre de usuario: <span>${usuarioPerfil.nombre }</span> </h5>
+									<h5 class="mb-3" >Edad: <span>${usuarioPerfil.edad }</span> </h5>
+									<h5 class="mb-3" >Ciudad: <span>${usuarioPerfil.ciudad }</span> </h5>
+									<h5 class="mb-3" >Email: <span>${usuarioPerfil.email }</span> </h5>
+									<h5 class="mb-3" >Biografía: <span>${usuarioPerfil.biografia }</span> </h5>
 
 									<c:choose>
 										<c:when test="${usuarioPerfil.profileImage != '/images/'}">
-											<img alt="Foto de perfil" src="${usuarioPerfil.profileImage}"
+											<img class="rounded mx-auto d-block" alt="Foto de perfil" src="${usuarioPerfil.profileImage}"
 												width=500px>
 										</c:when>
 									</c:choose>
 
 									<c:choose>
 										<c:when test="${usuario.id == usuarioPerfil.id}">
-											<div>
+											
+											<div class="row">
+												<div class="button_07 col">
 												<a href="/perfil/${usuario.id}/edit">Editar Información</a>
 											</div>
-											<div>
+											<div id="btnEliminar" class="col">
 												<form action="/perfil/${usuario.id}/delete" method="post">
 													<input type="hidden" name="_method" value="delete">
-													<input class="btn btn-danger mt-3" type="submit"
+													<input class="botoncito" class="btn btn-danger mt-3" type="submit"
 														value="Eliminar Cuenta">
 												</form>
 											</div>
+											</div>
+											
 										</c:when>
 									</c:choose>
 								</div>
@@ -146,8 +150,8 @@
 											<div>
 												<form action="/servicios/${publicacion.id}/delete" method="post">
 													<input type="hidden" name="_method" value="delete">
-													<input class="btn btn-danger mt-3" type="submit"
-														value="Eliminar Publicación">
+													<input  class="botoncito" type="submit"
+														value="Eliminar Servicio">
 												</form>
 											</div>
 										</c:when>
