@@ -151,12 +151,10 @@ public class UserController {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
-		Long userId = (Long) sesion.getAttribute("userID");
 
 		usuario.setProfileImage("/images/" + profileImage.getOriginalFilename());
-		usuario.setPasswordConfirmation("1");
 		
+		Long userId = (Long) sesion.getAttribute("userID");
 		if (resultado.hasErrors()) {
 			viewModel.addAttribute("usuario", userServ.encontrarUserPorId(userId));
 			viewModel.addAttribute("publicaciones", publiServ.findAllPublicaciones());

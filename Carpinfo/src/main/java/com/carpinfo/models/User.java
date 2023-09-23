@@ -3,8 +3,6 @@ package com.carpinfo.models;
 import java.util.Date;
 import java.util.List;
 
-import org.hibernate.annotations.DynamicUpdate;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -23,7 +21,6 @@ import jakarta.validation.constraints.Size;
 
 @Entity
 @Table(name = "users")
-@DynamicUpdate
 public class User {
 
 	@Id
