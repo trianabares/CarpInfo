@@ -4,10 +4,12 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.List;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,9 +18,12 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.carpinfo.models.Comentarios;
 import com.carpinfo.models.LogReg;
+import com.carpinfo.models.Mensajes;
 import com.carpinfo.models.User;
 import com.carpinfo.services.FileUpService;
+import com.carpinfo.services.ForoService;
 import com.carpinfo.services.PublicidadService;
 import com.carpinfo.services.UserService;
 
@@ -31,11 +36,13 @@ public class UserController {
 	private final UserService userServ;
 	private final PublicidadService publiServ;
 	private final FileUpService fileUpServ;
+	private final ForoService foroServ;
 
-	public UserController(UserService uSer, PublicidadService publiServ, FileUpService fileUpServ) {
+	public UserController(UserService uSer, PublicidadService publiServ, FileUpService fileUpServ, ForoService foroServ) {
 		this.userServ = uSer;
 		this.publiServ = publiServ;
 		this.fileUpServ = fileUpServ;
+		this.foroServ = foroServ;
 	}
 
 	// ruta donde se suben las fotos
@@ -95,6 +102,7 @@ public class UserController {
 			HttpSession sesion) {
 		if (resultado.hasErrors()) {
 			viewModel.addAttribute("user", new User());
+			viewModel.addAttribute("publicaciones", publiServ.findAllPublicaciones());
 			viewModel.addAttribute("error", "E-mail y/o contraseña ingresados son inválidos");
 			return "info.jsp";
 		}
@@ -112,8 +120,28 @@ public class UserController {
 
 	}
 	
+	//editar perfil de user
+	@GetMapping("/perfil/{id}/edit")
+	public String editGet(@PathVariable("id") Long id, Model viewModel, HttpSession sesion) {
+		Long userId = (Long) sesion.getAttribute("userID");
+
+		// Verifica si el usuario ha iniciado sesión
+		if (userId != null) {
+			if(userId != id) {
+				return "redirect:/";
+			}
+			User usuarioSesion = userServ.encontrarUserPorId(userId);
+			viewModel.addAttribute("usuario", usuarioSesion);
+		}
+		
+		viewModel.addAttribute("user", userServ.encontrarUserPorId(userId));
+		viewModel.addAttribute("login", new LogReg());
+		viewModel.addAttribute("publicaciones", publiServ.findAllPublicaciones());
+		return "editarperfil.jsp";
+	}
+	
 	@PutMapping("/perfil/{id}/edit")
-	public String edit(@Valid @ModelAttribute("user") User usuario, BindingResult resultado,
+	public String edit(@Valid @ModelAttribute("user") User usuario, BindingResult resultado, HttpSession sesion,
 			@RequestParam("imageUpload") MultipartFile profileImage, @PathVariable("id") Long id, Model viewModel) throws IOException {
 
 		// subir foto de perfil
@@ -132,14 +160,15 @@ public class UserController {
 		}
 
 		usuario.setProfileImage("/images/" + profileImage.getOriginalFilename());
-
-		userServ.actualizarUsuario(usuario, resultado);
-
+		
+		Long userId = (Long) sesion.getAttribute("userID");
 		if (resultado.hasErrors()) {
-			viewModel.addAttribute("login", new LogReg());
+			viewModel.addAttribute("usuario", userServ.encontrarUserPorId(userId));
 			viewModel.addAttribute("publicaciones", publiServ.findAllPublicaciones());
 			return "editarperfil.jsp";
 		}
+		
+		userServ.actualizarUsuario(usuario, id);
 
 		viewModel.addAttribute("login", new LogReg());
 		return "redirect:/perfil/{id}";
@@ -147,6 +176,39 @@ public class UserController {
 
 	@GetMapping("/logout")
 	public String logout(HttpSession sesion) {
+		sesion.setAttribute("userID", null);
+		return "redirect:/";
+	}
+	
+	@DeleteMapping("/perfil/{id}/delete")
+	public String eliminarUser(@PathVariable("id") Long id, Model viewModel, HttpSession sesion) {
+		Long userId = (Long) sesion.getAttribute("userID");
+
+		// Verifica si el usuario ha iniciado sesión
+		if (userId != null) {
+			if(userId != id) {
+				return "redirect:/";
+			}
+			User usuarioSesion = userServ.encontrarUserPorId(userId);
+			viewModel.addAttribute("usuario", usuarioSesion);
+		}
+		
+		List<Mensajes> mensajes = foroServ.findMensajesByUser(id);
+		for (Mensajes mensaje : mensajes) {
+			List<Comentarios> comentarios = foroServ.findComentarioByMensaje(mensaje.getId());
+			for (Comentarios comentario : comentarios) {
+				foroServ.eliminarComentario(comentario.getId());
+			}
+			foroServ.eliminarMensaje(mensaje.getId());
+		}
+		
+		List<Comentarios> comentarios = foroServ.findComentariosByUser(id);
+		for(Comentarios comentario : comentarios) {
+			foroServ.eliminarComentario(comentario.getId());
+		}
+		
+		userServ.eliminarUser(id);
+		
 		sesion.setAttribute("userID", null);
 		return "redirect:/";
 	}

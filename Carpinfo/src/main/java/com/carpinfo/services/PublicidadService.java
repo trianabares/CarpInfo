@@ -21,4 +21,8 @@ public class PublicidadService {
 	public Publicacion addPublicacion(Publicacion publi) {
 		return pRepo.save(publi);
 	}
+	
+	public void deletePublication(Long id) {
+		pRepo.deleteById(id);
+	}
 }

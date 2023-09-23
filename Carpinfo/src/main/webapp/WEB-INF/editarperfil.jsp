@@ -14,7 +14,7 @@
 
 <head>
 <meta charset="ISO-8859-1">
-<title>CarpInfo</title>
+<title>Editar Perfil</title>
 <!-- BOOTSTRAP  -->
 <link rel="stylesheet"
 	href="/webjars/bootstrap/5.2.3/css/bootstrap.min.css">
@@ -44,7 +44,6 @@
 							</div>
 							<!-- end of menu -->
 						</div>
-						<!-- end of header left -->
 						<div id="header_right">
 							<c:choose>
 								<c:when test="${usuario.id == null }">
@@ -57,7 +56,7 @@
 											name="password" class="input_field" />
 										<div class="cleaner"></div>
 										<input type="submit" name="login" value="Ingresar" alt="login"
-											id="submit_btn" class="button_login"/>
+											id="submit_btn" class="button_login" />
 									</form>
 									<a href="/registro">Registrarse</a>
 								</c:when>
@@ -92,50 +91,55 @@
 					</div>
 					<!-- end of header -->
 					<div id="content_wrapper">
-
 						<div id="content_outer">
 							<div id="content">
 								<div class="content_section">
-									<h2>PRONOSTICO MAREOLOGICO</h2>
-									<p>Corrección a las alturas de la Tablas de Marea para los
-										puertos de La Plata, Buenos Aires, San Fernando e Isla Martín
-										García.</p>
-									<p>
-										<strong>CINCUENTA CENTIMETROS SOBRE LOS VALORES
-											INDICADOS EN LAS TABLAS DE MAREA, LUEGO DISMINUYENDO HASTA
-											CUARENTA CENTIMETROS SOBRE DE ESTOS.-</strong>
-									</p>
-								</div>
-								<div class="content_section">
-									<table class="table table-striped float_r">
-
-										<thead>
-											<tr>
-												<th>LUGAR</th>
-												<th>HORA</th>
-
-												<th>ALTURA (m)</th>
-												<th>FECHA</th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<td>SAN FERNANDO / TIGRE</td>
-												<td>${hora}</td>
-
-												<td>${altura }</td>
-												<td>${fecha }</td>
-
-											</tr>
-										</tbody>
-									</table>
-
-									<div id="content_bottom"></div>
-									<div class="cleaner"></div>
-
-									<div class="button_01">
-										<a href="/">Atrás</a>
+									<div class="text-danger my-2">
+										<form:errors path="user.*" />
 									</div>
+
+									<form:form method="POST" action="/perfil/${usuario.id}/edit"
+										modelAttribute="user" enctype="multipart/form-data"
+										accept-charset="UTF-8">
+										<input type="hidden" name="_method" value="put">
+										<div class="mb-3">
+											<form:label path="nombre" class="form-label">Nombre:</form:label>
+											<form:input type="text" path="nombre" class="form-control" />
+										</div>
+
+										<div class="mb-3">
+											<label class="form-label">Foto de perfil:</label> <input
+												type="file" name="imageUpload"
+												accept="image/png, image/jpeg" class="form-control">
+										</div>
+
+										<div class="mb-3">
+											<form:label path="ciudad" class="form-label">Localidad:</form:label>
+											<form:input type="text" path="ciudad" class="form-control" />
+										</div>
+
+										<div class="mb-3">
+											<form:label path="rol" class="form-label">Vecino o Visitante:</form:label>
+											<form:select class="form-select" path="rol">
+												<form:option value="select">--</form:option>
+												<form:option value="vecino"> Vecino</form:option>
+												<form:option value="turista"> Turista</form:option>
+											</form:select>
+										</div>
+										<div class="mb-3">
+											<form:label path="biografia" class="form-label">Biografía:</form:label>
+											<form:textarea path="biografia" class="form-control" />
+										</div>
+										<div class="mb-3">
+											<form:label path="edad" class="form-label">Edad:</form:label>
+											<form:input type="number" path="edad" class="form-control" />
+										</div>
+										<form:input type="hidden" path="email" value="${usuario.email}" />
+										<form:input type="hidden" path="password"
+											value="${usuario.password}" />
+										<input type="submit" class="button_registro"
+											value="Actualizar" alt="Actualizar" />
+									</form:form>
 								</div>
 							</div>
 							<!-- end of content -->
@@ -154,17 +158,6 @@
 									<div class="button_01">
 										<a href="${publicacion.enlace}">Ver más</a>
 									</div>
-									<c:choose>
-										<c:when test="${usuario.id == 1}">
-											<div>
-												<form action="/servicios/${publicacion.id}/delete" method="post">
-													<input type="hidden" name="_method" value="delete">
-													<input class="btn btn-danger mt-3" type="submit"
-														value="Eliminar Publicación">
-												</form>
-											</div>
-										</c:when>
-									</c:choose>
 									<div class="cleaner_h30"></div>
 								</c:forEach>
 							</div>

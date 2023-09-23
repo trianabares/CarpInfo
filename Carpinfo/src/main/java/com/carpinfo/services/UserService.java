@@ -31,7 +31,8 @@ public class UserService {
 
 	// registar al usuario
 	public User registroUsuario(User user, BindingResult resultado) {
-
+		
+		//validacion para que no se repita el email en la base de datos
 		User usuarioRegistrado = userRepo.findByEmail(user.getEmail());
 
 		if (usuarioRegistrado != null) {
@@ -49,23 +50,18 @@ public class UserService {
 
 	}
 	
-	public User actualizarUsuario(User user, BindingResult resultado) {
-
-		User usuarioRegistrado = userRepo.findByEmail(user.getEmail());
-
-		if (usuarioRegistrado != null) {
-			resultado.rejectValue("email", "Matches", "El correo electrónico ingresado ya existe en nuestra base de datos");
-		}
-		if (!user.getPassword().equals(user.getPasswordConfirmation())) {
-			resultado.rejectValue("password", "Matches", "La contraseña no coincide");
-		}
-		if (resultado.hasErrors()) {
-			return null;
-		}
-		String hashed = BCrypt.hashpw(user.getPassword(), BCrypt.gensalt());
-		user.setPassword(hashed);
-		return userRepo.save(user);
-
+	public User actualizarUsuario(User userEditado, Long id) {
+		
+		User originalUser = encontrarUserPorId(id);
+		
+		originalUser.setNombre(userEditado.getNombre());
+		originalUser.setProfileImage(userEditado.getProfileImage());
+		originalUser.setCiudad(userEditado.getCiudad());
+		originalUser.setRol(userEditado.getRol());
+		originalUser.setBiografia(userEditado.getBiografia());
+		originalUser.setEdad(userEditado.getEdad());
+		
+		return userRepo.save(originalUser);
 	}
 
 	// Autenticacion del usuario (LOGIN)
@@ -84,5 +80,10 @@ public class UserService {
 				return false;
 			}
 		}
+	}
+	
+	//eliminar usuario
+	public void eliminarUser(Long id) {
+		userRepo.deleteById(id);
 	}
 }

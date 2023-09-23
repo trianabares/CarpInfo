@@ -43,7 +43,6 @@ public class User {
 	private String password;
 	
 	@Transient
-	@NotBlank(message="Por favor confirme la contraseña")
 	private String passwordConfirmation;
 	
 	private String ciudad;
