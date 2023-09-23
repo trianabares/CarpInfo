@@ -140,7 +140,7 @@
 													<form:errors class="text-danger" path="nombre" />
 													<form:input class="form-control" path="nombre" />
 												</div>
-												<button class="btn btn-success mt-2">Agregar</button>
+												<button class="button_08">Agregar</button>
 											</form:form>
 										</c:when>
 									</c:choose>
@@ -175,7 +175,7 @@
 												</div>
 												<form:input type="hidden" path="creador"
 													value="${usuario.id}" />
-												<button class="btn btn-success mt-2">Agregar</button>
+												<button class="button_08">Agregar</button>
 											</form:form>
 										</div>
 									</c:when>

@@ -120,7 +120,7 @@
 										</div>
 										<form:input type="hidden" path="creador" value="${usuario.id}" />
 										<form:input type="hidden" path="tema" value="${tema.id}" />
-										<button class="btn btn-success my-2">Agregar</button>
+										<button class="button_08 mb-3">Agregar</button>
 									</form:form>
 									<table class="table table-bordered">
 										<thead>
@@ -155,7 +155,7 @@
 										<c:when test="${usuario.id == 1}">
 											<form action="/foro/${idTema}/delete" method="post">
 												<input type="hidden" name="_method" value="delete">
-												<input class="btn btn-success mt-3" type="submit"
+												<input class="botoncito2" type="submit"
 													value="Borrar Tema">
 											</form>
 										</c:when>

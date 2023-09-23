@@ -127,7 +127,7 @@
 											<form action="/foro/${idTema}/${idMensaje}/delete"
 												method="post">
 												<input type="hidden" name="_method" value="delete">
-												<input class="btn btn-success mt-3" type="submit"
+												<input class="botoncito2" type="submit"
 													value="Borrar">
 											</form>
 										</c:when>
@@ -136,7 +136,7 @@
 											<form action="/foro/${idTema}/${idMensaje}/delete"
 												method="post">
 												<input type="hidden" name="_method" value="delete">
-												<input class="btn btn-danger mt-3" type="submit"
+												<input class="botoncito2" type="submit"
 													value="Borrar">
 											</form>
 										</c:when>
@@ -168,14 +168,14 @@
 											<form action="/foro/${idTema}/${idMensaje}/${comentario.id}/delete"
 												method="post">
 												<input type="hidden" name="_method" value="delete">
-												<input type="submit" value="Borrar">
+												<input class="botoncito2 mb-2" type="submit" value="Borrar">
 											</form>
 										</c:when>
 										<c:when test="${usuario.id == comentario.creador.id}">
 											<form action="/foro/${idTema}/${idMensaje}/${comentario.id}/delete"
 												method="post">
 												<input type="hidden" name="_method" value="delete">
-												<input type="submit" value="Borrar">
+												<input class="botoncito2 mb-2" type="submit" value="Borrar">
 											</form>
 										</c:when>
 										<c:otherwise>
@@ -198,7 +198,7 @@
 										</div>
 										<form:input type="hidden" path="creador" value="${usuario.id}" />
 										<form:input type="hidden" path="mensaje" value="${mensaje.id}" />
-										<button class="btn btn-success mt-2">Agregar</button>
+										<button class="button_08">Agregar</button>
 									</form:form>
 
 								</div>

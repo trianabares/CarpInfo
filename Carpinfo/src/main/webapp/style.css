@@ -572,12 +572,42 @@ img {
 	background-color: #db0101;
 	opacity: 0.75;
 }
+
+.botoncito2{
+	display: block;
+	padding: 5px;
+	margin-top: 17px;	
+	color: #FFFFFF ;
+	font-size: 12px;
+	font-weight: bold;
+	text-align: center;
+	text-decoration: none;
+	border: 1px solid #000000;
+	border-radius: 3px;
+	background-color: #db0101;
+	opacity: 0.75;
+}
 	
 	
 .button_07 a {
 	display: block;
 	width: 120px;
 	padding: 3px;
+	margin-top:17px;
+	color: rgb(0, 0, 0);
+	font-size: 12px;
+	font-weight: bold;
+	text-align: center;
+	text-decoration: none;
+	border: 1px solid #000000;
+	border-radius: 3px;
+	background-color: #A1DC8C;
+	opacity: 0.75;
+}
+
+.button_08{
+	display: block;
+	padding: 5px;
 	margin-top:17px;
 	color: rgb(0, 0, 0);
 	font-size: 12px;
