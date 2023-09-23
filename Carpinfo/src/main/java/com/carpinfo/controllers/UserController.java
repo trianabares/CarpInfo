@@ -95,6 +95,7 @@ public class UserController {
 			HttpSession sesion) {
 		if (resultado.hasErrors()) {
 			viewModel.addAttribute("user", new User());
+			viewModel.addAttribute("publicaciones", publiServ.findAllPublicaciones());
 			viewModel.addAttribute("error", "E-mail y/o contraseña ingresados son inválidos");
 			return "info.jsp";
 		}
@@ -133,7 +134,7 @@ public class UserController {
 	}
 	
 	@PutMapping("/perfil/{id}/edit")
-	public String edit(@Valid @ModelAttribute("user") User usuario, BindingResult resultado,
+	public String edit(@Valid @ModelAttribute("user") User usuario, BindingResult resultado, HttpSession sesion,
 			@RequestParam("imageUpload") MultipartFile profileImage, @PathVariable("id") Long id, Model viewModel) throws IOException {
 
 		// subir foto de perfil
@@ -150,16 +151,19 @@ public class UserController {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		
+		Long userId = (Long) sesion.getAttribute("userID");
 
 		usuario.setProfileImage("/images/" + profileImage.getOriginalFilename());
-
-		userServ.actualizarUsuario(usuario, id);
-
+		usuario.setPasswordConfirmation("1");
+		
 		if (resultado.hasErrors()) {
-			viewModel.addAttribute("login", new LogReg());
+			viewModel.addAttribute("usuario", userServ.encontrarUserPorId(userId));
 			viewModel.addAttribute("publicaciones", publiServ.findAllPublicaciones());
 			return "editarperfil.jsp";
 		}
+		
+		userServ.actualizarUsuario(usuario, id);
 
 		viewModel.addAttribute("login", new LogReg());
 		return "redirect:/perfil/{id}";

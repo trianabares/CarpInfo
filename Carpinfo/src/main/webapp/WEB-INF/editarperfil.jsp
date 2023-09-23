@@ -134,10 +134,9 @@
 											<form:label path="edad" class="form-label">Edad:</form:label>
 											<form:input type="number" path="edad" class="form-control" />
 										</div>
-										<form:input type="hidden" path="email"
-											value="${usuario.email}" />
-										<form:input type="hidden" path="password" value="${usuario.password}" />
-										<form:input type="hidden" path="passwordConfirmation" value="${usuario.password}" />
+										<form:input type="hidden" path="email" value="${usuario.email}" />
+										<form:input type="hidden" path="password"
+											value="${usuario.password}" />
 										<input type="submit" class="button_registro"
 											value="Actualizar" alt="Actualizar" />
 									</form:form>
