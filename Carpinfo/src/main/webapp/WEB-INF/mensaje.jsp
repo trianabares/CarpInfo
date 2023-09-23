@@ -127,7 +127,7 @@
 											<form action="/foro/${idTema}/${idMensaje}/delete"
 												method="post">
 												<input type="hidden" name="_method" value="delete">
-												<input class="btn btn-danger mt-3" type="submit"
+												<input class="btn btn-success mt-3" type="submit"
 													value="Borrar">
 											</form>
 										</c:when>
