@@ -14,7 +14,7 @@
 
 <head>
 <meta charset="ISO-8859-1">
-<title>Mi Perfil</title>
+<title>CarpInfo - ${usuarioPerfil.nombre }</title>
 <!-- BOOTSTRAP  -->
 <link rel="stylesheet"
 	href="/webjars/bootstrap/5.2.3/css/bootstrap.min.css">
@@ -84,7 +84,6 @@
 									<a href="/logout">Cerrar sesión</a>
 								</c:otherwise>
 							</c:choose>
-
 						</div>
 						<!-- end of header right -->
 						<div class="cleaner"></div>
@@ -94,39 +93,41 @@
 						<div id="content_outer">
 							<div id="content">
 								<div class="content_section">
-									<h1 class="text-center">Perfil de ${usuarioPerfil.nombre }</h1>
-
-									<h5 class="mb-3">Nombre de usuario: <span>${usuarioPerfil.nombre }</span> </h5>
-									<h5 class="mb-3" >Edad: <span>${usuarioPerfil.edad }</span> </h5>
-									<h5 class="mb-3" >Ciudad: <span>${usuarioPerfil.ciudad }</span> </h5>
-									<h5 class="mb-3" >Email: <span>${usuarioPerfil.email }</span> </h5>
-									<h5 class="mb-3" >Biografía: <span>${usuarioPerfil.biografia }</span> </h5>
-
-									<c:choose>
-										<c:when test="${usuarioPerfil.profileImage != '/images/'}">
-											<img class="rounded mx-auto d-block" alt="Foto de perfil" src="${usuarioPerfil.profileImage}"
-												width=500px>
-										</c:when>
-									</c:choose>
-
-									<c:choose>
-										<c:when test="${usuario.id == usuarioPerfil.id}">
-											
-											<div class="row">
-												<div class="button_07 col">
-												<a href="/perfil/${usuario.id}/edit">Editar Información</a>
-											</div>
-											<div id="btnEliminar" class="col">
-												<form action="/perfil/${usuario.id}/delete" method="post">
-													<input type="hidden" name="_method" value="delete">
-													<input class="botoncito" class="btn btn-danger mt-3" type="submit"
-														value="Eliminar Cuenta">
-												</form>
-											</div>
-											</div>
-											
-										</c:when>
-									</c:choose>
+									<h2 class="text-center">Perfil de ${usuarioPerfil.nombre }</h2>
+									<div class="row">
+										<div class="col">
+											<c:choose>
+												<c:when test="${usuarioPerfil.profileImage != '/images/'}">
+													<img class="rounded mx-auto d-block" alt="Foto de perfil" src="${usuarioPerfil.profileImage}"
+														width=250px>
+												</c:when>
+											</c:choose>
+											<c:choose>
+												<c:when test="${usuario.id == usuarioPerfil.id}">
+													<div class="row">
+														<div class="button_07 col">
+														<a href="/perfil/${usuario.id}/edit">Editar Información</a>
+														<a href="#">Editar Foto</a>
+														<a href="#">Editar contraseña</a>
+													</div>
+													<div class="col">
+														<form action="/perfil/${usuario.id}/delete" method="post">
+															<input type="hidden" name="_method" value="delete">
+															<input class="botoncito" class="btn btn-danger mt-3" type="submit" value="Eliminar Cuenta">
+														</form>
+													</div>
+													</div>
+												</c:when>
+											</c:choose>
+										</div>
+										<div class="col">
+											<h6 class="mb-3">Nombre de usuario: <span>${usuarioPerfil.nombre }</span></h6>
+											<h6 class="mb-3" >Edad: <span>${usuarioPerfil.edad }</span></h6>
+											<h6 class="mb-3" >Ciudad: <span>${usuarioPerfil.ciudad }</span></h6>
+											<h6 class="mb-3" >Email: <span>${usuarioPerfil.email }</span></h6>
+											<h6 class="mb-3" >Biografía: <span>${usuarioPerfil.biografia }</span></h6>
+										</div>
+									</div>
 								</div>
 							</div>
 							<!-- end of content -->

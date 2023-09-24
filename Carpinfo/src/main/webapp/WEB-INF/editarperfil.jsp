@@ -42,8 +42,8 @@
 									<li><a href="/contacto">CONTACTO</a></li>
 								</ul>
 							</div>
-							<!-- end of menu -->
 						</div>
+							<!-- end of menu -->
 						<div id="header_right">
 							<c:choose>
 								<c:when test="${usuario.id == null }">
@@ -84,7 +84,6 @@
 									<a href="/logout">Cerrar sesión</a>
 								</c:otherwise>
 							</c:choose>
-
 						</div>
 						<!-- end of header right -->
 						<div class="cleaner"></div>

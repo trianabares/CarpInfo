@@ -132,6 +132,13 @@ public class UserController {
 			return "redirect:/perfil/{id}";
 		}
 		
+		if (userId != null) {
+
+			User usuario = userServ.encontrarUserPorId(userId);
+			viewModel.addAttribute("usuario", usuario);
+
+		}
+		
 		viewModel.addAttribute("user", userServ.encontrarUserPorId(userId));
 		viewModel.addAttribute("login", new LogReg());
 		viewModel.addAttribute("publicaciones", publiServ.findAllPublicaciones());
