@@ -98,6 +98,7 @@
 									<form:form action="/foro/${tema.id}/${mensaje.id}/edit"
 										method="POST" modelAttribute="mensaje"
 										enctype="multipart/form-data" accept-charset="UTF-8">
+										<input type="hidden" name="_method" value="put">
 										<div class="form-group my-2">
 											<form:label class="form-label" path="titulo">Título: </form:label>
 											<form:errors class="text-danger" path="titulo" />
