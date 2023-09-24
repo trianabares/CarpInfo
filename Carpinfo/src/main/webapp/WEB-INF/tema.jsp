@@ -48,7 +48,7 @@
 						<div id="header_right">
 							<c:choose>
 								<c:when test="${usuario.id == null }">
-									<h2>Inicio de Sesión</h2>
+									<h2>Inicio de Sesiï¿½n</h2>
 									<form action="/login" method="POST">
 										<label>Email</label> <input type="text" name="email"
 											class="input_field" />
@@ -82,7 +82,7 @@
 										</p>
 									</div>
 									<hr>
-									<a href="/logout">Cerrar sesión</a>
+									<a href="/logout">Cerrar sesiï¿½n</a>
 								</c:otherwise>
 							</c:choose>
 
@@ -125,7 +125,7 @@
 									<table class="table table-bordered">
 										<thead>
 											<tr>
-												<th>Título</th>
+												<th>Tï¿½tulo</th>
 												<th>Autor</th>
 											</tr>
 										</thead>
@@ -144,7 +144,7 @@
 																${mensaje.creador.nombre}</a>
 														</p>
 														<p>
-															<c:out value="${mensaje.createdAt}"></c:out>
+															<c:out value="${mensaje.fechaMensaje()}"></c:out>
 														</p>
 													</td>
 												</tr>
@@ -179,7 +179,7 @@
 										height=120px />
 									<p class="my-2">${publicacion.contenidos}</p>
 									<div class="button_01">
-										<a href="${publicacion.enlace}">Ver más</a>
+										<a href="${publicacion.enlace}">Ver mï¿½s</a>
 									</div>
 									<c:choose>
 										<c:when test="${usuario.id == 1}">

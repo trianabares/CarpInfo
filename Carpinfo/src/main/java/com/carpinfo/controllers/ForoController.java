@@ -55,12 +55,14 @@ public class ForoController {
 		if (userId == null) {
 			return "redirect:/registro";
 		}
+		
 		Temas temas = foroServ.mostrar(idTema);
 		model.addAttribute("tema", temas);
 		List<Mensajes> mensajes = foroServ.findMensajesByTema(idTema);
 		model.addAttribute("mensajes", mensajes);
 		model.addAttribute("usuario", userServ.encontrarUserPorId(userId));
 		model.addAttribute("publicaciones", publiServ.findAllPublicaciones());
+		
 		return "tema.jsp";
 	}
 

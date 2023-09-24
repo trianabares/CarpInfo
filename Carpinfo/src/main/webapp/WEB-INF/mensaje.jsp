@@ -49,7 +49,7 @@
 						<div id="header_right">
 							<c:choose>
 								<c:when test="${usuario.id == null }">
-									<h2>Inicio de Sesión</h2>
+									<h2>Inicio de Sesiï¿½n</h2>
 									<form action="/login" method="POST">
 										<label>Email</label> <input type="text" name="email"
 											class="input_field" />
@@ -83,7 +83,7 @@
 										</p>
 									</div>
 									<hr>
-									<a href="/logout">Cerrar sesión</a>
+									<a href="/logout">Cerrar sesiï¿½n</a>
 								</c:otherwise>
 							</c:choose>
 
@@ -105,7 +105,7 @@
 										<a href="/perfil/${mensaje.creador.id}"> ${mensaje.creador.nombre}</a>
 									</h2>
 									<p>
-										<c:out value="${mensaje.createdAt}"></c:out>
+										<c:out value="${mensaje.fechaMensaje()}"></c:out>
 									</p>
 									<hr>
 									<p>
@@ -159,7 +159,7 @@
 											<a href="/perfil/${comentario.creador.id}"> ${comentario.creador.nombre}</a>
 										</p>
 										<p>
-											<c:out value="${comentario.createdAt}"></c:out>
+											<c:out value="${comentario.fechaComentario()}"></c:out>
 										</p>
 										
 										
@@ -217,7 +217,7 @@
 										height=120px />
 									<p class="my-2">${publicacion.contenidos}</p>
 									<div class="button_01">
-										<a href="${publicacion.enlace}">Ver más</a>
+										<a href="${publicacion.enlace}">Ver mï¿½s</a>
 									</div>
 									<c:choose>
 										<c:when test="${usuario.id == 1}">

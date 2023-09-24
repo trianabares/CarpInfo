@@ -1,5 +1,6 @@
 package com.carpinfo.models;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import jakarta.persistence.Column;
@@ -48,7 +49,11 @@ public class Comentarios {
 	public Comentarios() {
 	}
 	
-
+	public String fechaComentario() {
+	    SimpleDateFormat formatoFecha = new SimpleDateFormat("EEEE, MMM d, yyyy HH:mm");
+	    return formatoFecha.format(this.createdAt);
+	}
+	
 	@PrePersist
 	protected void onCreate() {
 		this.createdAt = new Date();

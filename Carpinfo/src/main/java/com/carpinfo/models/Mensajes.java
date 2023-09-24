@@ -1,5 +1,6 @@
 package com.carpinfo.models;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -59,6 +60,10 @@ public class Mensajes {
 	public Mensajes() {
 	}
 	
+	public String fechaMensaje() {
+	    SimpleDateFormat formatoFecha = new SimpleDateFormat("EEEE, MMM d, yyyy HH:mm");
+	    return formatoFecha.format(this.createdAt);
+	}
 
 	@PrePersist
 	protected void onCreate() {
