@@ -95,7 +95,7 @@
 							<div id="content">
 								<div class="content_section">
 									<h2>Editar Mensaje</h2>
-									<form:form action="/foro/${tema.id}/${mensaje.id}/edit"
+									<form:form action="/foro/${idTema}/${idMensaje}/edit"
 										method="POST" modelAttribute="mensaje"
 										enctype="multipart/form-data" accept-charset="UTF-8">
 										<input type="hidden" name="_method" value="put">
@@ -114,9 +114,9 @@
 												type="file" name="imageUpload"
 												accept="image/png, image/jpeg" class="form-control">
 										</div>
-										<form:input type="hidden" path="creador"
-											value="${mensaje.creador.id}" />
-										<form:input type="hidden" path="tema" value="${tema.id}" />
+<%-- 										<form:input type="hidden" path="creador" --%>
+<%-- 											value="${mensaje.creador.id}" /> --%>
+<%-- 										<form:input type="hidden" path="tema" value="${mensaje.tema.id}" /> --%>
 										<button class="button_08 mb-3">Guardar Cambios</button>
 									</form:form>
 								</div>

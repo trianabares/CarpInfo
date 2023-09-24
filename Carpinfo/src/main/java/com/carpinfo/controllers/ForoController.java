@@ -149,48 +149,63 @@ public class ForoController {
 	@GetMapping("/foro/{idTema}/{idMensaje}/edit")
 	public String editMensaje(@PathVariable("idTema") Long idTema,
 	        @PathVariable("idMensaje") Long idMensaje, Model model, HttpSession sesion) {
-	    Long userId = (Long) sesion.getAttribute("userID");
-	    Mensajes mensajes = foroServ.mostrarMensaje(idMensaje);
+		Mensajes mensajes = foroServ.mostrarMensaje(idMensaje);
+		if(mensajes == null) {
+			return "redirect:/foro/" + idTema.toString();
+		}
 		model.addAttribute("mensaje", mensajes);
+		
+		//verifica que el usuario tenga la sesión iniciada y que sea el mismo creador del post
+		Long userId = (Long) sesion.getAttribute("userID");
 	    if (userId == null) {
-	    	if(userId != mensajes.getCreador().getId()) {
-				return "redirect:/";
-			}
 	        return "redirect:/registro";
 	    }
-		List<Comentarios> comentario = foroServ.findComentarioByMensaje(idMensaje);
-		model.addAttribute("comentarios", comentario);
+	    if(!userId.equals(mensajes.getCreador().getId())) {
+			return "redirect:/foro/{idTema}/{idMensaje}";
+		}
+	    
 		model.addAttribute("usuario", userServ.encontrarUserPorId(userId));
 		model.addAttribute("publicaciones", publiServ.findAllPublicaciones());
+		
+		//enviamos id de tema y mensaje tmb
+		model.addAttribute("idTema", idTema);
+		model.addAttribute("idMensaje", idMensaje);
 	    return "editmensaje.jsp";
 	}
 
 	@PutMapping("/foro/{idTema}/{idMensaje}/edit")
 	public String editMensaje(@Valid @ModelAttribute("mensaje") Mensajes mensaje,
-	        BindingResult result, @PathVariable("idTema") Long idTema,
-	        @PathVariable("idMensaje") Long idMensaje, HttpSession sesion, Model model) {
-	    Long userId = (Long) sesion.getAttribute("userID");
-	    if (userId == null) {
-	        return "redirect:/registro";
-	    }
+	        BindingResult result, @PathVariable("idTema") Long idTema, @RequestParam("imageUpload") MultipartFile postImage,
+	        @PathVariable("idMensaje") Long idMensaje, HttpSession sesion, Model model) 
+	        		throws IOException{
+		// subir foto al mensaje/post
+		if (postImage == null) {
+			throw new RuntimeException("Por favor subir un archivo");
+		}
+		fileUpServ.subirArchivoABD(postImage);
+
+		try {
+			byte[] bytes = postImage.getBytes();
+			Path ruta = Paths.get(UPLOAD_FOLDER, postImage.getOriginalFilename());
+			Files.write(ruta, bytes);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		mensaje.setPostImage("/images/" + postImage.getOriginalFilename());
+		
+		Long userId = (Long) sesion.getAttribute("userID");
 	    if (result.hasErrors()) {
-	    	Mensajes mensajes = foroServ.mostrarMensaje(idMensaje);
-			model.addAttribute("mensaje", mensajes);
+	    	Mensajes mensajeOriginal = foroServ.mostrarMensaje(idMensaje);
+			model.addAttribute("mensaje", mensajeOriginal);
+			model.addAttribute("idTema", idTema);
+			model.addAttribute("idMensaje", idMensaje);
 			model.addAttribute("usuario", userServ.encontrarUserPorId(userId));
 			model.addAttribute("publicaciones", publiServ.findAllPublicaciones());
 	        return "editmensaje.jsp";
 	    }
 	    
-	    Mensajes mensajes = foroServ.mostrarMensaje(idMensaje);
-		model.addAttribute("mensaje", mensajes);
-		
-		List<Comentarios> comentario = foroServ.findComentarioByMensaje(idMensaje);
-		model.addAttribute("comentarios", comentario);
-		
-		model.addAttribute("usuario", userServ.encontrarUserPorId(userId));
-		model.addAttribute("publicaciones", publiServ.findAllPublicaciones());
-	    
-	    foroServ.editarMensaje(mensaje);
+	    foroServ.editarMensaje(mensaje, idMensaje);
 	    return "redirect:/foro/"+idTema.toString()+"/"+idMensaje.toString();
 	}
 

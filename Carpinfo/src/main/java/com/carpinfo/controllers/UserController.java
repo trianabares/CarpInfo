@@ -123,15 +123,13 @@ public class UserController {
 	//editar perfil de user
 	@GetMapping("/perfil/{id}/edit")
 	public String editGet(@PathVariable("id") Long id, Model viewModel, HttpSession sesion) {
+		//verifica que el usuario tenga la sesión iniciada y que sea el mismo creador del perfil
 		Long userId = (Long) sesion.getAttribute("userID");
-
-		// Verifica si el usuario ha iniciado sesión
-		if (userId != null) {
-			if(userId != id) {
-				return "redirect:/";
-			}
-			User usuarioSesion = userServ.encontrarUserPorId(userId);
-			viewModel.addAttribute("usuario", usuarioSesion);
+		if (userId == null) {
+			return "redirect:/registro";
+		}
+		if(userId != id) {
+			return "redirect:/perfil/{id}";
 		}
 		
 		viewModel.addAttribute("user", userServ.encontrarUserPorId(userId));
@@ -142,7 +140,8 @@ public class UserController {
 	
 	@PutMapping("/perfil/{id}/edit")
 	public String edit(@Valid @ModelAttribute("user") User usuario, BindingResult resultado, HttpSession sesion,
-			@RequestParam("imageUpload") MultipartFile profileImage, @PathVariable("id") Long id, Model viewModel) throws IOException {
+			@RequestParam("imageUpload") MultipartFile profileImage, @PathVariable("id") Long id, Model viewModel) 
+					throws IOException {
 
 		// subir foto de perfil
 		if (profileImage == null) {

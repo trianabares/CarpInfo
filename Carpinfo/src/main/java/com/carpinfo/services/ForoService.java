@@ -75,14 +75,15 @@ public class ForoService {
 		temasRepo.deleteById(id);
 	}
 	
-	public Mensajes editarMensaje(Mensajes mensaje) {
-        Mensajes mensajeExistente = mensajesRepo.findById(mensaje.getId()).orElse(null);
+	public Mensajes editarMensaje(Mensajes mensaje, Long idMensaje) {
+        Mensajes mensajeExistente = mensajesRepo.findById(idMensaje).orElse(null);
         if (mensajeExistente == null) {
             return null;
         }
         
         mensajeExistente.setTitulo(mensaje.getTitulo());
         mensajeExistente.setContenidos(mensaje.getContenidos());
+        mensajeExistente.setPostImage(mensaje.getPostImage());
 
         return mensajesRepo.save(mensajeExistente);
     }
