@@ -61,7 +61,7 @@ public class Mensajes {
 	}
 	
 	public String fechaMensaje() {
-	    SimpleDateFormat formatoFecha = new SimpleDateFormat("EEEE, MMM d, yyyy HH:mm");
+	    SimpleDateFormat formatoFecha = new SimpleDateFormat("dd-MM-yyyy HH:mm");
 	    return formatoFecha.format(this.createdAt);
 	}
 

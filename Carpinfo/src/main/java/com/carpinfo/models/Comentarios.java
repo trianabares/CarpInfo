@@ -50,7 +50,7 @@ public class Comentarios {
 	}
 	
 	public String fechaComentario() {
-	    SimpleDateFormat formatoFecha = new SimpleDateFormat("EEEE, MMM d, yyyy HH:mm");
+	    SimpleDateFormat formatoFecha = new SimpleDateFormat("dd-MM-yyyy HH:mm");
 	    return formatoFecha.format(this.createdAt);
 	}
 	
