@@ -114,9 +114,6 @@
 												type="file" name="imageUpload"
 												accept="image/png, image/jpeg" class="form-control">
 										</div>
-<%-- 										<form:input type="hidden" path="creador" --%>
-<%-- 											value="${mensaje.creador.id}" /> --%>
-<%-- 										<form:input type="hidden" path="tema" value="${mensaje.tema.id}" /> --%>
 										<button class="button_08 mb-3">Guardar Cambios</button>
 									</form:form>
 								</div>
