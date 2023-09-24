@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-
 <!-- c:out ; c:forEach etc. -->
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!-- Formateo fechas (dates) -->
@@ -15,7 +14,7 @@
 
 <head>
 <meta charset="ISO-8859-1">
-<title>CarpInfo Foro</title>
+<title>Mi Perfil</title>
 <!-- BOOTSTRAP  -->
 <link rel="stylesheet"
 	href="/webjars/bootstrap/5.2.3/css/bootstrap.min.css">
@@ -45,11 +44,10 @@
 							</div>
 							<!-- end of menu -->
 						</div>
-						<!-- end of header left -->
 						<div id="header_right">
 							<c:choose>
 								<c:when test="${usuario.id == null }">
-									<h2>Inicio de Sesiï¿½n</h2>
+									<h2>Inicio de Sesión</h2>
 									<form action="/login" method="POST">
 										<label>Email</label> <input type="text" name="email"
 											class="input_field" />
@@ -58,7 +56,7 @@
 											name="password" class="input_field" />
 										<div class="cleaner"></div>
 										<input type="submit" name="login" value="Ingresar" alt="login"
-											id="submit_btn" class="button_login"/>
+											id="submit_btn" class="button_login" />
 									</form>
 									<a href="/registro">Registrarse</a>
 								</c:when>
@@ -83,7 +81,7 @@
 										</p>
 									</div>
 									<hr>
-									<a href="/logout">Cerrar sesiï¿½n</a>
+									<a href="/logout">Cerrar sesión</a>
 								</c:otherwise>
 							</c:choose>
 
@@ -96,126 +94,30 @@
 						<div id="content_outer">
 							<div id="content">
 								<div class="content_section">
-
-									<h1>
-										<c:out value="${mensaje.titulo}"></c:out>
-									</h1>
-									<h2>
-										-
-										<a href="/perfil/${mensaje.creador.id}"> ${mensaje.creador.nombre}</a>
-									</h2>
-									<p>
-										<c:out value="${mensaje.fechaMensaje()}"></c:out>
-									</p>
-									<hr>
-									<p>
-										<c:out value="${mensaje.contenidos}"></c:out>
-									</p>
-
-									<c:choose>
-										<c:when test="${mensaje.postImage == '/images/'}">
-										</c:when>
-										<c:otherwise>
-											<img alt="Foto del Post" src="${mensaje.postImage}"
-												style="width: 500px">
-										</c:otherwise>
-									</c:choose>
-									
-									<c:choose>
-										<c:when test="${usuario.id == 1}">
-											<form action="/foro/${idTema}/${idMensaje}/edit">
-												<input class="button_08" type="submit" value="Editar">
-											</form>
-										</c:when>
-										<c:when test="${usuario.id == mensaje.creador.id}">
-											<form action="/foro/${idTema}/${idMensaje}/edit">
-												<input class="button_08" type="submit" value="Editar">
-											</form>
-										</c:when>
-										<c:otherwise>
-										</c:otherwise>
-									</c:choose>
-									
-									<c:choose>
-										<c:when test="${usuario.id == 1}">
-											<form action="/foro/${idTema}/${idMensaje}/delete"
-												method="post">
-												<input type="hidden" name="_method" value="delete">
-												<input class="botoncito2" type="submit"
-													value="Borrar">
-											</form>
-										</c:when>
-										<c:when test="${usuario.id == mensaje.creador.id}">
-
-											<form action="/foro/${idTema}/${idMensaje}/delete"
-												method="post">
-												<input type="hidden" name="_method" value="delete">
-												<input class="botoncito2" type="submit"
-													value="Borrar">
-											</form>
-										</c:when>
-										<c:otherwise>
-										</c:otherwise>
-									</c:choose>
-									
-
-
-									<hr>
-									<h2>Comentarios</h2>
-
-									<c:forEach var="comentario" items="${comentarios}">
-										<p>
-											"
-											<c:out value="${comentario.contenidos}"></c:out>
-											"
-										</p>
-										<p>
-											-
-											<a href="/perfil/${comentario.creador.id}"> ${comentario.creador.nombre}</a>
-										</p>
-										<p>
-											<c:out value="${comentario.fechaComentario()}"></c:out>
-										</p>
-										
-										
-										<c:choose>
-										<c:when test="${usuario.id == 1}">
-											<form action="/foro/${idTema}/${idMensaje}/${comentario.id}/delete"
-												method="post">
-												<input type="hidden" name="_method" value="delete">
-												<input class="botoncito2 mb-2" type="submit" value="Borrar">
-											</form>
-										</c:when>
-										<c:when test="${usuario.id == comentario.creador.id}">
-											<form action="/foro/${idTema}/${idMensaje}/${comentario.id}/delete"
-												method="post">
-												<input type="hidden" name="_method" value="delete">
-												<input class="botoncito2 mb-2" type="submit" value="Borrar">
-											</form>
-										</c:when>
-										<c:otherwise>
-										</c:otherwise>
-									</c:choose>
-									
-									
-									
-									</c:forEach>
-
-
-									<h2>Nuevo Comentario</h2>
-									<form:form action="/foro/${idTema}/${idMensaje}/nuevo"
-										method="POST" modelAttribute="nuevocomentario"
-										accept-charset="UTF-8">
-										<div class="form-group">
-											<form:label class="form-label" path="contenidos"></form:label>
+									<h2>Editar Mensaje</h2>
+									<form:form action="/foro/${tema.id}/${mensaje.id}/edit"
+										method="POST" modelAttribute="mensaje"
+										enctype="multipart/form-data" accept-charset="UTF-8">
+										<div class="form-group my-2">
+											<form:label class="form-label" path="titulo">Título: </form:label>
+											<form:errors class="text-danger" path="titulo" />
+											<form:input class="form-control" path="titulo" />
+										</div>
+										<div class="form-group my-2">
+											<form:label class="form-label" path="contenidos">Contenido: </form:label>
 											<form:errors class="text-danger" path="contenidos" />
 											<form:textarea class="form-control" path="contenidos" />
 										</div>
-										<form:input type="hidden" path="creador" value="${usuario.id}" />
-										<form:input type="hidden" path="mensaje" value="${mensaje.id}" />
-										<button class="button_08">Agregar</button>
+										<div class="form-group">
+											<label class="form-label">Adjuntar imagen:</label> <input
+												type="file" name="imageUpload"
+												accept="image/png, image/jpeg" class="form-control">
+										</div>
+										<form:input type="hidden" path="creador"
+											value="${mensaje.creador.id}" />
+										<form:input type="hidden" path="tema" value="${tema.id}" />
+										<button class="button_08 mb-3">Guardar Cambios</button>
 									</form:form>
-
 								</div>
 							</div>
 							<!-- end of content -->
@@ -232,14 +134,15 @@
 										height=120px />
 									<p class="my-2">${publicacion.contenidos}</p>
 									<div class="button_01">
-										<a href="${publicacion.enlace}">Ver mï¿½s</a>
+										<a href="${publicacion.enlace}">Ver más</a>
 									</div>
 									<c:choose>
 										<c:when test="${usuario.id == 1}">
 											<div>
-												<form action="/servicios/${publicacion.id}/delete" method="post">
+												<form action="/servicios/${publicacion.id}/delete"
+													method="post">
 													<input type="hidden" name="_method" value="delete">
-													<input  class="botoncito" type="submit"
+													<input class="botoncito" type="submit"
 														value="Eliminar Servicio">
 												</form>
 											</div>

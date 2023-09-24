@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -142,10 +143,60 @@ public class ForoController {
 			return "redirect:/foro/" + idTema.toString() + "/" + idMensaje.toString();
 		}
 	}
+	
+	// EDITAR MENSAJE
+	
+	@GetMapping("/foro/{idTema}/{idMensaje}/edit")
+	public String editMensaje(@PathVariable("idTema") Long idTema,
+	        @PathVariable("idMensaje") Long idMensaje, Model model, HttpSession sesion) {
+	    Long userId = (Long) sesion.getAttribute("userID");
+	    Mensajes mensajes = foroServ.mostrarMensaje(idMensaje);
+		model.addAttribute("mensaje", mensajes);
+	    if (userId == null) {
+	    	if(userId != mensajes.getCreador().getId()) {
+				return "redirect:/";
+			}
+	        return "redirect:/registro";
+	    }
+		List<Comentarios> comentario = foroServ.findComentarioByMensaje(idMensaje);
+		model.addAttribute("comentarios", comentario);
+		model.addAttribute("usuario", userServ.encontrarUserPorId(userId));
+		model.addAttribute("publicaciones", publiServ.findAllPublicaciones());
+	    return "editmensaje.jsp";
+	}
+
+	@PutMapping("/foro/{idTema}/{idMensaje}/edit")
+	public String editMensaje(@Valid @ModelAttribute("mensaje") Mensajes mensaje,
+	        BindingResult result, @PathVariable("idTema") Long idTema,
+	        @PathVariable("idMensaje") Long idMensaje, HttpSession sesion, Model model) {
+	    Long userId = (Long) sesion.getAttribute("userID");
+	    if (userId == null) {
+	        return "redirect:/registro";
+	    }
+	    if (result.hasErrors()) {
+	    	Mensajes mensajes = foroServ.mostrarMensaje(idMensaje);
+			model.addAttribute("mensaje", mensajes);
+			model.addAttribute("usuario", userServ.encontrarUserPorId(userId));
+			model.addAttribute("publicaciones", publiServ.findAllPublicaciones());
+	        return "editmensaje.jsp";
+	    }
+	    
+	    Mensajes mensajes = foroServ.mostrarMensaje(idMensaje);
+		model.addAttribute("mensaje", mensajes);
+		
+		List<Comentarios> comentario = foroServ.findComentarioByMensaje(idMensaje);
+		model.addAttribute("comentarios", comentario);
+		
+		model.addAttribute("usuario", userServ.encontrarUserPorId(userId));
+		model.addAttribute("publicaciones", publiServ.findAllPublicaciones());
+	    
+	    foroServ.editarMensaje(mensaje);
+	    return "redirect:/foro/"+idTema.toString()+"/"+idMensaje.toString();
+	}
 
 	// ELIMINAR MENSAJE
 	@DeleteMapping("/foro/{idTema}/{idMensaje}/delete")
-	public String eliminarLenguaje(@PathVariable("idTema") Long idTema, @PathVariable("idMensaje") Long idMensaje,
+	public String eliminarMensaje(@PathVariable("idTema") Long idTema, @PathVariable("idMensaje") Long idMensaje,
 			HttpSession sesion) {
 		Long userId = (Long) sesion.getAttribute("userID");
 		if (userId == null) {
@@ -182,7 +233,7 @@ public class ForoController {
 
 	// ELIMINAR COMENTARIO
 	@DeleteMapping("/foro/{idTema}/{idMensaje}/{idComentario}/delete")
-	public String eliminarLenguaje(@PathVariable("idTema") Long idTema, @PathVariable("idMensaje") Long idMensaje,
+	public String eliminarComentario(@PathVariable("idTema") Long idTema, @PathVariable("idMensaje") Long idMensaje,
 			@PathVariable("idComentario") Long idComentario, HttpSession sesion) {
 		Long userId = (Long) sesion.getAttribute("userID");
 		if (userId == null) {
