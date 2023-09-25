@@ -103,7 +103,7 @@
 									<div class="row">
 										<div class="col-md-4 mx-auto">
 											<div class="card text-center">
-												<img src="/images/stickman.jpg" class="card-img-top"
+												<img src="/images/candela.jpg" class="card-img-top"
 													alt="Cande">
 												<div class="card-body">
 													<h5 class="card-title">Candela</h5>
@@ -128,8 +128,8 @@
 
 										<div class="col-md-4 mx-auto">
 											<div class="card text-center">
-												<img src="/images/stickman.jpg" class="card-img-top"
-													alt="Elias">
+												<img src="/images/elias.jpg" class="card-img-top fotoContacto"
+													alt="Elias" >
 												<div class="card-body">
 													<h5 class="card-title">Elias</h5>
 													<h5 class="card-title">Garcia</h5>
@@ -150,7 +150,7 @@
 
 										<div class="col-md-4 mx-auto">
 											<div class="card text-center">
-												<img src="/images/stickman.jpg" class="card-img-top"
+												<img src="/images/braian.jpg" class="card-img-top fotoContacto"
 													alt="Braian">
 												<div class="card-body">
 													<h5 class="card-title">Braian</h5>
@@ -174,7 +174,7 @@
 
 										<div class="col-md-4 mx-auto">
 											<div class="card text-center">
-												<img src="/images/stickman.jpg" class="card-img-top"
+												<img src="/images/leon.png" class="card-img-top fotoContacto"
 													alt="Leon">
 												<div class="card-body">
 													<h5 class="card-title">León</h5>
@@ -183,7 +183,7 @@
 														class="btn btn-outline-success">Enviar correo</a>
 													<div class="d-flex mt-3" id="custom-align-center">
 														<!-- Agrega 'id' aquí -->
-														<a href="#" class="btn btn-primary px-1"><img
+														<a href="https://www.linkedin.com/in/leon-vallejos/" class="btn btn-primary px-1"><img
 															src="/images/linkedin-logo.png" alt="LinkedIn"
 															width="32px"></a> <a
 															href="https://github.com/VallejosLeon"
@@ -196,7 +196,7 @@
 
 										<div class="col-md-4 mx-auto">
 											<div class="card text-center">
-												<img src="/images/stickman.jpg" class="card-img-top"
+												<img src="/images/ignacio.jpeg" class="card-img-top fotoContacto"
 													alt="Ignacio">
 												<div class="card-body">
 													<h5 class="card-title">Ignacio</h5>
@@ -219,8 +219,8 @@
 
 										<div class="col-md-4 mx-auto">
 											<div class="card text-center">
-												<img src="/images/stickman.jpg" class="card-img-top"
-													alt="Triana">
+												<img src="/images/triana.jpeg" class="card-img-top fotoContacto"
+													alt="Triana" width=165px height=165px>
 												<div class="card-body">
 													<h5 class="card-title">Triana</h5>
 													<h5 class="card-title">Bares</h5>
@@ -268,6 +268,10 @@
 										tiempo es gracias a tanto al apoyo de la municipalidad, como
 										al espacio publicitario habilitado para cualquiera que quiera
 										promocionar su emprendimiento en nuestro sitio.</p>
+								</div>
+								<div class="content_section">
+									<h2>Contacto a CarpInfo</h2>
+									<p>Nuestro correo: somoscarpinfo@gmail.com</p>
 								</div>
 							</div>
 							<!-- end of content -->

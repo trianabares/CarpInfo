@@ -180,7 +180,7 @@
 										</div>
 									</c:when>
 									<c:otherwise>
-										<h5>¿Quiere promocionar su emprendimiento en nuestra página? Haga click <a href="#">aquí</a>.</h5>
+										<h5>¿Quiere promocionar su emprendimiento en nuestra página? Haga click <a href="https://forms.gle/EnRnQ26JBeCErFeg7">aquí</a>.</h5>
 									</c:otherwise>
 								</c:choose>
 

@@ -161,6 +161,12 @@ img {
 	margin: 10px 0px;
 }
 
+.fotoContacto {
+	height: 165px;
+	width: 165px;
+	object-fit:cover;
+}
+
 /* menu */
 
 .active {
