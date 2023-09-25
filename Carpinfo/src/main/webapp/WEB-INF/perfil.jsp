@@ -107,7 +107,7 @@
 													<div class="row">
 														<div class="button_07 col">
 														<a href="/perfil/${usuario.id}/edit">Editar Información</a>
-														<a href="#">Editar Foto</a>
+														<a href="/perfil/${usuario.id}/edit/photo">Editar Foto</a>
 														<a href="#">Editar contraseña</a>
 													</div>
 													<div class="col">

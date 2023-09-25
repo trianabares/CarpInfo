@@ -146,26 +146,8 @@ public class UserController {
 	}
 	
 	@PutMapping("/perfil/{id}/edit")
-	public String edit(@Valid @ModelAttribute("user") User usuario, BindingResult resultado, HttpSession sesion,
-			@RequestParam("imageUpload") MultipartFile profileImage, @PathVariable("id") Long id, Model viewModel) 
+	public String edit(@Valid @ModelAttribute("user") User usuario, BindingResult resultado, HttpSession sesion, MultipartFile profileImage, @PathVariable("id") Long id, Model viewModel) 
 					throws IOException {
-
-		// subir foto de perfil
-		if (profileImage == null) {
-			throw new RuntimeException("Por favor subir un archivo");
-		}
-
-		fileUpServ.subirArchivoABD(profileImage);
-
-		try {
-			byte[] bytes = profileImage.getBytes();
-			Path ruta = Paths.get(UPLOAD_FOLDER, profileImage.getOriginalFilename());
-			Files.write(ruta, bytes);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-
-		usuario.setProfileImage("/images/" + profileImage.getOriginalFilename());
 		
 		Long userId = (Long) sesion.getAttribute("userID");
 		if (resultado.hasErrors()) {
@@ -179,6 +161,67 @@ public class UserController {
 		viewModel.addAttribute("login", new LogReg());
 		return "redirect:/perfil/{id}";
 	}
+	
+		//editar foto de perfil
+		@GetMapping("/perfil/{id}/edit/photo")
+		public String editPhotoGet(@PathVariable("id") Long id, Model viewModel, HttpSession sesion) {
+			//verifica que el usuario tenga la sesión iniciada y que sea el mismo creador del perfil
+			Long userId = (Long) sesion.getAttribute("userID");
+			if (userId == null) {
+				return "redirect:/registro";
+			}
+			if(userId != id) {
+				return "redirect:/perfil/{id}";
+			}
+			
+			if (userId != null) {
+
+				User usuario = userServ.encontrarUserPorId(userId);
+				viewModel.addAttribute("usuario", usuario);
+
+			}
+			
+			viewModel.addAttribute("user", userServ.encontrarUserPorId(userId));
+			viewModel.addAttribute("login", new LogReg());
+			viewModel.addAttribute("publicaciones", publiServ.findAllPublicaciones());
+			return "editarfoto.jsp";
+		}
+		
+		
+		@PutMapping("/perfil/{id}/edit/photo")
+		public String editPhoto(@Valid @ModelAttribute("user") User usuario, BindingResult resultado, HttpSession sesion,
+				@RequestParam("imageUpload") MultipartFile profileImage, @PathVariable("id") Long id, Model viewModel) 
+						throws IOException {
+
+			// subir foto de perfil
+			if (profileImage == null) {
+				throw new RuntimeException("Por favor subir un archivo");
+			}
+
+			fileUpServ.subirArchivoABD(profileImage);
+
+			try {
+				byte[] bytes = profileImage.getBytes();
+				Path ruta = Paths.get(UPLOAD_FOLDER, profileImage.getOriginalFilename());
+				Files.write(ruta, bytes);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+
+			usuario.setProfileImage("/images/" + profileImage.getOriginalFilename());
+			
+			Long userId = (Long) sesion.getAttribute("userID");
+			if (resultado.hasErrors()) {
+				viewModel.addAttribute("usuario", userServ.encontrarUserPorId(userId));
+				viewModel.addAttribute("publicaciones", publiServ.findAllPublicaciones());
+				return "editarfoto.jsp";
+			}
+			
+			userServ.actualizarUsuario(usuario, id);
+
+			viewModel.addAttribute("login", new LogReg());
+			return "redirect:/perfil/{id}";
+		}
 
 	@GetMapping("/logout")
 	public String logout(HttpSession sesion) {
