@@ -96,7 +96,7 @@
 						<div id="content_outer">
 							<div id="content">
 								<div class="content_section">
-
+									<div class="text-end"><a href="/foro/${idTema}"> Volver atras</a></div>
 									<h1>
 										<c:out value="${mensaje.titulo}"></c:out>
 									</h1>
@@ -210,7 +210,7 @@
 										<form:input type="hidden" path="mensaje" value="${mensaje.id}" />
 										<button class="button_08">Agregar</button>
 									</form:form>
-
+									
 								</div>
 							</div>
 							<!-- end of content -->

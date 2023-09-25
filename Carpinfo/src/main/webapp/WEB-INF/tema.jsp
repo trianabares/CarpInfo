@@ -95,7 +95,7 @@
 						<div id="content_outer">
 							<div id="content">
 								<div class="content_section">
-
+									<div class="text-end"><a href="/vecinos"> Volver atras</a></div>
 									<h1>
 										<c:out value="${tema.nombre}"></c:out>
 									</h1>
