@@ -43,7 +43,7 @@
 								</ul>
 							</div>
 						</div>
-							<!-- end of menu -->
+						<!-- end of menu -->
 						<div id="header_right">
 							<c:choose>
 								<c:when test="${usuario.id == null }">
@@ -96,39 +96,24 @@
 									<div class="text-danger my-2">
 										<form:errors path="user.*" />
 									</div>
-
-									<form:form method="POST" action="/perfil/${usuario.id}/edit"
+									<h2>Nueva Foto</h2>
+									<form:form method="POST"
+										action="/perfil/${usuario.id}/edit/photo"
 										modelAttribute="user" enctype="multipart/form-data"
 										accept-charset="UTF-8">
 										<input type="hidden" name="_method" value="put">
 										<div class="mb-3">
-											<form:label path="nombre" class="form-label">Nombre:</form:label>
-											<form:input type="text" path="nombre" class="form-control" />
-										</div>
-										<div class="mb-3">
-											<form:label path="ciudad" class="form-label">Localidad:</form:label>
-											<form:input type="text" path="ciudad" class="form-control" />
-										</div>
-
-										<div class="mb-3">
-											<form:label path="rol" class="form-label">Vecino o Visitante:</form:label>
-											<form:select class="form-select" path="rol">
-												<form:option value="select">--</form:option>
-												<form:option value="vecino"> Vecino</form:option>
-												<form:option value="turista"> Turista</form:option>
-											</form:select>
-										</div>
-										<div class="mb-3">
-											<form:label path="biografia" class="form-label">Biografía:</form:label>
-											<form:textarea path="biografia" class="form-control" />
-										</div>
-										<div class="mb-3">
-											<form:label path="edad" class="form-label">Edad:</form:label>
-											<form:input type="number" path="edad" class="form-control" />
+											<label class="form-label">Foto de perfil:</label> <input
+												type="file" name="imageUpload"
+												accept="image/png, image/jpeg" class="form-control">
 										</div>
 										<form:input type="hidden" path="email" value="${usuario.email}" />
 										<form:input type="hidden" path="password" value="${usuario.password}" />
-										<form:input type="hidden" path="profileImage" value="${usuario.profileImage}" />
+										<form:input type="hidden" path="nombre" value="${usuario.nombre}" />
+										<form:input type="hidden" path="ciudad" value="${usuario.ciudad}" />
+										<form:input type="hidden" path="rol" value="${usuario.rol}" />
+										<form:input type="hidden" path="biografia" value="${usuario.biografia}" />
+										<form:input type="hidden" path="edad" value="${usuario.edad}" />
 										<input type="submit" class="button_registro" value="Actualizar" alt="Actualizar" />
 									</form:form>
 								</div>
@@ -152,16 +137,17 @@
 									<c:choose>
 										<c:when test="${usuario.id == 1}">
 											<div>
-												<form action="/servicios/${publicacion.id}/delete" method="post">
+												<form action="/servicios/${publicacion.id}/delete"
+													method="post">
 													<input type="hidden" name="_method" value="delete">
-													<input  class="botoncito" type="submit"
+													<input class="botoncito" type="submit"
 														value="Eliminar Servicio">
 												</form>
 											</div>
 										</c:when>
 									</c:choose>
 									<div class="cleaner_h30"></div>
-									
+
 								</c:forEach>
 							</div>
 						</div>
