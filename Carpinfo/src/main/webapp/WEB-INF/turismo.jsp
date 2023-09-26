@@ -61,7 +61,7 @@
 											name="password" class="input_field" />
 										<div class="cleaner"></div>
 										<input type="submit" name="login" value="Ingresar" alt="login"
-											id="submit_btn" class="button_login"/>
+											id="submit_btn" class="button_login" />
 									</form>
 									<a href="/registro">Registrarse</a>
 								</c:when>
@@ -111,19 +111,22 @@
 										colonización comenzó con la fundación de la ciudad de Buenos
 										Aires, en 1580, cuando el gobernador Juan de Garay repartió
 										tierras para estancias y chacras.</p>
+									<img style="width: 500px" src="/images/mapa.jpg"
+										alt="Casa Sarmiento" />
 								</div>
 								<div class="content_section">
 									<h2>Casa Sarmiento</h2>
 									<p class="em_text">La Casa Museo Sarmiento es un lugar
-										histórico ubicado en Buenos Aires, Argentina. Como
-										mencionaste, su primer propietario fue Federico Álvarez de
-										Toledo Bedoya, un estanciero que la construyó en 1855.
-										Federico Álvarez de Toledo Bedoya era un amigo cercano de
-										Domingo Faustino Sarmiento y compartía con él ideas políticas
-										y una visión común para el futuro de Argentina. Ambos eran
-										opositores al régimen de Juan Manuel de Rosas y, debido a su
-										oposición, se vieron obligados a exiliarse en Chile, donde
-										desarrollaron una relación de aprecio mutuo.</p>
+										histórico ubicado en Buenos Aires, Argentina. Su primer
+										propietario fue Federico Álvarez de Toledo Bedoya, un
+										estanciero que la construyó en 1855. Federico Álvarez de
+										Toledo Bedoya era un amigo cercano de Domingo Faustino
+										Sarmiento y compartía con él ideas políticas y una visión
+										común para el futuro de Argentina. Ambos eran opositores al
+										régimen de Juan Manuel de Rosas y, debido a su oposición, se
+										vieron obligados a exiliarse en Chile, donde desarrollaron una
+										relación de aprecio mutuo. El museo tiene información sobre
+										sus vidas.</p>
 									<img style="width: 500px" src="/images/casasarmiento.jpg"
 										alt="Casa Sarmiento" />
 									<div class="cleaner"></div>
@@ -249,9 +252,10 @@
 									<c:choose>
 										<c:when test="${usuario.id == 1}">
 											<div>
-												<form action="/servicios/${publicacion.id}/delete" method="post">
+												<form action="/servicios/${publicacion.id}/delete"
+													method="post">
 													<input type="hidden" name="_method" value="delete">
-													<input  class="botoncito" type="submit"
+													<input class="botoncito" type="submit"
 														value="Eliminar Servicio">
 												</form>
 											</div>
