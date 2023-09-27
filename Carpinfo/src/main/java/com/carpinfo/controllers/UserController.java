@@ -113,8 +113,9 @@ public class UserController {
 			viewModel.addAttribute("usuario", usuarioLog);
 			return "redirect:/";
 		} else {
-			viewModel.addAttribute("errorLog", "Por favor intenta de nuevo");
+			viewModel.addAttribute("error", "Por favor intenta de nuevo");
 			viewModel.addAttribute("user", new User());
+			viewModel.addAttribute("publicaciones", publiServ.findAllPublicaciones());
 			return "info.jsp";
 		}
 
